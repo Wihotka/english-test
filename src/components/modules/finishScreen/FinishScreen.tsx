@@ -7,10 +7,10 @@ import styles from './styles.scss';
 
 export const FinishScreen = () => {
     const tasksData = useSelector((state:any) => state.testData.tasks);
-    const studentFromPlatform = false; //TEST
+    const isStudentFromPlatform = useSelector((state:any) => state.studentData.isStudentFromPlatform);
 
     return <div className={styles.finishScreen}>
-        {studentFromPlatform
+        {isStudentFromPlatform
             ? <div className={styles.currentUserContent}>
                 <h3 className={styles.title}>
                     <LocalizedText name={'form.title'} path={'translation'}/>

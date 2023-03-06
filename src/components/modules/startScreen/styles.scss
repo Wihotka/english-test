@@ -21,8 +21,19 @@
     min-width: 741px;
 }
 
-.title {
+.titleWrap {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
     margin-bottom: 16px;
+
+    & > img {
+        width: 68px;
+        height: 76px;
+    }
+}
+
+.title {
     color: #FFFFFF;
     font-weight: 700;
     font-size: 36px;
