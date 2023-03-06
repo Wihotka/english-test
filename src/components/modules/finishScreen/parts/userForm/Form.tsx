@@ -13,7 +13,6 @@ export const UserForm = ({tasks}:P) => {
 
     const placeholders = {
         username: t('form.inputPlaceholders.name'),
-        age: t('form.inputPlaceholders.age'),
         tel: t('form.inputPlaceholders.tel'),
         email: t('form.inputPlaceholders.email')
     };
@@ -21,14 +20,12 @@ export const UserForm = ({tasks}:P) => {
     const formik = useFormik({
         initialValues: {
             username: '',
-            age: '',
             tel: '',
             email: ''
         },
         validate: values => {
             const errors = {
                 username: '',
-                age: '',
                 tel: '',
                 email: ''
             };
@@ -37,10 +34,6 @@ export const UserForm = ({tasks}:P) => {
             else if (values.username.split(' ').length < 2) errors.username = t('form.errors.incorrectUsername');
             else if (!values.username.split(' ').every(str => !!str)) errors.username = t('form.errors.incorrectUsername');
 
-            if (values.age.length < 1) errors.age = t('form.errors.noAge');
-            else if (+values.age <= 0) errors.age = t('form.errors.notEnoughAge');
-            else if (!values.age) errors.age = t('form.errors.noAge');
-
             if (!values.tel) errors.tel = t('form.errors.noTel');
             else if (values.tel.length < 5) errors.tel = t('form.errors.incorrectTel');
             else if (!values.tel.match(/\d/i)) errors.tel = t('form.errors.incorrectTel');
@@ -48,7 +41,7 @@ export const UserForm = ({tasks}:P) => {
             if (!values.email) errors.email = t('form.errors.noEmail');
             else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) errors.email = t('form.errors.incorrectEmail');
 
-            if (errors.username || errors.age || errors.tel || errors.email)
+            if (errors.username || errors.tel || errors.email)
                 return errors;
             
             return null;
@@ -66,11 +59,6 @@ export const UserForm = ({tasks}:P) => {
     const handleUsername = (e) => {
         const value = e.target.value;
         e.target.value = value.trimStart().replace(/\s\s+/g, ' ');
-        formik.handleChange(e);
-    };
-    const handleAge = (e) => {
-        const value = e.target.value;
-        e.target.value = value.replace(/[^\d]/g, '').substr(0, 2);
         formik.handleChange(e);
     };
     const handleTel = (e) => {
@@ -95,17 +83,6 @@ export const UserForm = ({tasks}:P) => {
                 className={formik.errors.username && formik.touched.username ? styles.inputError : ''}
             />
             {formik.errors.username && formik.touched.username && <div>{formik.errors.username}</div>}
-        </div>
-        <div className={styles.inputWrapper}>
-            <input
-                type='text'
-                value={formik.values.age}
-                onChange={handleAge}
-                placeholder={placeholders.age}
-                name='age'
-                className={formik.errors.age && formik.touched.age ? styles.inputError : ''}
-            />
-            {formik.errors.age && formik.touched.age && <div>{formik.errors.age}</div>}
         </div>
         <div className={styles.inputWrapper}>
             <input
