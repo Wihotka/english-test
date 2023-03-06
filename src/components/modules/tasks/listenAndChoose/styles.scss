@@ -1,0 +1,42 @@
+.listenAndChoose {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 100%;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.taskNumber {
+    display: block;
+    min-width: 28px;
+    margin-right: 5px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+}
+
+.questionWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.question {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+}
+
+.questionFiguresWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+}

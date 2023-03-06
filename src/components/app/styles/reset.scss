@@ -1,0 +1,121 @@
+@import "mixins";
+
+html, body, main, div, span,
+object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, acronym,
+address, big, cite, code, del, dfn, em,
+img, ins, kbd, q, s, samp,small, strike,
+strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead,
+tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time,
+mark, audio, video, input, textarea, button{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: Montserrat, serif;
+  font-size: 100%;
+  font-weight: 400;
+  //text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(20, 23, 28, 0);
+}
+
+
+html {
+  overflow-x: hidden;
+  height: 100%;
+  font-size: 14px;
+}
+
+*{
+  outline:none;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+*:active, *:hover, *:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+*::-moz-focus-inner {
+  border: 0;
+}
+
+body{
+  font-size: 16px;
+  line-height: 1.2;
+  height: 100%;
+  //background: url('/assets/img/main/bg.png') no-repeat fixed center;
+  background-size: cover!important;
+  letter-spacing: 0.03em;
+}
+
+main[id*="app"]{
+  //display: flex;
+  //flex-direction: column;
+  //min-height: 100vh;
+  //position: relative;
+  //padding: 24px 0;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+b, strong{
+  font-weight: bold;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+label, a, input, textarea {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+}
+
+figure{
+  margin: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  padding:0;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background: rgba(18, 6, 91, 0.3);
+  border: 1px solid #281D66;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-thumb {
+  background: #a5def5;
+  border: 1px solid #a5def5;
+  border-radius: 15px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,38 @@
+@import '@mixins';
+
+.mainPage {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    padding-top: 120px;
+    background: linear-gradient(126.68deg, #1496DE 28.65%, #E241CC 108.53%);
+
+    @include lg {
+        padding-top: 80px;
+    }
+
+    &Test {
+        padding-top: 36px;
+        padding-bottom: 110px;
+        background: url('_assets/img/background.png'), linear-gradient(126.68deg, #1496DE 28.65%, #E241CC 108.53%);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include lg {
+            padding-bottom: 72px;
+        }
+    }
+
+    &Finished {
+        padding: 64px 0;
+
+        @include lg {
+            padding: 32px 0;
+        }
+    }
+}
+
+.mainWrapper {
+    max-width: 1124px;
+}

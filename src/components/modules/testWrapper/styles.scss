@@ -1,0 +1,63 @@
+@import '@mixins';
+
+.testWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 1124px;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.questionWrapper {
+    display: grid;
+    grid-template-columns: 1fr 32px;
+    grid-template-rows: repeat(2, minmax(min-content, max-content));
+    gap: 38px;
+    width: 100%;
+    padding: 36px 55px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+
+    @include lg {
+        gap: 20px;
+        padding: 20px 40px;
+    }
+}
+
+.question {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+}
+
+.lang {
+    width: 100%;
+    height: auto;
+}
+
+.doneTasks {
+    grid-column: 1 / span 2;
+    justify-self: flex-end;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+}
+
+.task {
+    width: 100%;
+    max-height: 696px;
+    border-radius: 20px;
+    padding: 36px 40px 0;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}

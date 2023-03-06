@@ -1,0 +1,1 @@
+export {DragAndDropWord} from './DragAndDropWord';

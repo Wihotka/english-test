@@ -1,0 +1,29 @@
+.inputWrapper {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+    height: 1px;
+    background-color: #0B1F35;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 6px 4px;
+  border: 1px solid #E2E5EB;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  color: #0B1F35;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+
+  &.disabled{
+    cursor: not-allowed;
+  }
+}

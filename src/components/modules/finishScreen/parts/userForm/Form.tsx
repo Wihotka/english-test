@@ -1,0 +1,142 @@
+import React from 'react';
+import {useTranslation} from 'react-i18next';
+import {useFormik} from 'formik';
+import {LocalizedText} from '@components/elements/localizedText';
+import styles from './styles.scss';
+
+type P = {
+    tasks:any[];
+};
+
+export const UserForm = ({tasks}:P) => {
+    const {t} = useTranslation('translation');
+
+    const placeholders = {
+        username: t('form.inputPlaceholders.name'),
+        age: t('form.inputPlaceholders.age'),
+        tel: t('form.inputPlaceholders.tel'),
+        email: t('form.inputPlaceholders.email')
+    };
+
+    const formik = useFormik({
+        initialValues: {
+            username: '',
+            age: '',
+            tel: '',
+            email: ''
+        },
+        validate: values => {
+            const errors = {
+                username: '',
+                age: '',
+                tel: '',
+                email: ''
+            };
+
+            if (!values.username) errors.username = t('form.errors.noUsername');
+            else if (values.username.split(' ').length < 2) errors.username = t('form.errors.incorrectUsername');
+            else if (!values.username.split(' ').every(str => !!str)) errors.username = t('form.errors.incorrectUsername');
+
+            if (values.age.length < 1) errors.age = t('form.errors.noAge');
+            else if (+values.age <= 0) errors.age = t('form.errors.notEnoughAge');
+            else if (!values.age) errors.age = t('form.errors.noAge');
+
+            if (!values.tel) errors.tel = t('form.errors.noTel');
+            else if (values.tel.length < 5) errors.tel = t('form.errors.incorrectTel');
+            else if (!values.tel.match(/\d/i)) errors.tel = t('form.errors.incorrectTel');
+
+            if (!values.email) errors.email = t('form.errors.noEmail');
+            else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) errors.email = t('form.errors.incorrectEmail');
+
+            if (errors.username || errors.age || errors.tel || errors.email)
+                return errors;
+            
+            return null;
+        },
+        onSubmit: values => {
+            const resultsData = {
+                user: values,
+                tasks: tasks
+            };
+
+            console.log(resultsData); // TEST
+        },
+    });
+
+    const handleUsername = (e) => {
+        const value = e.target.value;
+        e.target.value = value.trimStart().replace(/\s\s+/g, ' ');
+        formik.handleChange(e);
+    };
+    const handleAge = (e) => {
+        const value = e.target.value;
+        e.target.value = value.replace(/[^\d]/g, '').substr(0, 2);
+        formik.handleChange(e);
+    };
+    const handleTel = (e) => {
+        const value = e.target.value;
+        e.target.value = value.replace(/[^\d\+\-() ]/g, '').replace(/\s\s+/g, ' ').substr(0, 20).trimStart();
+        formik.handleChange(e);
+    };
+    const handleEmail = (e) => {
+        const value = e.target.value;
+        e.target.value = value.trim();
+        formik.handleChange(e);
+    };
+
+    return <form onSubmit={formik.handleSubmit} className={styles.userForm}>
+        <div className={styles.inputWrapper}>
+            <input
+                type='text'
+                value={formik.values.username}
+                onChange={handleUsername}
+                placeholder={placeholders.username}
+                name='username'
+                className={formik.errors.username && formik.touched.username ? styles.inputError : ''}
+            />
+            {formik.errors.username && formik.touched.username && <div>{formik.errors.username}</div>}
+        </div>
+        <div className={styles.inputWrapper}>
+            <input
+                type='text'
+                value={formik.values.age}
+                onChange={handleAge}
+                placeholder={placeholders.age}
+                name='age'
+                className={formik.errors.age && formik.touched.age ? styles.inputError : ''}
+            />
+            {formik.errors.age && formik.touched.age && <div>{formik.errors.age}</div>}
+        </div>
+        <div className={styles.inputWrapper}>
+            <input
+                type='tel'
+                value={formik.values.tel}
+                onChange={handleTel}
+                placeholder={placeholders.tel}
+                name='tel'
+                className={formik.errors.tel && formik.touched.tel ? styles.inputError : ''}
+            />
+            {formik.errors.tel && formik.touched.tel && <div>{formik.errors.tel}</div>}
+        </div>
+        <div className={styles.inputWrapper}>
+            <input
+                type='text'
+                value={formik.values.email}
+                onChange={handleEmail}
+                placeholder={placeholders.email}
+                name='email'
+                className={formik.errors.email && formik.touched.email ? styles.inputError : ''}
+            />
+            {formik.errors.email && formik.touched.email && <div>{formik.errors.email}</div>}
+        </div>
+        <button type='submit' className={styles.submitBtn}>
+            <LocalizedText name={'buttons.submit'} path={'translation'}/>
+        </button>
+        <p className={styles.personal}>
+            <LocalizedText name={'form.personal.text'} path={'translation'}/>
+            <a href='https://amakids.ru/privacy_policy/' target='_blank' rel='noopener'>
+                <LocalizedText name={'form.personal.link'} path={'translation'}/>
+            </a>
+        </p>
+    </form>;
+};

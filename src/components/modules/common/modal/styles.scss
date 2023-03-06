@@ -1,0 +1,92 @@
+@import '@mixins';
+
+.modal{
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  background-color: rgba($color: #333, $alpha: .6);
+  overflow: auto;
+  overflow-y: scroll;
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s ease;
+
+  &.opened{
+    visibility: visible;
+    opacity: 1;
+  }
+
+}
+
+.modalClose{
+  position: absolute;
+  background: url('_assets/img/modules/modal/close.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+
+  @include lg{
+    top: 20px;
+  }
+  @include sm{
+    width: 20px;
+    height: 20px;
+    right: 20px;
+  }
+
+  &:hover{
+    background: url('_assets/img/modules/modal/closeHover.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.modalOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.modalBody{
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: auto;
+  background: #FFF;
+  box-shadow: 0 0 200px #9DB0E3;
+  border-radius: 10px;
+  min-height: 300px;
+  padding: 80px 0;
+  width: 970px;
+
+  @include md{
+    width: 650px;
+  }
+
+  @include sm{
+    width: 90%;
+    min-width: 350px;
+    padding: 6s0px 0;
+  }
+
+  @include xs{
+    width: 90%;
+    min-width: auto;
+  }
+
+  .modalContent{
+    display: inherit;
+  }
+}

@@ -1,0 +1,85 @@
+@import '@mixins';
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid #E3E7FC;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #E3E7FC;
+  transition: .2s ease;
+
+  &:hover {
+    background-color: #CCEDFF;
+  }
+
+  &:active {
+    transform: translate(0, 6px);
+  }
+
+  &_play {
+    .logoPlay {
+      position: absolute;
+      top: 12px;
+      left: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 28px;
+    }
+
+    .logoPause {
+      position: absolute;
+      top: 13px;
+      left: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 25px;
+    }
+  }
+
+  &_playSlowly {
+    width: 36px;
+    height: 36px;
+
+    .logoPlay {
+      position: absolute;
+      top: 9px;
+      left: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 15px;
+    }
+
+    .logoPause {
+      position: absolute;
+      top: 9px;
+      left: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 15px;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    cursor: none;
+  }
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

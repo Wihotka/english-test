@@ -1,0 +1,1 @@
+export {InputSentence} from './InputSentence';

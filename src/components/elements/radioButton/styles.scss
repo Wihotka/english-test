@@ -1,0 +1,91 @@
+@import '@mixins';
+
+.radioButton {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #2E1E90;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  transition: .2s ease;
+
+  &:hover,
+  &:active {
+    background-color: #CCEDFF;
+  }
+
+  &:hover::after,
+  &:active::after {
+    background-color: #CCEDFF;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    transition: .4s ease;
+  }
+
+  &:checked {
+    &::after {
+      background-color: #2E1E90;
+    }
+  }
+}
+
+.label {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+
+  &Disabled {
+    cursor: not-allowed;
+  }
+}
+
+.btnWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.btnWrapperImg {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.radioButtonImg {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 29px;
+}
+
+.imgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 251px;
+  height: 251px;
+
+  & > img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

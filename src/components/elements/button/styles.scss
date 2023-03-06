@@ -1,0 +1,28 @@
+.button{
+  border: none;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  user-select: none;
+
+  &.disabled{
+    background: linear-gradient(180deg, #FFFFFF 4.15%, #DFE0E4 99.36%) padding-box,
+    linear-gradient(158.59deg, #DFE0E4 -29.8%, #FFFFFF 125.76%) border-box;
+    color: #C2C2C2;
+    cursor: no-drop;
+    opacity: 0.5;
+
+    &:hover{
+      background: linear-gradient(180deg, #FFFFFF 4.15%, #DFE0E4 99.36%) padding-box,
+      linear-gradient(158.59deg, #DFE0E4 -29.8%, #FFFFFF 125.76%) border-box;
+      color: #C2C2C2;
+    }
+  }
+}
+

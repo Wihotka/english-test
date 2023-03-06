@@ -1,0 +1,67 @@
+.dropCell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 163px;
+    height: 86px;
+    padding: 8px;
+    border: 1px dashed rgba(46, 30, 144, 0.4);
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    transition: .2s ease;
+
+    &Over {
+        background-color: #CCEDFF;
+    }
+}
+
+.dragWord {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 163px;
+    height: 86px;
+    padding: 8px;
+    border: 1px solid rgba(46, 30, 144, 0.4);
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    opacity: 1;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    transform: scale(1);
+    transition: .2s ease;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: #CCEDFF;
+    }
+
+    &Dragging {
+        border-style: dashed;
+        font-size: 0;
+        background-color: #FFFFFF;
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: #FFFFFF;
+        }
+    }
+
+    &Dropped {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0);
+        pointer-events: none;
+    }
+}

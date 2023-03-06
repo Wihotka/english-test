@@ -1,0 +1,47 @@
+.trueOrFalse {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 100%;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.taskNumber {
+    display: block;
+    min-width: 28px;
+    margin-right: 5px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+}
+
+.taskImg {
+    display: block;
+    width: 430px;
+    height: 126px;
+}
+
+.questionsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.questionWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.question {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+}

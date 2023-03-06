@@ -1,0 +1,31 @@
+.lookAndChoose {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 100%;
+}
+
+.task {
+    display: flex;
+}
+
+.taskNumber {
+    display: block;
+    min-width: 28px;
+    margin-right: 5px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+}
+
+.taskImg {
+    width: 180px;
+    height: auto;
+    margin-right: 48px;
+}
+
+.radioBtns {
+    display: flex;
+    align-items: center;
+}

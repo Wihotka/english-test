@@ -1,0 +1,80 @@
+@import '@mixins';
+
+.startScreen {
+    display: flex;
+    justify-content: flex-end;
+    gap: 21px;
+    width: 100%;
+}
+
+.greetingImg {
+    @include xl {
+        width: auto;
+        height: 450px;
+    }
+    @include lg {
+        height: 400px;
+    }
+}
+
+.info {
+    min-width: 741px;
+}
+
+.title {
+    margin-bottom: 16px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 130%;
+}
+
+.text {
+    margin-bottom: 48px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+}
+
+.startTest {
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+}
+
+.ageBtnWrapper {
+    display: flex;
+    gap: 24px;
+}
+
+.ageBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 262px;
+    padding: 24px;
+    background-color: #FFFFFF;
+    transition: .2s ease;
+
+    & > span {
+        line-height: 120%;
+        letter-spacing: 0.02em;
+
+        &:last-child {
+            font-weight: 700;
+            font-size: 26px;
+        }
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: #CCEDFF;
+    }
+}

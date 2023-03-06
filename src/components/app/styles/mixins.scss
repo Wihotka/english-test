@@ -1,0 +1,38 @@
+$breakpointXS: 400px;
+$breakpointSM: 768px;
+$breakpointMD: 1024px;
+$breakpointLG: 1400px;
+$breakpointXL: 1900px;
+
+$mainFont: 'Montserrat';
+$mainColorBlack: #0B1F35;
+
+@mixin xl{
+  @media (max-width: $breakpointXL) {
+    @content;
+  }
+}
+
+@mixin lg{
+  @media (max-width: $breakpointLG) {
+    @content;
+  }
+}
+
+@mixin md{
+  @media (max-width: $breakpointMD) {
+    @content;
+  }
+}
+
+@mixin sm{
+  @media (max-width: $breakpointSM) {
+    @content;
+  }
+}
+
+@mixin xs{
+  @media (max-width: $breakpointXS) {
+    @content;
+  }
+}
