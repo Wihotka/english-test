@@ -5,10 +5,10 @@ import {pdfStyles} from './styles';
 export const PdfResults = () => <Document>
     <Page size="A4" style={pdfStyles.page}>
         <View style={pdfStyles.section}>
-            <Text>Section #1</Text>
+            <Text>Жаренные гвозди</Text>
         </View>
         <View style={pdfStyles.section}>
-            <Text>Section #2</Text>
+            <Text>Вареные табуретки</Text>
         </View>
     </Page>
 </Document>;

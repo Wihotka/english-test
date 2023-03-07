@@ -1,8 +1,9 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import {PDFDownloadLink} from '@react-pdf/renderer';
 import {Button} from '@components/elements/button';
 import {LocalizedText} from '@components/elements/localizedText';
-import {UserForm} from './parts';
+import {UserForm, PdfResults} from './parts';
 import styles from './styles.scss';
 
 export const FinishScreen = () => {
@@ -37,6 +38,9 @@ export const FinishScreen = () => {
                     <Button className={styles.btn}>
                         <LocalizedText name={'buttons.ok'} path={'translation'}/>
                     </Button>
+                    <PDFDownloadLink document={<PdfResults/>} fileName='results.pdf'>
+                        {({blob, url, loading, error}) => (loading ? 'Загрузка результатов...' : 'Скачать')}
+                    </PDFDownloadLink>
                 </div>
             </div>
             : <div className={styles.newUserContent}>
