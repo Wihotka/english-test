@@ -298,7 +298,7 @@ module.exports = (env, options) => {
             host: 'localhost',
             https: true,
             hot: true,
-            port: 1000,
+            port: 1100,
             client: {
                 overlay: {
                     errors: true,
