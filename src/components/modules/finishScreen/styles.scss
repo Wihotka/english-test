@@ -120,14 +120,20 @@
         width: 148px;
         height: 100px;
     }
+}
+
+.results {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 8px;
+    color: #F50882;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 130%;
 
     & > span {
-        position: relative;
-        z-index: 2;
-        color: #F50882;
         font-weight: 700;
-        font-size: 48px;
-        line-height: 130%;
     }
 }
 

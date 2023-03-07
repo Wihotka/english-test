@@ -8,6 +8,7 @@ import styles from './styles.scss';
 export const FinishScreen = () => {
     const tasksData = useSelector((state:any) => state.testData.tasks);
     const isStudentFromPlatform = useSelector((state:any) => state.studentData.isStudentFromPlatform);
+    const tasksWithRightAnswers = tasksData.filter(task => task.status);
 
     return <div className={styles.finishScreen}>
         {isStudentFromPlatform
@@ -27,7 +28,11 @@ export const FinishScreen = () => {
                         <svg viewBox="0 0 148 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M137.851 10.3948C125.345 -6.50743 105.316 -0.2022 91.2544 10.9654C67.4844 29.5333 36.2151 -0.189974 12.6745 19.3446C-11.931 39.7486 2.54965 79.0914 28.3142 91.4737C80.2806 118.806 180.055 77.3993 137.851 10.3948Z" fill="#E3EEFD"/>
                         </svg>
-                        <span>7 / 15</span>
+                        <div className={styles.results}>
+                            <span>{tasksWithRightAnswers.length}</span>
+                            /
+                            <span>{tasksData.length}</span>
+                        </div>
                     </div>
                     <Button className={styles.btn}>
                         <LocalizedText name={'buttons.ok'} path={'translation'}/>
