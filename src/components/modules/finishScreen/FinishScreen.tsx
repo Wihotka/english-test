@@ -1,15 +1,18 @@
 import React from 'react';
+import {useParams} from 'react-router';
 import {useSelector} from 'react-redux';
 import {PDFDownloadLink} from '@react-pdf/renderer';
+import {UrlParamsT} from '@components/types';
 import {Button} from '@components/elements/button';
 import {LocalizedText} from '@components/elements/localizedText';
 import {UserForm, PdfResults} from './parts';
 import styles from './styles.scss';
 
 export const FinishScreen = () => {
-    const tasksData = useSelector((state:any) => state.testData.tasks);
-    const isStudentFromPlatform = useSelector((state:any) => state.studentData.isStudentFromPlatform);
-    const tasksWithRightAnswers = tasksData.filter(task => task.status);
+    const tasksProgress = useSelector((state:any) => state.testData.tasksProgress);
+    const tasksWithRightAnswers = tasksProgress.filter(task => task.status);
+    const {source} = useParams<UrlParamsT>();
+    const isStudentFromPlatform = source === 'platform';
 
     return <div className={styles.finishScreen}>
         {isStudentFromPlatform
@@ -32,7 +35,7 @@ export const FinishScreen = () => {
                         <div className={styles.results}>
                             <span>{tasksWithRightAnswers.length}</span>
                             /
-                            <span>{tasksData.length}</span>
+                            <span>{tasksProgress.length}</span>
                         </div>
                     </div>
                     <Button className={styles.btn}>
@@ -52,7 +55,7 @@ export const FinishScreen = () => {
                     <p className={styles.text}>
                         <LocalizedText name={'form.description.new'} path={'translation'}/>
                     </p>
-                    <UserForm tasks={tasksData}/>
+                    <UserForm tasks={tasksProgress}/>
                 </div>
             </div>
         }

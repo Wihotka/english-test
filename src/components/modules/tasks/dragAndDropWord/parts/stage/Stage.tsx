@@ -6,10 +6,10 @@ import styles from './styles.scss';
 
 export const Stage = ({task}) => {
     const testData = useSelector((state:any) => state.testData);
-    const {option, tasks} = testData;
+    const {option, tasksProgress} = testData;
     const words:any[] = task.option[option].words;
     const correctAnswer:string[] = task.option[option].correctAnswer;
-    const currentAnswer:string[] = [...tasks[+task.id - 1].currentAnswer];
+    const currentAnswer:string[] = [...tasksProgress[+task.id - 1].currentAnswer];
 
     useEffect(() => {
         //Сравниваем результаты

@@ -1,19 +1,19 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {setTestData, setStage} from '@reducers/testData/dispatchers';
 import {Stage} from './parts';
-import {stages} from './utils/stagesData';
 import styles from './styles.scss';
 
-type Task = {
+type TaskProgressT = {
     status:boolean;
     done:boolean;
 };
 
 interface P {
-    tasks:Task[];
+    tasks:TaskProgressT[];
+    stages:any;
 }
 
-export const TestWrapper = ({tasks}:P) => {
+export const TestWrapper = ({tasks, stages}:P) => {
     //Подсчитываем число ответов
     const doneTasks = tasks.filter(task => task.done).length;
 
@@ -36,6 +36,7 @@ export const TestWrapper = ({tasks}:P) => {
         </div>
         <div ref={taskElement} className={styles.task}>
             <Stage
+                stages={stages}
                 stage={stages[currentStage]}
                 doneTasks={doneTasks}
                 setTestData={setTestData}

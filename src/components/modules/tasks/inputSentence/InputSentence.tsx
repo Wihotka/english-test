@@ -10,14 +10,14 @@ interface P {
 
 export const InputSentence = ({stage}:P) => {
     const testData = useSelector((state:any) => state.testData);
-    const {option, tasks} = testData;
+    const {option, tasksProgress} = testData;
 
     return <div className={styles.inputSentence}>
         {stage.tasks.map((task, index) => <Stage
             key={index}
             task={task}
             option={option}
-            tasks={tasks}
+            tasks={tasksProgress}
         />)}
     </div>;
 };

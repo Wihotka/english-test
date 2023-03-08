@@ -32,3 +32,8 @@ export type StageT = {
     theme:string,
     tasks:TaskT[]
 };
+
+export type UrlParamsT = {
+    subject:string;
+    source:string;
+};

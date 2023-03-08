@@ -11,7 +11,7 @@ interface P {
 
 export const ReadText = ({stage}:P) => {
     const testData = useSelector((state:any) => state.testData);
-    const {option, tasks} = testData;
+    const {option, tasksProgress} = testData;
 
     return <div className={styles.readText}>
         {stage.tasks.map(task => {
@@ -28,7 +28,7 @@ export const ReadText = ({stage}:P) => {
                         const labels = question.labels;
 
                         const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-                            const checkedAnswers = [...tasks[+task.id - 1].currentAnswer];
+                            const checkedAnswers = [...tasksProgress[+task.id - 1].currentAnswer];
                             checkedAnswers[index] = e.target.value;
                             const correctAnswers = questions.map(question => question.correctAnswer);
 

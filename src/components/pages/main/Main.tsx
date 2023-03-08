@@ -9,7 +9,7 @@ import styles from './styles.scss';
 
 export const Main = () => {
     const testData = useSelector((state:any) => state.testData);
-    const {isTestStarted, isTestFinished, tasks} = testData;
+    const {isTestStarted, isTestFinished, tasksData, tasksProgress} = testData;
 
     //API
     useEffect(() => {
@@ -33,7 +33,7 @@ export const Main = () => {
             {!isTestStarted
                 ? <StartScreen/>
                 : !isTestFinished
-                    ? <TestWrapper tasks={tasks}/>
+                    ? <TestWrapper tasks={tasksProgress} stages={tasksData}/>
                     : <FinishScreen/>
             }
         </div>

@@ -62,7 +62,7 @@ const RadioButton = ({
 
 export const RadioButtons = ({options, onChange, stageId, questionId, imgLabels}:MultipleP) => {
     //Получаем данные из стора для хранения состояния при переходе м/д этапами заданий
-    const tasks = useSelector((state:any) => state.testData.tasks);
+    const tasks = useSelector((state:any) => state.testData.tasksProgress);
     const currentAnswer:string[] = tasks[stageId - 1].currentAnswer;
 
     return <fieldset>

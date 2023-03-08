@@ -11,7 +11,8 @@ export const {actions, reducer} = createSlice({
         testLang: 'uk',
         isAudioPlaying: false,
         isAnotherAudioPlaying: false,
-        tasks: [],
+        tasksData: {},
+        tasksProgress: [],
     },
     reducers
 });

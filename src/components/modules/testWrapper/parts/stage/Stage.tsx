@@ -5,18 +5,18 @@ import {Button} from '@components/elements/button';
 import {LocalizedText} from '@components/elements/localizedText';
 import * as Tasks from '@modules/tasks';
 import {StageT} from '@components/types';
-import {stages} from '../../utils/stagesData';
 import styles from './styles.scss';
 
 interface P {
+    stages:any,
     stage:StageT;
     doneTasks:number;
     setTestData:React.Dispatch<React.SetStateAction<any>>;
     setStage:React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const Stage = ({stage, doneTasks, setTestData, setStage}:P) => {
-    //Выбираем нужный модуль по теме из stagesData
+export const Stage = ({stages, stage, doneTasks, setTestData, setStage}:P) => {
+    //Выбираем нужный модуль по теме из tasksData
     const Task = Tasks[stage.theme];
 
     const backClick = () => setStage(state => state > 1 ? --state : state);

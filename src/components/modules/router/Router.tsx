@@ -6,7 +6,7 @@ import {Main, NotFound} from '@pages';
 export const Router = () => (
     <BrowserRouter>
         <Switch>
-            <Route exact path={config.path.main} component={Main}/>
+            <Route exact path={config.path.subject} component={Main}/>
             <Route component={NotFound}/>
         </Switch>
     </BrowserRouter>

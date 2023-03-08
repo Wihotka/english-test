@@ -8,18 +8,18 @@ export const setStage = (state:{stage:number}, action:{payload:any}) => {
     state.stage = action.payload;
 };
 
-export const setTaskStatus = (state:{tasks:{status:boolean}[]}, action:{payload:{key:any; status:boolean}}) => {
+export const setTaskStatus = (state:{tasksProgress:{status:boolean}[]}, action:{payload:{key:any; status:boolean}}) => {
     const {key, status} = action.payload;
-    state.tasks[key - 1].status = status;
+    state.tasksProgress[key - 1].status = status;
 };
 
-export const setTaskDone = (state:{tasks:{
+export const setTaskDone = (state:{tasksProgress:{
     done:boolean;
     currentAnswer:any;
 }[]}, action:{payload:{key:any; done:boolean; value:any}}) => {
     const {key, done, value} = action.payload;
-    state.tasks[key - 1].done = done;
-    state.tasks[key - 1].currentAnswer = value;
+    state.tasksProgress[key - 1].done = done;
+    state.tasksProgress[key - 1].currentAnswer = value;
 };
 
 export const setIsAudioPlaying = (state:{isAudioPlaying:boolean}, action:{payload:any}) => {
