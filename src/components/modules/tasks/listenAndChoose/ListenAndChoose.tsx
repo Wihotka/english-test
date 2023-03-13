@@ -27,8 +27,8 @@ export const ListenAndChoose = ({stage}:P) => {
 
                 setTaskDone({key: task.id, done: true, value: [checkedAnswer]});
 
-                if (checkedAnswer === correctAnswer) setTaskStatus({key: task.id, status: true});
-                else setTaskStatus({key: task.id, status: false});
+                if (checkedAnswer === correctAnswer) setTaskStatus({key: task.id, status: true, score: 1});
+                else setTaskStatus({key: task.id, status: false, score: 0});
             };
 
             return <div key={task.id} className={styles.task}>

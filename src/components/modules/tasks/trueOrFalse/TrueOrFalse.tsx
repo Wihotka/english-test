@@ -35,11 +35,17 @@ export const TrueOrFalse = ({stage}:P) => {
                             else
                                 setTaskDone({key: task.id, done: false, value: checkedAnswers});
 
+                            let score = 0;
+
+                            for (let i = 0; i < checkedAnswers.length; i++) {
+                                if (checkedAnswers[i] && checkedAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) ++score;
+                            }
+
                             //Сравниваем результаты
                             const isEqual = JSON.stringify(checkedAnswers) === JSON.stringify(correctAnswers);
 
-                            if (isEqual) setTaskStatus({key: task.id, status: true});
-                            else setTaskStatus({key: task.id, status: false});
+                            if (isEqual) setTaskStatus({key: task.id, status: true, score: score});
+                            else setTaskStatus({key: task.id, status: false, score: score});
                         };
                         
                         return <div key={index} className={styles.questionWrapper}>

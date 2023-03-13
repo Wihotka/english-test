@@ -5,6 +5,7 @@ import styles from './styles.scss';
 
 export const Question = ({
     task,
+    questions,
     question,
     questionIndex,
     currentAnswer,
@@ -38,24 +39,29 @@ export const Question = ({
     return <div key={questionIndex} className={styles.questionWrapper}>
         <span className={styles.question}>{question.text}</span>
         <div className={styles.inputsWrapper}>
-            {inputGaps.map((inputGap, inputIndex) => {
+            {inputGaps.map((_inputGap, inputIndex) => {
                 const handleChange = (inputText) => {
                     //Убираем лишние пробельные символы
                     inputText = inputText.replace(/\s+/g, ' ').trim();
-                    //Получаем введенный текс
+                    //Получаем введенный текст
                     questionAnswer[inputIndex] = inputText;
                     //Добавляем ответ в массив ответов
                     currentAnswer[questionIndex] = questionAnswer.join(' / ');
                     //Помечаем выполненные вопросы и проверяем правильный ответ
                     checkIsDone();
                     checkIsCorrect();
+                    //Считаем баллы
+                    let score = 0;
+                    for (let i = 0; i < currentAnswer.length; i++) {
+                        if (currentAnswer[i] && currentAnswer[i].toLowerCase() === questions[i].correctAnswer.toLowerCase()) ++score;
+                    }
                     //Сохраняем данные в стор
                     if (!questionsDone.includes(false))
                         setTaskDone({key: task.id, done: true, value: currentAnswer});
                     else setTaskDone({key: task.id, done: false, value: currentAnswer});
                     if (!questionsStatus.includes(false))
-                        setTaskStatus({key: task.id, status: true});
-                    else setTaskStatus({key: task.id, status: false});
+                        setTaskStatus({key: task.id, status: true, score: score});
+                    else setTaskStatus({key: task.id, status: false, score: score});
                 };
 
                 return <Input

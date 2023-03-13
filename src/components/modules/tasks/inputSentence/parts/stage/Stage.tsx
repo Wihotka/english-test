@@ -14,6 +14,7 @@ export const Stage = ({task, option, tasks}) => {
             {questions.map((question, questionIndex) => <Question
                 key={questionIndex}
                 task={task}
+                questions={questions}
                 question={question}
                 questionIndex={questionIndex}
                 currentAnswer={currentAnswer}

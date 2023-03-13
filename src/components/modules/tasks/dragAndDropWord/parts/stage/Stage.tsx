@@ -14,9 +14,14 @@ export const Stage = ({task}) => {
     useEffect(() => {
         //Сравниваем результаты
         const isEqual = JSON.stringify(currentAnswer) === JSON.stringify(correctAnswer);
+        let score = 0;
 
-        if (isEqual) setTaskStatus({key: task.id, status: true});
-        else setTaskStatus({key: task.id, status: false});
+        for (let i = 0; i < currentAnswer.length; i++) {
+            if (currentAnswer[i] && currentAnswer[i].toLowerCase() === correctAnswer[i].toLowerCase()) ++score;
+        }
+
+        if (isEqual) setTaskStatus({key: task.id, status: true, score: score});
+        else setTaskStatus({key: task.id, status: false, score: score});
     }, [currentAnswer]);
 
     return <div key={task.id} className={styles.task}>

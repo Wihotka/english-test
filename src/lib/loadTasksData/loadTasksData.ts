@@ -4,7 +4,7 @@ export const loadTasksData = async (subject:string) => {
   const progress = [];
 
   for (let i = 1; i <= Object.keys(data).length; i++) {
-    data[i].tasks.forEach(_task => progress.push({status: false, done: false, currentAnswer: []}));
+    data[i].tasks.forEach(_task => progress.push({status: false, done: false, currentAnswer: [], score: 0}));
   }
 
   return [data, progress];

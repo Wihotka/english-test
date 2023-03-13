@@ -35,9 +35,14 @@ export const ChooseOne = ({stage}:P) => {
 
                             //Сравниваем результаты
                             const isEqual = JSON.stringify(checkedAnswers) === JSON.stringify(correctAnswers);
+                            let score = 0;
 
-                            if (isEqual) setTaskStatus({key: task.id, status: true});
-                            else setTaskStatus({key: task.id, status: false});
+                            for (let i = 0; i < checkedAnswers.length; i++) {
+                                if (checkedAnswers[i] && checkedAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) ++score;
+                            }
+
+                            if (isEqual) setTaskStatus({key: task.id, status: true, score: score});
+                            else setTaskStatus({key: task.id, status: false, score: score});
                         };
                         
                         return <div key={index} className={styles.questionWrapper}>

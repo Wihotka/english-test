@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router';
 import {useSelector} from 'react-redux';
 import {PDFDownloadLink} from '@react-pdf/renderer';
@@ -11,10 +11,20 @@ import styles from './styles.scss';
 export const FinishScreen = () => {
     const tasksProgress = useSelector((state:any) => state.testData.tasksProgress);
     const tasksWithRightAnswers = tasksProgress.filter(task => task.status);
+    const [finalScore, setFinalScore] = useState<number>(0);
     const {source} = useParams<UrlParamsT>();
     const isStudentFromPlatform = source === 'platform';
 
+    // Подсчет итогового кол-ва баллов
+    useEffect(() => {
+        let score = 0;
+        tasksProgress.forEach(task => score += task.score);
+
+        setFinalScore(score);
+    }, []);
+
     return <div className={styles.finishScreen}>
+        <div>RESULT: {finalScore}</div>
         {isStudentFromPlatform
             ? <div className={styles.currentUserContent}>
                 <h3 className={styles.title}>
