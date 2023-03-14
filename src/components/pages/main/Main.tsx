@@ -32,7 +32,7 @@ export const Main = () => {
         <div className={styles.mainWrapper}>
             {!isTestStarted
                 ? <StartScreen/>
-                : !isTestFinished
+                : isTestFinished
                     ? <TestWrapper tasks={tasksProgress} stages={tasksData}/>
                     : <FinishScreen/>
             }

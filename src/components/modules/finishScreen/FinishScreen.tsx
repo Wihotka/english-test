@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router';
 import {useSelector} from 'react-redux';
-import {PDFDownloadLink} from '@react-pdf/renderer';
+import {PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
 import {UrlParamsT} from '@components/types';
 import {Button} from '@components/elements/button';
 import {LocalizedText} from '@components/elements/localizedText';
@@ -22,6 +22,12 @@ export const FinishScreen = () => {
 
         setFinalScore(score);
     }, []);
+
+    return <PDFViewer className={styles.test}>
+        <PdfResults
+            finalScore={finalScore}
+        />
+    </PDFViewer>;
 
     return <div className={styles.finishScreen}>
         <div>RESULT: {finalScore}</div>
@@ -51,9 +57,9 @@ export const FinishScreen = () => {
                     <Button className={styles.btn}>
                         <LocalizedText name={'buttons.ok'} path={'translation'}/>
                     </Button>
-                    <PDFDownloadLink document={<PdfResults/>} fileName='results.pdf'>
+                    {/* <PDFDownloadLink document={<PdfResults/>} fileName='results.pdf'>
                         {({blob, url, loading, error}) => (loading ? 'Загрузка результатов...' : 'Скачать')}
-                    </PDFDownloadLink>
+                    </PDFDownloadLink> */}
                 </div>
             </div>
             : <div className={styles.newUserContent}>
