@@ -56,29 +56,30 @@ export const PdfResults = ({
                                 />
                                 <View style={pdfStyles.answerBlock}>
                                     {task.option[option].labels.map((label:any, index) => <View key={index} style={pdfStyles.answer}>
-                                        <View style={pdfStyles.checkbox}>
+                                        <View style={[
+                                            pdfStyles.checkbox,
+                                            task.option[option].correctAnswer === label.label && {borderColor: 'green'},
+                                            progress[+task.id - 1].done && !progress[+task.id - 1].status &&  progress[+task.id - 1].currentAnswer[0] === label.label && {borderColor: 'red'}
+                                        ]}>
                                             {/* Correct answer */}
                                             {
                                                 progress[+task.id - 1].done &&
+                                                progress[+task.id - 1].status &&
                                                 progress[+task.id - 1].currentAnswer[0] === label.label &&
-                                                progress[+task.id - 1].currentAnswer[0] === task.option[option].correctAnswer &&
                                                     <Text style={[pdfStyles.checked, {backgroundColor: 'green'}]}></Text>
                                             }
                                             {/* Wrong answer */}
                                             {
                                                 progress[+task.id - 1].done &&
+                                                !progress[+task.id - 1].status &&
                                                 progress[+task.id - 1].currentAnswer[0] === label.label &&
-                                                progress[+task.id - 1].currentAnswer[0] !== task.option[option].correctAnswer &&
                                                     <Text style={[pdfStyles.checked, {backgroundColor: 'red'}]}></Text>
                                             }
-                                            {
-                                                progress[+task.id - 1].done &&
-                                                task.option[option].correctAnswer === label.label &&
-                                                progress[+task.id - 1].currentAnswer[0] !== task.option[option].correctAnswer &&
-                                                    <Text style={[pdfStyles.checked, {backgroundColor: 'green'}]}></Text>
-                                            }
                                         </View>
-                                        <Text>
+                                        <Text style={[
+                                            task.option[option].correctAnswer === label.label && {color: 'green', fontWeight: 'bold'},
+                                            progress[+task.id - 1].done && !progress[+task.id - 1].status &&  progress[+task.id - 1].currentAnswer[0] === label.label && {color: 'red', fontWeight: 'bold'}
+                                        ]}>
                                             {label.label}
                                         </Text>
                                     </View>)}
