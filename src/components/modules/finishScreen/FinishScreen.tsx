@@ -27,6 +27,7 @@ export const FinishScreen = () => {
         <PdfResults
             finalScore={finalScore}
             tasks={tasksData}
+            progress={tasksProgress}
             subject={subject}
             option={option}
         />
@@ -63,6 +64,7 @@ export const FinishScreen = () => {
                     <PDFDownloadLink document={<PdfResults
                         finalScore={finalScore}
                         tasks={tasksData}
+                        progress={tasksProgress}
                         subject={subject}
                         option={option}
                     />} fileName='results.pdf'>

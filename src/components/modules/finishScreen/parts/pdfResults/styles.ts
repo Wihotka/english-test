@@ -52,6 +52,21 @@ export const pdfStyles = StyleSheet.create({
       width: 160,
       height: 80
     },
+    checkbox: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: 16,
+      height: 16,
+      marginRight: 4,
+      border: '1px solid #333',
+      borderRadius: '4px',
+    },
+    checked: {
+      width: '75%',
+      height: '75%',
+      borderRadius: '2px'
+    },
     sections: {
       flexDirection: 'column',
       padding: '0 16px'
@@ -60,21 +75,41 @@ export const pdfStyles = StyleSheet.create({
       marginBottom: 16
     },
     question: {
-      marginBottom: 16
+      marginBottom: 16,
+      fontWeight: 'bold'
     },
     taskBlock: {
-      flexDirection: 'row',
+      flexDirection: 'column',
       marginBottom: 8
     },
+    task: {
+      flexDirection: 'row',
+      marginBottom: 4
+    },
+    taskScore: {
+      flexDirection: 'row',
+      fontSize: 14
+    },
+    score: {
+      fontWeight: 'bold'
+    },
     taskNumber: {
-      marginRight: 16
+      marginRight: 16,
+      fontWeight: 'bold'
     },
     singleImg: {
       width: 'auto',
       height: 100,
-      marginRight: 16
+      marginRight: 24
     },
     answerBlock: {
-      flexDirection: 'column'
+      flexDirection: 'column',
+      justifyContent: 'center',
+      fontSize: 14
+    },
+    answer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginBottom: 4
     }
 });
