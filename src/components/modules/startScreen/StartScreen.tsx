@@ -16,7 +16,7 @@ export const StartScreen = () => {
 
     const startTest = async (option:string) => {
         const [data, progress] = await loadTasksData(subject);
-        setTestData({isTestStarted: true, option: option, tasksData: data, tasksProgress: progress});
+        setTestData({subject: subject, isTestStarted: true, option: option, tasksData: data, tasksProgress: progress});
     };
 
     return <div className={styles.startScreen}>

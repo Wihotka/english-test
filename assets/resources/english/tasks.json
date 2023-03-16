@@ -8,7 +8,7 @@
         "id": "1",
         "option": {
           "sixToTen": {
-            "img": ["sixToTen/task1.png"],
+            "img": ["sixToTen/task1/img.png"],
             "labels": [
               {"label": "A book", "name": "task1"},
               {"label": "A pen", "name": "task1"}
@@ -16,7 +16,7 @@
             "correctAnswer": "A book"
           },
           "elevenToFourteen": {
-            "img": ["elevenToFourteen/task1.png"],
+            "img": ["elevenToFourteen/task1/img.png"],
             "labels": [
               {"label": "Twins", "name": "task1"},
               {"label": "Grandparents", "name": "task1"}
@@ -29,7 +29,7 @@
         "id": "2",
         "option": {
           "sixToTen": {
-            "img": ["sixToTen/task2.png"],
+            "img": ["sixToTen/task2/img.png"],
             "labels": [
               {"label": "A dog", "name": "task2"},
               {"label": "A cat", "name": "task2"}
@@ -37,7 +37,7 @@
             "correctAnswer": "A cat"
           },
           "elevenToFourteen": {
-            "img": ["elevenToFourteen/task2.png"],
+            "img": ["elevenToFourteen/task2/img.png"],
             "labels": [
               {"label": "Dining room", "name": "task2"},
               {"label": "Bedroom", "name": "task2"}
@@ -50,7 +50,7 @@
         "id": "3",
         "option": {
           "sixToTen": {
-            "img": ["sixToTen/task3.png"],
+            "img": ["sixToTen/task3/img.png"],
             "labels": [
               {"label": "A green car", "name": "task3"},
               {"label": "A blue car", "name": "task3"},
@@ -60,7 +60,7 @@
             "correctAnswer": "A yellow car"
           },
           "elevenToFourteen": {
-            "img": ["elevenToFourteen/task3.png"],
+            "img": ["elevenToFourteen/task3/img.png"],
             "labels": [
               {"label": "Dark blue trousers", "name": "task3"},
               {"label": "Dark blue shorts", "name": "task3"},
@@ -75,7 +75,7 @@
         "id": "4",
         "option": {
           "sixToTen": {
-            "img": ["sixToTen/task4.png"],
+            "img": ["sixToTen/task4/img.png"],
             "labels": [
               {"label": "A small grey elephant", "name": "task4"},
               {"label": "A big grey elephant", "name": "task4"},
@@ -85,7 +85,7 @@
             "correctAnswer": "A big grey elephant"
           },
           "elevenToFourteen": {
-            "img": ["elevenToFourteen/task4.png"],
+            "img": ["elevenToFourteen/task4/img.png"],
             "labels": [
               {"label": "Hippo", "name": "task4"},
               {"label": "Elephant", "name": "task4"},
@@ -579,7 +579,7 @@
         "id": "11",
         "option": {
           "sixToTen": {
-            "img": ["sixToTen/task11.png"],
+            "img": ["sixToTen/task11/img.png"],
             "questions": [
               {
                 "text": "I can run here.",
@@ -600,7 +600,7 @@
             ]
           },
           "elevenToFourteen": {
-            "img": ["elevenToFourteen/task11.png"],
+            "img": ["elevenToFourteen/task11/img.png"],
             "questions": [
               {
                 "text": "I shouldn’t clean after my pet.",
@@ -626,7 +626,7 @@
         "id": "12",
         "option": {
           "sixToTen": {
-            "img": ["sixToTen/task12.png"],
+            "img": ["sixToTen/task12/img.png"],
             "questions": [
               {
                 "text": "The shop is closed.",
@@ -647,7 +647,7 @@
             ]
           },
           "elevenToFourteen": {
-            "img": ["elevenToFourteen/task12.png"],
+            "img": ["elevenToFourteen/task12/img.png"],
             "questions": [
               {
                 "text": "I can get on a bus from here.",

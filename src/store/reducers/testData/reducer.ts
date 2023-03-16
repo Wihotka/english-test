@@ -4,6 +4,7 @@ import * as reducers from './reducers';
 export const {actions, reducer} = createSlice({
     name: 'testData',
     initialState: {
+        subject: '',
         isTestStarted: false,
         isTestFinished: false, //TEST
         option: '',

@@ -11,7 +11,7 @@ interface P {
 
 export const TrueOrFalse = ({stage}:P) => {
     const testData = useSelector((state:any) => state.testData);
-    const {option, tasksProgress} = testData;
+    const {subject, option, tasksProgress} = testData;
 
     return <div className={styles.trueOrFalse}>
         {stage.tasks.map(task => {
@@ -20,7 +20,7 @@ export const TrueOrFalse = ({stage}:P) => {
 
             return <div key={task.id} className={styles.task}>
                 <span className={styles.taskNumber}>{task.id}.</span>
-                <img src={require(`_assets/img/tasks/${imgPath}`)} alt='sign' className={styles.taskImg}/>
+                <img src={require(`_assets/img/tasks/${subject}/${imgPath}`)} alt='sign' className={styles.taskImg}/>
                 <div className={styles.questionsWrapper}>
                     {questions.map((question, index) => {
                         const labels = question.labels;

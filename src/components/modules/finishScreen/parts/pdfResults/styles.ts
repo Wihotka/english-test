@@ -1,15 +1,25 @@
 import {StyleSheet, Font} from '@react-pdf/renderer';
 
 Font.register({
-  family: 'Roboto',
-  src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-medium-webfont.ttf'
+  family: 'Montserrat',
+  fonts: [
+    {
+      src: require('_assets/fonts/Montserrat/Regular.ttf'),
+      fontWeight: 'normal'
+    },
+    {
+      src: require('_assets/fonts/Montserrat/Bold.ttf'),
+      fontWeight: 'bold'
+    }
+  ]
 });
 
 export const pdfStyles = StyleSheet.create({
     page: {
       flexDirection: 'column',
       backgroundColor: '#FFFFFF',
-      fontFamily: 'Roboto'
+      fontFamily: 'Montserrat',
+      fontWeight: 'normal'
     },
     numeration: {
       margin: '8px auto 8px 8px',
@@ -31,15 +41,40 @@ export const pdfStyles = StyleSheet.create({
     },
     headerTitle: {
       color: '#E40489',
-      fontWeight: 700,
+      fontWeight: 'bold',
       fontSize: 20
     },
     headerSubtitle: {
-      fontWeight: 700,
+      fontWeight: 'bold',
       fontSize: 16
     },
     logo: {
       width: 160,
       height: 80
+    },
+    sections: {
+      flexDirection: 'column',
+      padding: '0 16px'
+    },
+    sectionBlock: {
+      marginBottom: 16
+    },
+    question: {
+      marginBottom: 16
+    },
+    taskBlock: {
+      flexDirection: 'row',
+      marginBottom: 8
+    },
+    taskNumber: {
+      marginRight: 16
+    },
+    singleImg: {
+      width: 'auto',
+      height: 100,
+      marginRight: 16
+    },
+    answerBlock: {
+      flexDirection: 'column'
     }
 });

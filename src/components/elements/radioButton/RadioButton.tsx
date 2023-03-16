@@ -32,7 +32,7 @@ const RadioButton = ({
     onChange,
     img
 }:SingleP) => {
-    const option = useSelector((state:any) => state.testData.option);
+    const {subject, option} = useSelector((state:any) => state.testData);
     const imgPath = img ? `${option}/${img}` : '';
 
     return <div className={classNames(styles.radioButton, imgPath && styles.radioButtonImg)}>
@@ -54,7 +54,7 @@ const RadioButton = ({
         </label>
         {imgPath &&
             <div className={styles.imgWrapper}>
-                <img src={require(`_assets/img/tasks/${imgPath}`)} alt='image'/>
+                <img src={require(`_assets/img/tasks/${subject}/${imgPath}`)} alt='image'/>
             </div>
         }
     </div>;

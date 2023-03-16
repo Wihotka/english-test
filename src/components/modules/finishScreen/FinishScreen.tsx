@@ -9,7 +9,7 @@ import {UserForm, PdfResults} from './parts';
 import styles from './styles.scss';
 
 export const FinishScreen = () => {
-    const tasksProgress = useSelector((state:any) => state.testData.tasksProgress);
+    const {subject, option, tasksData, tasksProgress} = useSelector((state:any) => state.testData);
     const tasksWithRightAnswers = tasksProgress.filter(task => task.status);
     const [finalScore, setFinalScore] = useState<number>(0);
     const {source} = useParams<UrlParamsT>();
@@ -26,6 +26,9 @@ export const FinishScreen = () => {
     return <PDFViewer className={styles.test}>
         <PdfResults
             finalScore={finalScore}
+            tasks={tasksData}
+            subject={subject}
+            option={option}
         />
     </PDFViewer>;
 
@@ -57,9 +60,14 @@ export const FinishScreen = () => {
                     <Button className={styles.btn}>
                         <LocalizedText name={'buttons.ok'} path={'translation'}/>
                     </Button>
-                    {/* <PDFDownloadLink document={<PdfResults/>} fileName='results.pdf'>
+                    <PDFDownloadLink document={<PdfResults
+                        finalScore={finalScore}
+                        tasks={tasksData}
+                        subject={subject}
+                        option={option}
+                    />} fileName='results.pdf'>
                         {({blob, url, loading, error}) => (loading ? 'Загрузка результатов...' : 'Скачать')}
-                    </PDFDownloadLink> */}
+                    </PDFDownloadLink>
                 </div>
             </div>
             : <div className={styles.newUserContent}>
