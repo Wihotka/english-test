@@ -80,11 +80,11 @@ export const pdfStyles = StyleSheet.create({
     },
     taskBlock: {
       flexDirection: 'column',
-      marginBottom: 8
+      marginBottom: 24
     },
     task: {
       flexDirection: 'row',
-      marginBottom: 4
+      marginBottom: 8
     },
     taskScore: {
       flexDirection: 'row',
@@ -96,20 +96,5 @@ export const pdfStyles = StyleSheet.create({
     taskNumber: {
       marginRight: 16,
       fontWeight: 'bold'
-    },
-    singleImg: {
-      width: 'auto',
-      height: 100,
-      marginRight: 24
-    },
-    answerBlock: {
-      flexDirection: 'column',
-      justifyContent: 'center',
-      fontSize: 14
-    },
-    answer: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      marginBottom: 4
     }
 });

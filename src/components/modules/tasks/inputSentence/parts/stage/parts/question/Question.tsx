@@ -41,6 +41,10 @@ export const Question = ({
         <div className={styles.inputsWrapper}>
             {inputGaps.map((_inputGap, inputIndex) => {
                 const handleChange = (inputText) => {
+                    //Убираем символы
+                    inputText = inputText.replace(/[\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\&\@\#\%\_\=]/g, '').trim();
+                    //Убираем цифры
+                    inputText = inputText.replace(/[0-9]/g, '').trim();
                     //Убираем лишние пробельные символы
                     inputText = inputText.replace(/\s+/g, ' ').trim();
                     //Получаем введенный текст
