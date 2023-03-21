@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import classNames from 'classnames';
-import {setCommonData} from '@reducers/commonData/dispatchers';
+import md5 from 'md5';
+import config from '@config';
+import {ApiActions, ApiConnector} from '@lib/apiConnector';
 import {StartScreen} from '@components/modules/startScreen';
 import {FinishScreen} from '@components/modules/finishScreen';
 import {TestWrapper} from '@components/modules/testWrapper';
@@ -15,9 +17,29 @@ export const Main = () => {
     useEffect(() => {
         let isSubscribed = true;
 
-        if (isSubscribed) {
-            setCommonData({langCode: 'ru'});
-        }
+        const subjectID = 13;
+        const token = md5(`--sp--${subjectID.toString()}--${md5(subjectID.toString())}`);
+
+        const data = {
+            action: ApiActions.getSubjectPageData,
+            params: {
+                subjectID,
+                token
+            },
+            isIsolated: true // Вкл. изолированный режим
+        };
+
+        ApiConnector.request(data).then((response) => {
+            if (isSubscribed) {
+                if (response.status) {
+                    // setPageData({page: 'subject', data: response.data});
+                } else {
+                    setTimeout(() => {
+                        location.href = config.personalCabinet;
+                    }, 1500);
+                }
+            }
+        });
 
         return () => {
             isSubscribed = false;

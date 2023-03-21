@@ -1,3 +1,3 @@
 export const ApiActions = {
-    saveResult: '',
+    getSubjectPageData: 'student_interface_subject_page',
 };

@@ -1,1 +1,42 @@
-{}
+{
+  "form": {
+    "title": "Well done! The test is completed",
+    "subtitle": "Total score",
+    "description": {
+      "new": "Fill in the form to learn full results and get a present",
+      "current": "We've sent your results on the e-mail in your personal profile. If you haven't recieved the mail, contact the support team"
+    },
+    "inputPlaceholders": {
+      "name": "Full name",
+      "tel": "Phone number",
+      "email": "E-mail"
+    },
+    "errors": {
+      "noUsername": "Enter your full name",
+      "incorrectUsername": "Invalid first or last name",
+      "noAge": "Enter your age",
+      "notEnoughAge": "Возраст не может быть меньше 1 года",
+      "noTel": "Enter your phone number",
+      "incorrectTel": "Invalid phone number",
+      "noEmail": "Enter your E-mail",
+      "incorrectEmail": "Invalid E-mail"
+    },
+    "personal": {
+      "text": "By submitting this form you agree that the company",
+      "link": "can process your personal data"
+    }
+  },
+  "notFound": {
+    "description": "The page is not found",
+    "back": "Return to the maun page"
+  },
+  "buttons": {
+    "back": "Back",
+    "next": "Next",
+    "done": "Finish",
+    "submit": "Send",
+    "ok": "Ok",
+    "repeat": "Try again"
+  },
+  "tooltip": "Answer at leat one question"
+}

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import {setCommonData} from '@reducers/commonData/dispatchers';
 import config from '../../config';
-import {toast} from 'react-hot-toast';
 import i18n from 'i18next';
 
 const buildFormData = (formData, data, parentKey) => {
@@ -25,6 +24,7 @@ export type RequestData = {
     postParams?:{
         [key:string]:any;
     };
+    isIsolated?:boolean;
 };
 
 type RequestF = <T = any>(data:RequestData) => Promise<{ data:T, status:boolean }>;
@@ -37,17 +37,18 @@ export class ApiConnector{
             appCode: 1
         };
 
-        const method = data.method ? data.method : 'get';
+        const method = data.method ?? 'get';
         const url = config.apiHost + data.action;
         const params = data.params ? Object.assign(defaultParams, data.params) : defaultParams;
         const dataParams = method === 'post' ? (data.postParams ? data.postParams : data.params) : {};
+        const isIsolated = data.isIsolated ?? false;
 
         const formData = new FormData();
 
         buildFormData(formData, dataParams, '');
 
         const requestBody = {
-            method, url, params: {...params, reactApp: 'mental-arithmetic'},
+            method, url, params: {...params, reactApp: 'test'},
             withCredentials: true,
             data: formData,
             headers: {
@@ -55,28 +56,18 @@ export class ApiConnector{
             }
         };
 
+        if (isIsolated) setCommonData({langCode: 'ru'});
+
         const serverResponse = await axios(requestBody);
 
         const apiResponse = serverResponse.data;
 
-        if (apiResponse.data?.code == 'needAuthorization'){
-            //Спецкод для требования авторизации. Показываем уведомление
-            toast('Кажется, мы вас не узнаем. Перенаправляю на страницу входа...', {
-                style: {color: '#f0ad4e', textAlign: 'center'},
-            });
-
-            //И перенавравляем на страницу входа
-            setTimeout(() => {
-                location.href = config.root;
-            }, 3500);
-        }
-
-        if(apiResponse.data?.code == 'redirect'){
+        if(apiResponse.data?.code == 'redirect') {
             //Спецкод на принудительную переадресацию
             window.location.href = apiResponse.data.redirection?.link;
         }
 
-        if (apiResponse.status && apiResponse.data?.common){
+        if (apiResponse.status && apiResponse.data?.common) {
             //Общие данные сохраняем в Redux всегда, когда они приходят
             setCommonData(apiResponse.data.common);
             if(apiResponse.data?.common?.settings?.langCode){
