@@ -25,8 +25,7 @@ export const Main = () => {
             params: {
                 subjectID,
                 token
-            },
-            isIsolated: true // Вкл. изолированный режим
+            }
         };
 
         ApiConnector.request(data).then((response) => {

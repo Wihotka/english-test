@@ -24,7 +24,6 @@ export type RequestData = {
     postParams?:{
         [key:string]:any;
     };
-    isIsolated?:boolean;
 };
 
 type RequestF = <T = any>(data:RequestData) => Promise<{ data:T, status:boolean }>;
@@ -41,7 +40,7 @@ export class ApiConnector{
         const url = config.apiHost + data.action;
         const params = data.params ? Object.assign(defaultParams, data.params) : defaultParams;
         const dataParams = method === 'post' ? (data.postParams ? data.postParams : data.params) : {};
-        const isIsolated = data.isIsolated ?? false;
+        const isIsolated = config.isIsolated;
 
         const formData = new FormData();
 
