@@ -1,6 +1,6 @@
 const config:any = {};
 
-const domainsWithInsideMode = ['amakids.ru'];
+const domainsWithInsideMode = ['amakids.ru', 'amakids.com'];
 const insideMode = domainsWithInsideMode.includes(window.location.hostname);
 
 config.prodMode = process.env.NODE_ENV === 'production';
