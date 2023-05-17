@@ -47,7 +47,9 @@ export class ApiConnector{
         buildFormData(formData, dataParams, '');
 
         const requestBody = {
-            method, url, params: {...params, reactApp: 'test'},
+            method,
+            url,
+            params: {...params, reactApp: 'test'},
             withCredentials: true,
             data: formData,
             headers: {

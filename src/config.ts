@@ -4,9 +4,9 @@ const domainsWithInsideMode = ['amakids.ru', 'amakids.com'];
 const insideMode = domainsWithInsideMode.includes(window.location.hostname);
 //TODO заменить папку сборки на introTests
 config.prodMode = process.env.NODE_ENV === 'production';
-config.appPath = config.prodMode ? (insideMode ? '/platform' : '') + '/apps/intro-tests/' : '/';
+config.appPath = config.prodMode ? (insideMode ? '/platform' : '') + '/apps/introTests/' : '/';
 config.root = 'https://' + window.location.hostname;
-config.host = config.prodMode ? 'https://' + window.location.hostname + (insideMode ? '/platform' : '') +  '/apps/intro-tests/' : 'https://' + window.location.host + '/';
+config.host = config.prodMode ? 'https://' + window.location.hostname + (insideMode ? '/platform' : '') +  '/apps/introTests/' : 'https://' + window.location.host + '/';
 config.apiHost = 'https://' + window.location.hostname + (insideMode ? '/platform' : '') +  '/api/';
 config.personalCabinet = config.root + (insideMode ? '/platform' : '') + '/apps/student/';
 config.isIsolated = process.env.ISOLATED === 'true';
