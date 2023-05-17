@@ -57,7 +57,7 @@ export const FinishScreen = () => {
                         subject={subject}
                         option={option}
                     />} fileName='results.pdf'>
-                        {({blob, url, loading, error}) => (loading ? 'Загрузка результатов...' : 'Скачать')}
+                        {({blob, url, loading, error}) => (loading ? 'Загрузка результатов...' : 'Скачать результаты')}
                     </PDFDownloadLink>
                 </div>
             </div>
