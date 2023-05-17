@@ -27,8 +27,6 @@ export const PdfResults = ({
     subject,
     option
 }:IPdfResults) => {
-    console.log(tasks);
-    console.log(progress);
     return <Document >
         <Page size='A4' wrap style={pdfStyles.page}>
             {/* Numeration */}

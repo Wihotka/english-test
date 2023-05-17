@@ -32,7 +32,7 @@ export const TestWrapper = ({tasks, stages}:P) => {
         <div className={styles.questionWrapper}>
             <span className={styles.question}>{stages[currentStage].question}</span>
             <button>
-                <img src={require(`_assets/img/lang/${langCode}.svg`)} alt='lang' className={styles.lang}/>
+                <img src={require(`_assets/img/lang/${langCode ?? 'ru'}.svg`)} alt='lang' className={styles.lang}/>
             </button>
             <span className={styles.doneTasks}>{`Done ${doneTasks}/${tasks.length}`}</span>
         </div>

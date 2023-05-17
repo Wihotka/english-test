@@ -23,16 +23,6 @@ export const FinishScreen = () => {
         setFinalScore(score);
     }, []);
 
-    // return <PDFViewer className={styles.test}>
-    //     <PdfResults
-    //         finalScore={finalScore}
-    //         tasks={tasksData}
-    //         progress={tasksProgress}
-    //         subject={subject}
-    //         option={option}
-    //     />
-    // </PDFViewer>;
-
     return <div className={styles.finishScreen}>
         {isStudentFromPlatform
             ? <div className={styles.currentUserContent}>
