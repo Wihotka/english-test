@@ -137,7 +137,28 @@
     }
 }
 
-.btn {
+.downloadBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 257px;
+    height: 54px;
+    border: 2px solid #F50882;
+    border-radius: 10px;
+    color: #F50882;
+    background: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    transition: .2s ease;
+
+    &:hover {
+        border-color: #BE0062;
+        color: #BE0062;
+    }
+}
+
+.okBtn {
     display: flex;
     justify-content: center;
     align-items: center;

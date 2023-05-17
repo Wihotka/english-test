@@ -4,11 +4,18 @@ import {useFormik} from 'formik';
 import {LocalizedText} from '@components/elements/localizedText';
 import styles from './styles.scss';
 
-type P = {
-    tasks:any[];
+type UserData = {
+    username:string;
+    tel:string;
+    email:string;
 };
 
-export const UserForm = ({tasks}:P) => {
+interface IUserForm {
+    tasks:any[];
+    setUserData:React.Dispatch<React.SetStateAction<UserData>>;
+}
+
+export const UserForm = ({tasks, setUserData}:IUserForm) => {
     const {t} = useTranslation('translation');
 
     const placeholders = {

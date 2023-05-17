@@ -1,17 +1,26 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router';
 import {useSelector} from 'react-redux';
-import {PDFDownloadLink, PDFViewer} from '@react-pdf/renderer';
+import {PDFDownloadLink} from '@react-pdf/renderer';
 import {UrlParamsT} from '@components/types';
 import {Button} from '@components/elements/button';
 import {LocalizedText} from '@components/elements/localizedText';
 import {UserForm, PdfResults} from './parts';
 import styles from './styles.scss';
 
+type UserData = {
+    username:string;
+    tel:string;
+    email:string;
+};
+
 export const FinishScreen = () => {
     const {subject, option, tasksData, tasksProgress} = useSelector((state:any) => state.testData);
     const tasksWithRightAnswers = tasksProgress.filter(task => task.status);
+
     const [finalScore, setFinalScore] = useState<number>(0);
+    const [userData, setUserData] = useState<UserData>({username: '', tel: '', email: ''});
+
     const {source} = useParams<UrlParamsT>();
     const isStudentFromPlatform = source === 'platform';
 
@@ -19,6 +28,15 @@ export const FinishScreen = () => {
     useEffect(() => {
         let score = 0;
         tasksProgress.forEach(task => score += task.score);
+
+        // TEST
+        const resultsData = {
+            source: source,
+            rightAnswers: tasksWithRightAnswers.length,
+            score: score
+        };
+
+        console.log(resultsData);
 
         setFinalScore(score);
     }, []);
@@ -46,19 +64,23 @@ export const FinishScreen = () => {
                             /
                             <span>{tasksProgress.length}</span>
                         </div>
-                    </div> 
-                    <Button className={styles.btn}>
+                    </div>
+                    <PDFDownloadLink
+                        className={styles.downloadBtn}
+                        document={<PdfResults
+                            finalScore={finalScore}
+                            tasks={tasksData}
+                            progress={tasksProgress}
+                            subject={subject}
+                            option={option}
+                        />}
+                        fileName='results.pdf'
+                    >
+                        {({loading}) => (loading ? 'Загрузка результатов...' : 'Скачать результаты')}
+                    </PDFDownloadLink>
+                    <Button className={styles.okBtn}>
                         <LocalizedText name={'buttons.ok'} path={'translation'}/>
                     </Button>
-                    <PDFDownloadLink document={<PdfResults
-                        finalScore={finalScore}
-                        tasks={tasksData}
-                        progress={tasksProgress}
-                        subject={subject}
-                        option={option}
-                    />} fileName='results.pdf'>
-                        {({blob, url, loading, error}) => (loading ? 'Загрузка результатов...' : 'Скачать результаты')}
-                    </PDFDownloadLink>
                 </div>
             </div>
             : <div className={styles.newUserContent}>
@@ -70,7 +92,7 @@ export const FinishScreen = () => {
                     <p className={styles.text}>
                         <LocalizedText name={'form.description.new'} path={'translation'}/>
                     </p>
-                    <UserForm tasks={tasksProgress}/>
+                    <UserForm tasks={tasksProgress} setUserData={setUserData}/>
                 </div>
             </div>
         }
