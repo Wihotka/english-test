@@ -1,12 +1,14 @@
 import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import classNames from 'classnames';
-import md5 from 'md5';
+// import md5 from 'md5';
+
 import config from '@config';
 import {ApiActions, ApiConnector} from '@lib/apiConnector';
 import {StartScreen} from '@components/modules/startScreen';
 import {FinishScreen} from '@components/modules/finishScreen';
 import {TestWrapper} from '@components/modules/testWrapper';
+
 import styles from './styles.scss';
 
 export const Main = () => {
@@ -18,13 +20,13 @@ export const Main = () => {
         let isSubscribed = true;
 
         const subjectID = 13;
-        const token = md5(`--sp--${subjectID.toString()}--${md5(subjectID.toString())}`);
+        // const token = md5(`--sp--${subjectID.toString()}--${md5(subjectID.toString())}`);
 
         const data = {
-            action: ApiActions.getSubjectPageData,
+            action: ApiActions.getData,
             params: {
                 subjectID,
-                token
+                // token
             }
         };
 

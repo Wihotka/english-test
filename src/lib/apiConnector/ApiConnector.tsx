@@ -63,15 +63,15 @@ export class ApiConnector{
 
         const apiResponse = serverResponse.data;
 
-        if(apiResponse.data?.code == 'redirect') {
+        if(apiResponse.data?.code === 'redirect') {
             //Спецкод на принудительную переадресацию
             window.location.href = apiResponse.data.redirection?.link;
         }
 
-        if (apiResponse.status && apiResponse.data?.common) {
+        if (apiResponse.status && apiResponse.data) {
             //Общие данные сохраняем в Redux всегда, когда они приходят
-            setCommonData(apiResponse.data.common);
-            if(apiResponse.data?.common?.settings?.langCode){
+            setCommonData(apiResponse.data);
+            if(apiResponse.data?.langCode){
                 await i18n.changeLanguage(apiResponse.data?.common?.settings?.langCode);
             }
         }

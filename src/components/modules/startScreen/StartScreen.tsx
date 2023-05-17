@@ -10,9 +10,12 @@ import config from '@config';
 import styles from './styles.scss';
 
 export const StartScreen = () => {
-    const isFirstTime = useSelector((state:any) => state.studentData.isFirstTime);
+    const isAuthorized = useSelector((state:any) => state.commonData.authorized);
+    const isEnrolledOnCourse = useSelector((state:any) => state.commonData.enrolledOnCourse);
     const {subject} = useParams<UrlParamsT>();
     const options = config.options[subject];
+
+    const isFirstTime = isAuthorized ? !isEnrolledOnCourse : true;
 
     const startTest = async (option:string) => {
         const [data, progress] = await loadTasksData(subject);
