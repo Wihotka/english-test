@@ -2,7 +2,7 @@ const config:any = {};
 
 const domainsWithInsideMode = ['amakids.ru', 'amakids.com'];
 const insideMode = domainsWithInsideMode.includes(window.location.hostname);
-
+//TODO заменить папку сборки на introTests
 config.prodMode = process.env.NODE_ENV === 'production';
 config.appPath = config.prodMode ? (insideMode ? '/platform' : '') + '/apps/intro-tests/' : '/';
 config.root = 'https://' + window.location.hostname;
