@@ -71,7 +71,7 @@ export class ApiConnector{
         if (apiResponse.status && apiResponse.data) {
             //Общие данные сохраняем в Redux всегда, когда они приходят
             setCommonData(apiResponse.data);
-            if(apiResponse.data?.langCode){
+            if(apiResponse.data?.settings?.langCode){
                 await i18n.changeLanguage(apiResponse.data?.common?.settings?.langCode);
             }
         }

@@ -46,7 +46,7 @@ export const FinishScreen = () => {
                             /
                             <span>{tasksProgress.length}</span>
                         </div>
-                    </div>
+                    </div> 
                     <Button className={styles.btn}>
                         <LocalizedText name={'buttons.ok'} path={'translation'}/>
                     </Button>
