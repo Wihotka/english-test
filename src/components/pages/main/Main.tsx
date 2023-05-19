@@ -1,10 +1,13 @@
 import React, {useEffect} from 'react';
+import {useParams} from 'react-router';
 import {useSelector} from 'react-redux';
 import classNames from 'classnames';
 // import md5 from 'md5';
 
+import {UrlParamsT} from '@components/types';
 import config from '@config';
 import {ApiActions, ApiConnector} from '@lib/apiConnector';
+import {getSubjectID} from '@lib/getSubjectID';
 import {StartScreen} from '@components/modules/startScreen';
 import {FinishScreen} from '@components/modules/finishScreen';
 import {TestWrapper} from '@components/modules/testWrapper';
@@ -14,11 +17,13 @@ export const Main = () => {
     const testData = useSelector((state:any) => state.testData);
     const {isTestStarted, isTestFinished, tasksData, tasksProgress} = testData;
 
+    const {source} = useParams<UrlParamsT>();
+
     //API
     useEffect(() => {
         let isSubscribed = true;
 
-        const subjectID = 13; // TODO динамически присваивать код
+        const subjectID = getSubjectID(source);
         // const token = md5(`--sp--${subjectID.toString()}--${md5(subjectID.toString())}`);
 
         const data = {
