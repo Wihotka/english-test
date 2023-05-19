@@ -4,9 +4,9 @@
     "subtitle": "Total score",
     "description": {
       "new": "Fill in the form to learn full results and get a present",
-      "website": "Мы выслали вам методические рекомендации и инструкцию по получению подарка на указанный e-mail. Если сообщение не пришло, обратитесь в техподдержку.",
-      "platform": "Мы выслали вам методические рекомендации на почту в личном кабинете. Если сообщение не пришло, обратитесь в техподдержку.",
-      "platformWithGift": "Мы выслали вам методические рекомендации и инструкцию по получению подарка на почту в личном кабинете. Если сообщение не пришло, обратитесь в техподдержку."
+      "website": "We have sent you our methodological recommendations and instructions on how to get the present to the e-mail you provided. If you haven’t received the message, please contact the support team.",
+      "platform": "We have sent you our methodological recommendations to the e-mail in your personal account on the platform. If you haven’t received the message, please contact the support team.",
+      "platformWithGift": "We have sent you our methodological recommendations and instructions on how to get the present to the e-mail in your personal account on the platform. If you haven’t received the message, please contact the support team."
     },
     "inputPlaceholders": {
       "name": "Full name",
