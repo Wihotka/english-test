@@ -1,27 +1,38 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import {PDFDownloadLink} from '@react-pdf/renderer';
-import {Button} from '@components/elements/button';
+
+import config from '@config';
 import {LocalizedText} from '@components/elements/localizedText';
 import {PdfResults} from './parts';
 import styles from './styles.scss';
 
 interface IUserResults {
+    source:'platform'|'website';
     finalScore:number;
 }
 
-export const UserResults = ({finalScore}:IUserResults) => {
+export const UserResults = ({source, finalScore}:IUserResults) => {
+    const {authorized, enrolledOnCourse} = useSelector((state:any) => state.commonData);
     const {subject, option, tasksData, tasksProgress} = useSelector((state:any) => state.testData);
+
+    const isFirstTime = authorized ? !enrolledOnCourse : true;
     const tasksWithRightAnswers = tasksProgress.filter(task => task.status);
+    const redirectUrl = source === 'platform' ? config.personalTests : config.website;
 
     return <div className={styles.currentUserContent}>
         <h3 className={styles.title}>
             <LocalizedText name={'form.title'} path={'translation'}/>
         </h3>
         <div className={styles.infoPlatform}>
-            <img src={require('_assets/img/mail.png')} alt='mail'/>
+            {source === 'platform' && <img src={require('_assets/img/mail.png')} alt='mail'/>}
             <p className={styles.text}>
-                <LocalizedText name={'form.description.current'} path={'translation'}/>
+                {source === 'platform'
+                    ? isFirstTime 
+                        ? <LocalizedText name={'form.description.platformWithGift'} path={'translation'}/>
+                        : <LocalizedText name={'form.description.platform'} path={'translation'}/>
+                    : <LocalizedText name={'form.description.website'} path={'translation'}/>
+                }
             </p>
             <h4 className={styles.subtitle}>
                 <LocalizedText name={'form.subtitle'} path={'translation'}/>
@@ -47,11 +58,14 @@ export const UserResults = ({finalScore}:IUserResults) => {
                 />}
                 fileName='results.pdf'
             >
-                {({loading}) => (loading ? 'Загрузка результатов...' : 'Скачать результаты')}
+                {({loading}) => (loading
+                    ? <LocalizedText name={'buttons.loading'} path={'translation'}/> 
+                    : <LocalizedText name={'buttons.download'} path={'translation'}/> 
+                )}
             </PDFDownloadLink>
-            <Button className={styles.okBtn}>
+            <a href={redirectUrl} className={styles.okBtn}>
                 <LocalizedText name={'buttons.ok'} path={'translation'}/>
-            </Button>
+            </a>
         </div>
     </div>;
 };

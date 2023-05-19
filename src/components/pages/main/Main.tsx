@@ -8,7 +8,6 @@ import {ApiActions, ApiConnector} from '@lib/apiConnector';
 import {StartScreen} from '@components/modules/startScreen';
 import {FinishScreen} from '@components/modules/finishScreen';
 import {TestWrapper} from '@components/modules/testWrapper';
-
 import styles from './styles.scss';
 
 export const Main = () => {

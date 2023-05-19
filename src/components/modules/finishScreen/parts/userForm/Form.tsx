@@ -1,6 +1,7 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import {useFormik} from 'formik';
+
 import {LocalizedText} from '@components/elements/localizedText';
 import styles from './styles.scss';
 
@@ -13,9 +14,10 @@ type UserData = {
 interface IUserForm {
     tasks:any[];
     setUserData:React.Dispatch<React.SetStateAction<UserData>>;
+    setIsFormSent:React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const UserForm = ({tasks, setUserData}:IUserForm) => {
+export const UserForm = ({tasks, setUserData, setIsFormSent}:IUserForm) => {
     const {t} = useTranslation('translation');
 
     const placeholders = {
@@ -58,6 +60,8 @@ export const UserForm = ({tasks, setUserData}:IUserForm) => {
                 user: values,
                 tasks: tasks
             };
+
+            setIsFormSent(true);
 
             console.log(resultsData); // TEST
         },

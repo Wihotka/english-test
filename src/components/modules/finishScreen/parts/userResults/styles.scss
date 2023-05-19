@@ -1,0 +1,138 @@
+@import '@mixins';
+
+.currentUserContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoPlatform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 500px;
+    padding-top: 20px;
+    text-align: center;
+
+    & > img {
+        width: 46px;
+        height: 46px;
+    }
+}
+
+.title {
+    width: 100%;
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: 0.01em;
+    text-align: center;
+
+    @include lg {
+        margin-bottom: 12px;
+        font-size: 32px;
+    }
+}
+
+.text {
+    width: 100%;
+    margin-bottom: 36px;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+
+    @include lg {
+        margin-bottom: 24px;
+        font-size: 18px;
+    }
+}
+
+.subtitle {
+    width: 100%;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.resultsWrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100px;
+    margin-bottom: 48px;
+
+    & > svg {
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        width: 148px;
+        height: 100px;
+    }
+}
+
+.results {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 8px;
+    color: #F50882;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 130%;
+
+    & > span {
+        font-weight: 700;
+    }
+}
+
+.downloadBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 257px;
+    height: 54px;
+    border: 2px solid #F50882;
+    border-radius: 10px;
+    color: #F50882;
+    background: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    transition: .2s ease;
+
+    &:hover {
+        border-color: #BE0062;
+        color: #BE0062;
+    }
+}
+
+.okBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 257px;
+    height: 54px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    background: #F50882;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    transition: .2s ease;
+
+    &:hover {
+        background: #BE0062;
+    }
+}
+
+.test {
+    width: 80vw;
+    height: 90vh;
+}

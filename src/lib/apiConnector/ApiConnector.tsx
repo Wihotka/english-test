@@ -1,7 +1,8 @@
 import axios from 'axios';
+import i18n from 'i18next';
+
 import {setCommonData} from '@reducers/commonData/dispatchers';
 import config from '../../config';
-import i18n from 'i18next';
 
 const buildFormData = (formData, data, parentKey) => {
     if (data && typeof data === 'object' && !(data instanceof Date) && !(data instanceof File)) {
@@ -57,7 +58,11 @@ export class ApiConnector{
             }
         };
 
-        if (isIsolated) setCommonData({langCode: 'ru'});
+        if (isIsolated) setCommonData({
+            settings: {langCode: 'ru'},
+            authorized: true,
+            enrolledOnCourse: false
+        });
 
         const serverResponse = await axios(requestBody);
 

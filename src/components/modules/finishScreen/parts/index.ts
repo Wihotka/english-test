@@ -1,2 +1,2 @@
 export {UserForm} from './userForm';
-export {PdfResults} from './pdfResults';
+export {UserResults} from './userResults';
