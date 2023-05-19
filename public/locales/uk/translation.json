@@ -4,7 +4,9 @@
     "subtitle": "Total score",
     "description": {
       "new": "Fill in the form to learn full results and get a present",
-      "current": "We've sent your results on the e-mail in your personal profile. If you haven't recieved the mail, contact the support team"
+      "website": "Мы выслали вам методические рекомендации и инструкцию по получению подарка на указанный e-mail. Если сообщение не пришло, обратитесь в техподдержку.",
+      "platform": "Мы выслали вам методические рекомендации на почту в личном кабинете. Если сообщение не пришло, обратитесь в техподдержку.",
+      "platformWithGift": "Мы выслали вам методические рекомендации и инструкцию по получению подарка на почту в личном кабинете. Если сообщение не пришло, обратитесь в техподдержку."
     },
     "inputPlaceholders": {
       "name": "Full name",
@@ -14,8 +16,6 @@
     "errors": {
       "noUsername": "Enter your full name",
       "incorrectUsername": "Invalid first or last name",
-      "noAge": "Enter your age",
-      "notEnoughAge": "Возраст не может быть меньше 1 года",
       "noTel": "Enter your phone number",
       "incorrectTel": "Invalid phone number",
       "noEmail": "Enter your E-mail",
@@ -36,7 +36,9 @@
     "done": "Finish",
     "submit": "Send",
     "ok": "Ok",
-    "repeat": "Try again"
+    "repeat": "Try again",
+    "download": "Download results",
+    "loading": "Loading results..."
   },
   "tooltip": "Answer at leat one question"
 }
