@@ -1,24 +1,86 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import {PDFDownloadLink} from '@react-pdf/renderer';
 
 import config from '@config';
+import {ApiActions, ApiConnector} from '@lib/apiConnector';
 import {LocalizedText} from '@components/elements/localizedText';
 import {PdfResults} from './parts';
 import styles from './styles.scss';
 
+type UserData = {
+    username:string;
+    tel:string;
+    email:string;
+};
+
+type PostData = {
+    source:'platform'|'website';
+    rightAnswers:number;
+    wrongAnswers:number[];
+    score:number;
+    user:UserData;
+};
+
 interface IUserResults {
     source:'platform'|'website';
     finalScore:number;
+    user:UserData;
 }
 
-export const UserResults = ({source, finalScore}:IUserResults) => {
+export const UserResults = ({source, finalScore, user}:IUserResults) => {
     const {authorized, enrolledOnCourse} = useSelector((state:any) => state.commonData);
     const {subject, option, tasksData, tasksProgress} = useSelector((state:any) => state.testData);
 
+    const redirectUrl = source === 'platform' ? config.personalTests : config.website;
     const isFirstTime = authorized ? !enrolledOnCourse : true;
     const tasksWithRightAnswers = tasksProgress.filter(task => task.status);
-    const redirectUrl = source === 'platform' ? config.personalTests : config.website;
+    const tasksWithWrongAnswers = tasksProgress.map((task, index) => {
+        if (!task.status) return index + 1;
+
+        return null;
+    }).filter(task => task) as number[];
+
+    // TODO Отправка данных
+    useEffect(() => {
+        let isSubscribed = true;
+
+        const resultData:PostData = {
+            source: source,
+            rightAnswers: tasksWithRightAnswers.length,
+            wrongAnswers: tasksWithWrongAnswers,
+            score: finalScore,
+            user: user
+        };
+
+        const subjectID = 13; // TODO динамически присваивать код
+
+        const data = {
+            action: ApiActions.sendData,
+            params: {
+                subjectID
+            },
+            postParams: {
+                resultData
+            }
+        };
+
+        ApiConnector.request(data).then((response) => {
+            if (isSubscribed) {
+                if (response.status) {
+                    console.log('Success');
+                } else {
+                    setTimeout(() => {
+                        location.href = config.personalCabinet;
+                    }, 1500);
+                }
+            }
+        });
+
+        return () => {
+            isSubscribed = false;
+        };
+    }, []);
 
     return <div className={styles.currentUserContent}>
         <h3 className={styles.title}>

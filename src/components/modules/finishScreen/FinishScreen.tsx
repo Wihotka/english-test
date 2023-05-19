@@ -13,17 +13,8 @@ type UserData = {
     email:string;
 };
 
-type PostData = {
-    source:'platform'|'website';
-    rightAnswers:number;
-    wrongAnswers:number[];
-    score:number;
-    user:UserData;
-};
-
 export const FinishScreen = () => {
     const {tasksProgress} = useSelector((state:any) => state.testData);
-    const tasksWithRightAnswers = tasksProgress.filter(task => task.status);
 
     const [finalScore, setFinalScore] = useState<number>(0);
     const [userData, setUserData] = useState<UserData>({username: '', tel: '', email: ''});
@@ -37,23 +28,14 @@ export const FinishScreen = () => {
         let score = 0;
         tasksProgress.forEach(task => score += task.score);
 
-        // TEST
-        const resultsData = {
-            source: source,
-            rightAnswers: tasksWithRightAnswers.length,
-            score: score
-        };
-
-        console.log(resultsData);
-
         setFinalScore(score);
     }, []);
 
     return <div className={styles.finishScreen}>
         {isStudentFromPlatform
-            ? <UserResults source={source} finalScore={finalScore}/>
+            ? <UserResults source={source} finalScore={finalScore} user={userData}/>
             : isFormSent
-                ? <UserResults source={source as 'website'} finalScore={finalScore}/>
+                ? <UserResults source={source as 'website'} finalScore={finalScore} user={userData}/>
                 : <div className={styles.newUserContent}>
                     <img src={require('_assets/img/greeting.png')} alt='greeting' className={styles.greetingImg}/>
                     <div className={styles.infoNew}>
@@ -64,7 +46,6 @@ export const FinishScreen = () => {
                             <LocalizedText name={'form.description.new'} path={'translation'}/>
                         </p>
                         <UserForm
-                            tasks={tasksProgress}
                             setUserData={setUserData}
                             setIsFormSent={setIsFormSent}
                         />

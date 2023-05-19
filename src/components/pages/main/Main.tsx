@@ -18,7 +18,7 @@ export const Main = () => {
     useEffect(() => {
         let isSubscribed = true;
 
-        const subjectID = 13;
+        const subjectID = 13; // TODO динамически присваивать код
         // const token = md5(`--sp--${subjectID.toString()}--${md5(subjectID.toString())}`);
 
         const data = {
@@ -32,7 +32,7 @@ export const Main = () => {
         ApiConnector.request(data).then((response) => {
             if (isSubscribed) {
                 if (response.status) {
-                    // setPageData({page: 'subject', data: response.data});
+                    console.log('Success');
                 } else {
                     setTimeout(() => {
                         location.href = config.personalCabinet;

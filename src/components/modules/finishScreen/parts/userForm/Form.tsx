@@ -12,12 +12,11 @@ type UserData = {
 };
 
 interface IUserForm {
-    tasks:any[];
     setUserData:React.Dispatch<React.SetStateAction<UserData>>;
     setIsFormSent:React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const UserForm = ({tasks, setUserData, setIsFormSent}:IUserForm) => {
+export const UserForm = ({setUserData, setIsFormSent}:IUserForm) => {
     const {t} = useTranslation('translation');
 
     const placeholders = {
@@ -56,14 +55,8 @@ export const UserForm = ({tasks, setUserData, setIsFormSent}:IUserForm) => {
             return null;
         },
         onSubmit: values => {
-            const resultsData = {
-                user: values,
-                tasks: tasks
-            };
-
+            setUserData(() => values);
             setIsFormSent(true);
-
-            console.log(resultsData); // TEST
         },
     });
 
