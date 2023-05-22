@@ -1,3 +1,5 @@
+@import '@mixins';
+
 .inputWrapper {
   position: relative;
 
@@ -9,6 +11,12 @@
     left: 4px;
     height: 1px;
     background-color: #0B1F35;
+
+    @include sm {
+      right: 3px;
+      bottom: 3px;
+      left: 3px;
+    }
   }
 }
 
@@ -22,6 +30,17 @@
   font-weight: 700;
   font-size: 20px;
   text-align: center;
+
+  @include md {
+    font-size: 18px;
+  }
+  @include sm {
+    font-size: 16px;
+    letter-spacing: 0.01em;
+  }
+  @include xs {
+    font-size: 14px;
+  }
 
   &.disabled{
     cursor: not-allowed;

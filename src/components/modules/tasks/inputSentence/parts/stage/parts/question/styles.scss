@@ -1,7 +1,19 @@
+@import '@mixins';
+
 .questionWrapper {
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    @include lg {
+        gap: 24px;
+    }
+    @include sm {
+        gap: 20px;
+    }
+    @include xs {
+        gap: 16px;
+    }
 }
 
 .question {
@@ -9,15 +21,52 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include md {
+        font-size: 22px;
+    }
+    @include sm {
+        font-size: 18px;
+        letter-spacing: 0.01em;
+    }
+    @include xs {
+        font-size: 16px;
+    }
 }
 
 .inputsWrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+
+    @include md {
+        gap: 10px;
+    }
+    @include sm {
+        gap: 8px;
+    }
 }
 
 .input {
     width: 128px;
     height: 32px;
+
+    @include lg {
+        width: 112px;
+        height: 28px;
+    }
+    @include md {
+        width: 96px;
+    }
+    @include sm {
+        width: 88px;
+        height: 24px;
+    }
+    @include xs {
+        width: 80px;
+        height: 22px;
+    }
 }
