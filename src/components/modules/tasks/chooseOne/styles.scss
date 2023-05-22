@@ -1,3 +1,5 @@
+@import '@mixins';
+
 .chooseOne {
     width: 100%;
 }
@@ -6,6 +8,16 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @include md {
+        gap: 20px;
+    }
+    @include sm {
+        gap: 16px;
+    }
+    @include xs {
+        gap: 12px;
+    }
 }
 
 .taskNumber {
@@ -16,18 +28,55 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include sm {
+        min-width: 24px;
+        margin-right: 4px;
+        font-size: 20px;
+    }
+    @include xs {
+        min-width: 20px;
+        margin-right: 3px;
+        font-size: 18px;
+    }
 }
 
 .questionsWrapper {
     display: flex;
     flex-direction: column;
     gap: 64px;
+
+    @include lg {
+        gap: 56px;
+    }
+    @include md {
+        gap: 48px;
+    }
+    @include sm {
+        gap: 32px;
+    }
+    @include xs {
+        gap: 24px;
+    }
 }
 
 .questionWrapper {
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    @include lg {
+        gap: 24px;
+    }
+    @include sm {
+        gap: 20px;
+    }
+    @include xs {
+        gap: 16px;
+    }
 }
 
 .question {
@@ -35,6 +84,16 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include sm {
+        font-size: 20px;
+    }
+    @include xs {
+        font-size: 18px;
+    }
 }
 
 .emptyQuestion {
@@ -43,6 +102,16 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include sm {
+        font-size: 20px;
+    }
+    @include xs {
+        font-size: 18px;
+    }
 }
 
 .emptyBlock {
