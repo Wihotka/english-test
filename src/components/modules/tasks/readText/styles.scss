@@ -1,3 +1,5 @@
+@import '@mixins';
+
 .readText {
     width: 100%;
 }
@@ -6,6 +8,16 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @include md {
+        gap: 20px;
+    }
+    @include sm {
+        gap: 16px;
+    }
+    @include xs {
+        gap: 12px;
+    }
 }
 
 .taskNumber {
@@ -16,6 +28,20 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include sm {
+        min-width: 24px;
+        margin-right: 4px;
+        font-size: 20px;
+    }
+    @include xs {
+        min-width: 20px;
+        margin-right: 3px;
+        font-size: 18px;
+    }
 }
 
 .taskText {
@@ -25,18 +51,59 @@
     font-size: 20px;
     line-height: 140%;
     letter-spacing: 0.02em;
+
+    @include md {
+        max-width: 100%;
+        font-size: 18px;
+        line-height: 130%;
+    }
+    @include sm {
+        font-size: 16px;
+    }
+    @include xs {
+        line-height: 120%;
+    }
 }
 
 .questionsWrapper {
     display: flex;
     flex-direction: column;
     gap: 64px;
+
+    @include xl {
+        gap: 56px;
+    }
+    @include lg {
+        gap: 48px;
+    }
+    @include md {
+        gap: 40px;
+    }
+    @include sm {
+        gap: 32px;
+    }
+    @include xs {
+        gap: 24px;
+    }
 }
 
 .questionWrapper {
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    @include lg {
+        gap: 24px;
+    }
+    @include md {
+        gap: 20px;
+    }
+    @include sm {
+        gap: 16px;
+    }
+    @include xs {
+        gap: 12px;
+    }
 }
 
 .question {
@@ -44,4 +111,17 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include md {
+        font-size: 22px;
+    }
+    @include sm {
+        font-size: 18px;
+    }
+    @include xs {
+        font-size: 16px;
+    }
 }

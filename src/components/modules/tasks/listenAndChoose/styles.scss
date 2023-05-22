@@ -1,3 +1,5 @@
+@import '@mixins';
+
 .listenAndChoose {
     display: flex;
     flex-direction: column;
@@ -9,6 +11,16 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @include md {
+        gap: 20px;
+    }
+    @include sm {
+        gap: 16px;
+    }
+    @include xs {
+        gap: 12px;
+    }
 }
 
 .taskNumber {
@@ -19,6 +31,20 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include sm {
+        min-width: 24px;
+        margin-right: 4px;
+        font-size: 20px;
+    }
+    @include xs {
+        min-width: 20px;
+        margin-right: 3px;
+        font-size: 18px;
+    }
 }
 
 .questionWrapper {
@@ -33,6 +59,19 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include md {
+        font-size: 22px;
+    }
+    @include sm {
+        font-size: 18px;
+    }
+    @include xs {
+        font-size: 16px;
+    }
 }
 
 .questionFiguresWrapper {
