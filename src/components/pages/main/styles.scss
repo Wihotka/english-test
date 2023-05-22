@@ -61,6 +61,7 @@
         max-width: 390px;
     }
     @include xs {
+        min-width: 96%;
         max-width: 96%;
     }
 }

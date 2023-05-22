@@ -1,6 +1,18 @@
+@import '@mixins';
+
 .dragAndDropWord {
     display: flex;
     flex-direction: column;
     gap: 80px;
     width: 100%;
+
+    @include xl {
+        gap: 64px;
+    }
+    @include md {
+        gap: 56px;
+    }
+    @include sm {
+        gap: 48px;
+    }
 }
