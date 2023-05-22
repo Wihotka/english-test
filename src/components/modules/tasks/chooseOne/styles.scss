@@ -123,6 +123,25 @@
     border: 1px solid #E2E5EB;
     border-radius: 5px;
 
+    @include lg {
+        bottom: -6px;
+        width: 112px;
+        height: 28px;
+    }
+    @include md {
+        width: 96px;
+    }
+    @include sm {
+        bottom: -4px;
+        width: 64px;
+        height: 20px;
+    }
+    @include xs {
+        bottom: -3px;
+        width: 56px;
+        height: 18px;
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -131,5 +150,11 @@
         left: 4px;
         height: 1px;
         background-color: #0B1F35;
+
+        @include sm {
+            right: 3px;
+            bottom: 3px;
+            left: 3px;
+        }
     }
 }
