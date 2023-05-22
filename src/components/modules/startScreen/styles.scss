@@ -5,6 +5,17 @@
     justify-content: flex-end;
     gap: 21px;
     width: 100%;
+
+    @include md {
+        gap: 16px;
+    }
+    @include sm {
+        flex-direction: column;
+        align-items: center;
+    }
+    @include xs {
+        gap: 12px;
+    }
 }
 
 .greetingImg {
@@ -13,12 +24,42 @@
         height: 450px;
     }
     @include lg {
-        height: 400px;
+        height: 380px;
+    }
+    @include md {
+        height: 270px;
+    }
+    @include sm {
+        width: 200px;
+        max-width: 90%;
+        height: auto;
+    }
+    @include xs {
+        width: 160px;
     }
 }
 
 .info {
     min-width: 741px;
+
+    @include lg {
+        min-width: 580px;
+        max-width: 580px;
+    }
+    @include md {
+        min-width: 470px;
+        max-width: 470px;
+    }
+    @include sm {
+        min-width: 390px;
+        max-width: 390px;
+        padding: 0 8px;
+    }
+    @include xs {
+        min-width: 96%;
+        max-width: 96%;
+        padding: 0 4px;
+    }
 }
 
 .titleWrap {
@@ -27,9 +68,32 @@
     gap: 16px;
     margin-bottom: 16px;
 
+    @include md {
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    @include sm {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     & > img {
         width: 68px;
-        height: 76px;
+        height: auto;
+
+        @include lg {
+            width: 56px;
+        }
+        @include md {
+            width: 40px;
+        }
+        @include sm {
+            width: 32px;
+        }
+        @include xs {
+            width: 28px;
+        }
     }
 }
 
@@ -38,6 +102,21 @@
     font-weight: 700;
     font-size: 36px;
     line-height: 130%;
+
+    @include lg {
+        font-size: 28px;
+    }
+    @include md {
+        font-size: 24px;
+    }
+    @include sm {
+        font-size: 20px;
+        line-height: 120%;
+        text-align: center;
+    }
+    @include xs {
+        font-size: 18px;
+    }
 }
 
 .text {
@@ -47,6 +126,24 @@
     font-size: 20px;
     line-height: 140%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        margin-bottom: 40px;
+        font-size: 18px;
+        line-height: 130%;
+    }
+    @include md {
+        margin-bottom: 32px;
+        font-size: 16px;
+    }
+    @include sm {
+        margin-bottom: 24px;
+        font-size: 14px;
+    }
+    @include xs {
+        margin-bottom: 20px;
+        font-size: 12px;
+    }
 }
 
 .startTest {
@@ -56,11 +153,41 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include md {
+        font-size: 20px;
+    }
+    @include sm {
+        margin-bottom: 12px;
+        font-size: 18px;
+    }
+    @include xs {
+        margin-bottom: 8px;
+        font-size: 16px;
+        text-align: center;
+    }
 }
 
 .ageBtnWrapper {
     display: flex;
     gap: 24px;
+
+    @include md {
+        gap: 20px;
+    }
+    @include sm {
+        gap: 16px;
+        justify-content: space-between;
+    }
+    @include xs {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
 }
 
 .ageBtn {
@@ -73,13 +200,49 @@
     background-color: #FFFFFF;
     transition: .2s ease;
 
+    @include lg {
+        width: 240px;
+        padding: 20px;
+    }
+    @include md {
+        gap: 4px;
+        width: 180px;
+        padding: 16px;
+    }
+    @include xs {
+        align-items: center;
+        gap: 3px;
+        width: 90%;
+        padding: 8px 12px;
+    }
+
     & > span {
         line-height: 120%;
         letter-spacing: 0.02em;
 
+        @include md {
+            font-size: 14px;
+        }
+        @include xs {
+            font-size: 12px;
+        }
+
         &:last-child {
             font-weight: 700;
             font-size: 26px;
+
+            @include lg {
+                font-size: 24px;
+            }
+            @include md {
+                font-size: 20px;
+            }
+            @include sm {
+                font-size: 18px;
+            }
+            @include xs {
+                font-size: 16px;
+            }
         }
     }
 

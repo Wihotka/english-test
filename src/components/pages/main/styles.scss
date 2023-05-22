@@ -11,6 +11,9 @@
     @include lg {
         padding-top: 80px;
     }
+    @include sm {
+        padding-top: 40px;
+    }
 
     &Test {
         padding-top: 36px;
@@ -35,4 +38,17 @@
 
 .mainWrapper {
     max-width: 1124px;
+
+    @include lg {
+        max-width: 1000px;
+    }
+    @include md {
+        max-width: 760px;
+    }
+    @include sm {
+        max-width: 390px;
+    }
+    @include xs {
+        max-width: 96%;
+    }
 }
