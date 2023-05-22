@@ -14,6 +14,9 @@
     @include sm {
         padding-top: 40px;
     }
+    @include xs {
+        padding-top: 32px;
+    }
 
     &Test {
         padding-top: 36px;
@@ -24,6 +27,15 @@
 
         @include lg {
             padding-bottom: 72px;
+        }
+        @include md {
+            padding-bottom: 48px;
+        }
+        @include sm {
+            padding-bottom: 40px;
+        }
+        @include xs {
+            padding-bottom: 32px;
         }
     }
 

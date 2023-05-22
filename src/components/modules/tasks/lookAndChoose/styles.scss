@@ -1,12 +1,36 @@
+@import '@mixins';
+
 .lookAndChoose {
     display: flex;
     flex-direction: column;
     gap: 80px;
     width: 100%;
+
+    @include lg {
+        gap: 40px;
+    }
+    @include md {
+        gap: 32px;
+    }
+    @include sm {
+        gap: 24px;
+    }
+    @include xs {
+        gap: 20px;
+    }
 }
 
 .task {
     display: flex;
+
+    @include sm {
+        display: grid;
+        grid-template-columns: 24px 1fr;
+        grid-template-rows: repeat(2, minmax(min-content, max-content));
+    }
+    @include xs {
+        grid-template-columns: 20px 1fr;
+    }
 }
 
 .taskNumber {
@@ -17,15 +41,41 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include sm {
+        min-width: 100%;
+        margin-right: 4px;
+        font-size: 20px;
+    }
+    @include xs {
+        margin-right: 3px;
+        font-size: 18px;
+    }
 }
 
 .taskImg {
     width: 180px;
     height: auto;
     margin-right: 48px;
+
+    @include lg {
+        width: 160px;
+        margin-right: 40px;
+    }
+    @include sm {
+        width: 120px;
+        margin-right: 0;
+    }
+    @include xs {
+        width: 100px;
+    }
 }
 
 .radioBtns {
+    grid-column: 1 / span 2;
     display: flex;
     align-items: center;
 }

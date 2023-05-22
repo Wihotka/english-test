@@ -3,6 +3,8 @@
 .testWrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 16px;
     width: 1124px;
     height: 100%;
@@ -18,7 +20,8 @@
         width: 390px;
     }
     @include xs {
-        width: 96%;
+        gap: 12px;
+        width: 100%;
     }
 }
 
@@ -36,6 +39,17 @@
         gap: 16px;
         padding: 20px 40px;
     }
+    @include sm {
+        grid-template-columns: 1fr 24px;
+        gap: 12px;
+        padding: 16px 32px;
+        border-radius: 16px;
+    }
+    @include xs {
+        grid-template-columns: 1fr 22px;
+        gap: 8px;
+        padding: 8px 16px;
+    }
 }
 
 .question {
@@ -46,6 +60,12 @@
 
     @include lg {
         font-size: 24px;
+    }
+    @include sm {
+        font-size: 20px;
+    }
+    @include xs {
+        font-size: 18px;
     }
 }
 
@@ -61,6 +81,13 @@
     font-size: 20px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include sm {
+        font-size: 18px;
+    }
+    @include xs {
+        font-size: 16px;
+    }
 }
 
 .task {
@@ -75,6 +102,13 @@
 
     @include lg {
         padding: 24px 40px 0;
+    }
+    @include sm {
+        border-radius: 16px;
+        padding: 20px 32px 0;
+    }
+    @include xs {
+        padding: 12px 16px 0;
     }
 
     &::-webkit-scrollbar {

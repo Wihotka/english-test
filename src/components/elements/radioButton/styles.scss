@@ -20,6 +20,20 @@
   cursor: pointer;
   transition: .2s ease;
 
+  @include lg {
+    width: 28px;
+    height: 28px;
+  }
+  @include sm {
+    width: 24px;
+    height: 24px;
+  }
+  @include xs {
+    width: 20px;
+    height: 20px;
+    border-width: 1px;
+  }
+
   &:hover,
   &:active {
     background-color: #CCEDFF;
@@ -38,6 +52,15 @@
     border-radius: 50%;
     background-color: #FFFFFF;
     transition: .4s ease;
+
+    @include sm {
+      width: 16px;
+      height: 16px;
+    }
+    @include xs {
+      width: 14px;
+      height: 14px;
+    }
   }
 
   &:checked {
@@ -53,6 +76,13 @@
   line-height: 24px;
   letter-spacing: 0.02em;
 
+  @include sm {
+    font-size: 18px;
+  }
+  @include xs {
+    font-size: 16px;
+  }
+
   &Disabled {
     cursor: not-allowed;
   }
@@ -62,6 +92,16 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @include lg {
+    gap: 16px;
+  }
+  @include md {
+    gap: 12px;
+  }
+  @include sm {
+    gap: 8px;
+  }
 }
 
 .btnWrapperImg {
