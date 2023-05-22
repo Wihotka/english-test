@@ -1,14 +1,42 @@
+@import '@mixins';
+
 .trueOrFalse {
     display: flex;
     flex-direction: column;
     gap: 80px;
     width: 100%;
+
+    @include xl {
+        gap: 72px;
+    }
+    @include lg {
+        gap: 64px;
+    }
+    @include md {
+        gap: 56px;
+    }
+    @include sm {
+        gap: 48px;
+    }
+    @include xs {
+        gap: 40px;
+    }
 }
 
 .task {
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @include md {
+        gap: 20px;
+    }
+    @include sm {
+        gap: 16px;
+    }
+    @include xs {
+        gap: 12px;
+    }
 }
 
 .taskNumber {
@@ -19,24 +47,81 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include sm {
+        min-width: 24px;
+        margin-right: 4px;
+        font-size: 20px;
+    }
+    @include xs {
+        min-width: 20px;
+        margin-right: 3px;
+        font-size: 18px;
+    }
 }
 
 .taskImg {
     display: block;
     width: 430px;
-    height: 126px;
+    height: auto;
+
+    @include lg {
+        width: 400px;
+    }
+    @include md {
+        width: 360px;
+    }
+    @include sm {
+        width: 280px;
+    }
+    @include xs {
+        width: 250px;
+        max-width: 100%;
+    }
 }
 
 .questionsWrapper {
     display: flex;
     flex-direction: column;
     gap: 64px;
+
+    @include xl {
+        gap: 56px;
+    }
+    @include lg {
+        gap: 48px;
+    }
+    @include md {
+        gap: 40px;
+    }
+    @include sm {
+        gap: 32px;
+    }
+    @include xs {
+        gap: 24px;
+    }
 }
 
 .questionWrapper {
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    @include lg {
+        gap: 24px;
+    }
+    @include md {
+        gap: 20px;
+    }
+    @include sm {
+        gap: 16px;
+    }
+    @include xs {
+        gap: 12px;
+    }
 }
 
 .question {
@@ -44,4 +129,15 @@
     font-size: 26px;
     line-height: 120%;
     letter-spacing: 0.02em;
+
+    @include lg {
+        font-size: 24px;
+    }
+    @include sm {
+        font-size: 20px;
+        letter-spacing: 0.01em;
+    }
+    @include xs {
+        font-size: 18px;
+    }
 }
