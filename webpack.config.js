@@ -62,7 +62,7 @@ const createPlugins = (isProd) => {
             ],
         }),
         new HtmlWebpackPlugin({
-            title: 'English Test',
+            title: 'Test',
             template: path.resolve(__dirname, './src/template.html'),
             filename: isProd ? 'index.php' : 'index.html',
             base: isProd ? false : '/'
