@@ -16,8 +16,10 @@ type UserData = {
 };
 
 type PostData = {
+    subject:string;
+    test:string;
     source:'platform'|'website';
-    rightAnswers:number;
+    rightAnswersQty:number;
     wrongAnswers:number[];
     score:number;
     user:UserData;
@@ -47,8 +49,10 @@ export const UserResults = ({source, finalScore, user}:IUserResults) => {
         let isSubscribed = true;
 
         const resultData:PostData = {
+            subject: subject,
+            test: '', // Изменить структуру и добавить сюда название теста
             source: source,
-            rightAnswers: tasksWithRightAnswers.length,
+            rightAnswersQty: tasksWithRightAnswers.length,
             wrongAnswers: tasksWithWrongAnswers,
             score: finalScore,
             user: user
