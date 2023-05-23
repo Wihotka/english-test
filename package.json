@@ -107,6 +107,7 @@
     "@sentry/tracing": "^6.15.0",
     "@types/lodash": "^4.14.172",
     "@types/react-router": "^5.1.14",
+    "amakids-games-utils-and-generations": "^0.0.20",
     "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "core-js": "^3.9.1",

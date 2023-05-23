@@ -7,6 +7,7 @@ config.appPath = config.prodMode ? (insideMode ? '/platform' : '') + '/apps/intr
 config.root = 'https://' + window.location.hostname;
 config.host = config.prodMode ? 'https://' + window.location.hostname + (insideMode ? '/platform' : '') +  '/apps/introTests/' : 'https://' + window.location.host + '/';
 config.apiHost = 'https://' + window.location.hostname + (insideMode ? '/platform' : '') +  '/api/';
+config.favicon = config.prodMode ? (insideMode ? '/platform' : '') : '/';
 config.personalCabinet = config.root + (insideMode ? '/platform' : '') + '/apps/student/';
 config.personalTests = config.personalCabinet + ''; // TODO вставить нужный путь к разделу с тестами
 config.website = 'https://amakids.ru/';
