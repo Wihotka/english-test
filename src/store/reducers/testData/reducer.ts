@@ -5,6 +5,7 @@ export const {actions, reducer} = createSlice({
     name: 'testData',
     initialState: {
         subject: '',
+        test: '',
         isTestStarted: false,
         isTestFinished: false, //TEST
         option: '',

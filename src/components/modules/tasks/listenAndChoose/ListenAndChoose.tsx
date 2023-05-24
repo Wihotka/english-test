@@ -12,7 +12,7 @@ interface P {
 
 export const ListenAndChoose = ({stage}:P) => {
     const testData = useSelector((state:any) => state.testData);
-    const {option} = testData;
+    const {subject, test, option} = testData;
 
     return <div className={styles.listenAndChoose}>
         {stage.tasks.map(task => {
@@ -31,12 +31,14 @@ export const ListenAndChoose = ({stage}:P) => {
                 else setTaskStatus({key: task.id, status: false, score: 0});
             };
 
+            const soundUrl = `${subject}/${test}/${option}`;
+
             return <div key={task.id} className={styles.task}>
                 <span className={styles.taskNumber}>{task.id}.</span>
                 {option === 'sixToTen'
                     ? <div className={styles.questionFiguresWrapper}>
                         <BtnPlayGroup
-                            soundUrl={option}
+                            soundUrl={soundUrl}
                             audioFile={`task${task.id}`}
                             type={'play'}
                         />
@@ -50,7 +52,7 @@ export const ListenAndChoose = ({stage}:P) => {
                     </div>
                     : <div className={styles.questionWrapper}>
                         <BtnPlayGroup
-                            soundUrl={option}
+                            soundUrl={soundUrl}
                             audioFile={`task${task.id}`}
                             type={'play'}
                         />

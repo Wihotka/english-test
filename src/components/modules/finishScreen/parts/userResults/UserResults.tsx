@@ -33,7 +33,7 @@ interface IUserResults {
 
 export const UserResults = ({source, finalScore, user}:IUserResults) => {
     const {authorized, enrolledOnCourse} = useSelector((state:any) => state.commonData);
-    const {subject, option, tasksData, tasksProgress} = useSelector((state:any) => state.testData);
+    const {subject, test, option, tasksData, tasksProgress} = useSelector((state:any) => state.testData);
 
     const redirectUrl = source === 'platform' ? config.personalTests : config.website;
     const isFirstTime = authorized ? !enrolledOnCourse : true;
@@ -50,7 +50,7 @@ export const UserResults = ({source, finalScore, user}:IUserResults) => {
 
         const resultData:PostData = {
             subject: subject,
-            test: '', // Изменить структуру и добавить сюда название теста
+            test: test,
             source: source,
             rightAnswersQty: tasksWithRightAnswers.length,
             wrongAnswers: tasksWithWrongAnswers,
@@ -121,6 +121,7 @@ export const UserResults = ({source, finalScore, user}:IUserResults) => {
                     tasks={tasksData}
                     progress={tasksProgress}
                     subject={subject}
+                    test={test}
                     option={option}
                 />}
                 fileName='results.pdf'

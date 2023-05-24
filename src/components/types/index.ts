@@ -35,5 +35,6 @@ export type StageT = {
 
 export type UrlParamsT = {
     subject:string;
+    test:string;
     source:string;
 };

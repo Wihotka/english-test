@@ -6,7 +6,7 @@ import styles from './styles.scss';
 
 export const Stage = ({task}) => {
     const testData = useSelector((state:any) => state.testData);
-    const {subject, option, tasksProgress} = testData;
+    const {subject, test, option, tasksProgress} = testData;
     const words:any[] = task.option[option].words;
     const correctAnswer:string[] = task.option[option].correctAnswer;
     const currentAnswer:string[] = [...tasksProgress[+task.id - 1].currentAnswer];
@@ -31,7 +31,7 @@ export const Stage = ({task}) => {
                 return <div key={index} className={styles.dropCellWrapper}>
                     <div className={styles.imgWrapper}>
                         <img
-                            src={require(`_assets/img/tasks/${subject}/${word.img}`)}
+                            src={require(`_assets/img/tasks/${subject}/${test}/${word.img}`)}
                             alt='image'
                             className={styles.image}
                         />

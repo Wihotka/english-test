@@ -11,7 +11,7 @@ interface P {
 
 export const LookAndChoose = ({stage}:P) => {
     const testData = useSelector((state:any) => state.testData);
-    const {subject, option} = testData;
+    const {subject, test, option} = testData;
 
     return <div className={styles.lookAndChoose}>
         {stage.tasks.map(task => {
@@ -32,7 +32,7 @@ export const LookAndChoose = ({stage}:P) => {
 
             return <div key={task.id} className={styles.task}>
                 <span className={styles.taskNumber}>{task.id}.</span>
-                <img src={require(`_assets/img/tasks/${subject}/${imgPath}`)} alt='task' className={styles.taskImg}/>
+                <img src={require(`_assets/img/tasks/${subject}/${test}/${imgPath}`)} alt='task' className={styles.taskImg}/>
                 <div className={styles.radioBtns}>
                     <RadioButtons
                         options={labels}

@@ -7,6 +7,7 @@ interface IPdfResults {
     tasks:any;
     progress:any;
     subject:string;
+    test:string;
     option:string;
 }
 
@@ -25,6 +26,7 @@ export const PdfResults = ({
     tasks,
     progress,
     subject,
+    test,
     option
 }:IPdfResults) => {
     return <Document >
@@ -50,7 +52,7 @@ export const PdfResults = ({
                             <View style={pdfStyles.task}>
                                 <Text style={pdfStyles.taskNumber}>{task.id}.</Text>
                                 <Image
-                                    src={require(`_assets/img/tasks/${subject}/${task.option[option].img}`)}
+                                    src={require(`_assets/img/tasks/${subject}/${test}/${task.option[option].img}`)}
                                     style={{width: 'auto', height: 100, marginRight: 24}}
                                 />
                                 <View style={{flexDirection: 'column', justifyContent: 'center', fontSize: 14}}>
@@ -97,7 +99,7 @@ export const PdfResults = ({
                                 <Text style={pdfStyles.taskNumber}>{task.id}.</Text>
                                 {task.option[option].words.map((word:any, index) => <View key={index} style={{flexDirection: 'column', width: 100, marginRight: 8}}>
                                     <Image
-                                        src={require(`_assets/img/tasks/${subject}/${word.img}`)}
+                                        src={require(`_assets/img/tasks/${subject}/${test}/${word.img}`)}
                                         style={{width: 'auto', height: 80, marginBottom: 16}}
                                     />
                                     <Text style={[{marginBottom: 8, fontSize: 14, textAlign: 'center'},
@@ -191,7 +193,7 @@ export const PdfResults = ({
                                 <Text style={pdfStyles.taskNumber}>{task.id}.</Text>
                                 <View style={{flexDirection: 'column'}}>
                                     <Image
-                                        src={require(`_assets/img/tasks/${subject}/${task.option[option].img}`)}
+                                        src={require(`_assets/img/tasks/${subject}/${test}/${task.option[option].img}`)}
                                         style={{width: 'auto', height: 56, marginBottom: 16}}
                                     />
                                     {task.option[option].questions.map((question:any, questionIndex) => <View key={questionIndex} style={{marginBottom: 12}}>
@@ -318,7 +320,7 @@ export const PdfResults = ({
                                     </View>
                                     : task.option[option].labels.map((label:any, index) => <View key={index} style={{flexDirection: 'column', alignItems: 'center', width: 100, marginRight: 16}}>
                                         <Image
-                                            src={require(`_assets/img/tasks/${subject}/${option}/${label.img}`)}
+                                            src={require(`_assets/img/tasks/${subject}/${test}/${option}/${label.img}`)}
                                             style={{width: 'auto', height: 90, marginBottom: 16}}
                                         />
                                         <View style={[

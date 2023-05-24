@@ -1,5 +1,5 @@
-export const loadTasksData = async (subject:string) => {
-  const res = await fetch(`assets/resources/${subject}/tasks.json`);
+export const loadTasksData = async (subject:string, test:string) => {
+  const res = await fetch(`assets/resources/${subject}/${test}/tasks.json`);
   const data = await res.json();
   const progress = [];
 
