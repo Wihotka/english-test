@@ -13,10 +13,17 @@ type UserData = {
     email:string;
 };
 
+type TaskData = {
+    maxScore:{
+        option:{}
+    }
+};
+
 export const FinishScreen = () => {
-    const {tasksProgress} = useSelector((state:any) => state.testData);
+    const {tasksData, tasksProgress, option} = useSelector((state:any) => state.testData);
 
     const [finalScore, setFinalScore] = useState<number>(0);
+    const [maxScore, setMaxScore] = useState<number>(0);
     const [userData, setUserData] = useState<UserData>({username: '', tel: '', email: ''});
     const [isFormSent, setIsFormSent] = useState<boolean>(false);
 
@@ -26,16 +33,30 @@ export const FinishScreen = () => {
     // Подсчет итогового кол-ва баллов
     useEffect(() => {
         let score = 0;
+        let maxScore = 0;
+
         tasksProgress.forEach(task => score += task.score);
+        Object.values(tasksData).forEach((task:any) => maxScore += +task.maxScore[option]);
 
         setFinalScore(score);
+        setMaxScore(maxScore);
     }, []);
 
     return <div className={styles.finishScreen}>
         {isStudentFromPlatform
-            ? <UserResults source={source} finalScore={finalScore} user={userData}/>
+            ? <UserResults
+                source={source}
+                finalScore={finalScore}
+                maxScore={maxScore}
+                user={userData}
+            />
             : isFormSent
-                ? <UserResults source={source as 'website'} finalScore={finalScore} user={userData}/>
+                ? <UserResults
+                    source={source as 'website'}
+                    finalScore={finalScore}
+                    maxScore={maxScore}
+                    user={userData}
+                />
                 : <div className={styles.newUserContent}>
                     <img src={require('_assets/img/greeting.png')} alt='greeting' className={styles.greetingImg}/>
                     <div className={styles.infoNew}>

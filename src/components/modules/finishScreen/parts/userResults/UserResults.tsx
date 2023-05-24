@@ -19,19 +19,21 @@ type PostData = {
     subject:string;
     test:string;
     source:'platform'|'website';
-    rightAnswersQty:number;
+    testSubcategory:string;
     wrongAnswers:number[];
     score:number;
+    maxScore:number;
     user:UserData;
 };
 
 interface IUserResults {
     source:'platform'|'website';
     finalScore:number;
+    maxScore:number;
     user:UserData;
 }
 
-export const UserResults = ({source, finalScore, user}:IUserResults) => {
+export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) => {
     const {authorized, enrolledOnCourse} = useSelector((state:any) => state.commonData);
     const {subject, test, option, tasksData, tasksProgress} = useSelector((state:any) => state.testData);
 
@@ -52,9 +54,10 @@ export const UserResults = ({source, finalScore, user}:IUserResults) => {
             subject: subject,
             test: test,
             source: source,
-            rightAnswersQty: tasksWithRightAnswers.length,
+            testSubcategory: option,
             wrongAnswers: tasksWithWrongAnswers,
             score: finalScore,
+            maxScore: maxScore,
             user: user
         };
 

@@ -3,6 +3,10 @@
     "id": "1",
     "question": "Choose the best answer.",
     "theme": "LookAndChoose",
+    "maxScore": {
+      "sixToTen": "4",
+      "elevenToFourteen": "4"
+    },
     "tasks": [
       {
         "id": "1",
@@ -102,6 +106,10 @@
     "id": "2",
     "question": "Look at the pictures and match the words with them.",
     "theme": "DragAndDropWord",
+    "maxScore": {
+      "sixToTen": "12",
+      "elevenToFourteen": "12"
+    },
     "tasks": [
       {
         "id": "5",
@@ -184,6 +192,10 @@
     "id": "3",
     "question": "Look at the sentences and choose the best answer.",
     "theme": "ChooseOne",
+    "maxScore": {
+      "sixToTen": "4",
+      "elevenToFourteen": "6"
+    },
     "tasks": [
       {
         "id": "7",
@@ -294,6 +306,10 @@
     "id": "4",
     "question": "Look at the sentences and choose the best answer.",
     "theme": "ChooseOne",
+    "maxScore": {
+      "sixToTen": "4",
+      "elevenToFourteen": "6"
+    },
     "tasks": [
       {
         "id": "8",
@@ -404,6 +420,10 @@
     "id": "5",
     "question": "Look at the sentences and choose the best answer.",
     "theme": "ChooseOne",
+    "maxScore": {
+      "sixToTen": "4",
+      "elevenToFourteen": "6"
+    },
     "tasks": [
       {
         "id": "9",
@@ -504,6 +524,10 @@
     "id": "6",
     "question": "Put the words in the correct order to make sentences.",
     "theme": "InputSentence",
+    "maxScore": {
+      "sixToTen": "4",
+      "elevenToFourteen": "6"
+    },
     "tasks": [
       {
         "id": "10",
@@ -574,6 +598,10 @@
     "id": "7",
     "question": "Look at the picture, read the sentence and choose true or false.",
     "theme": "TrueOrFalse",
+    "maxScore": {
+      "sixToTen": "4",
+      "elevenToFourteen": "4"
+    },
     "tasks": [
       {
         "id": "11",
@@ -675,6 +703,10 @@
     "id": "8",
     "question": "Read the text and choose the best answer.",
     "theme": "ReadText",
+    "maxScore": {
+      "sixToTen": "3",
+      "elevenToFourteen": "3"
+    },
     "tasks": [
       {
         "id": "13",
@@ -751,6 +783,10 @@
     "id": "9",
     "question": "Listen to the recording and choose the best answer.",
     "theme": "ListenAndChoose",
+    "maxScore": {
+      "sixToTen": "2",
+      "elevenToFourteen": "2"
+    },
     "tasks": [
       {
         "id": "14",
