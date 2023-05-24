@@ -2,29 +2,17 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router';
 import {useSelector} from 'react-redux';
 
-import {UrlParamsT} from '@components/types';
+import {UrlParamsT, UserDataT} from '@components/types';
 import {LocalizedText} from '@components/elements/localizedText';
 import {UserForm, UserResults} from './parts';
 import styles from './styles.scss';
-
-type UserData = {
-    username:string;
-    tel:string;
-    email:string;
-};
-
-type TaskData = {
-    maxScore:{
-        option:{}
-    }
-};
 
 export const FinishScreen = () => {
     const {tasksData, tasksProgress, option} = useSelector((state:any) => state.testData);
 
     const [finalScore, setFinalScore] = useState<number>(0);
     const [maxScore, setMaxScore] = useState<number>(0);
-    const [userData, setUserData] = useState<UserData>({username: '', tel: '', email: ''});
+    const [userData, setUserData] = useState<UserDataT>({username: '', tel: '', email: ''});
     const [isFormSent, setIsFormSent] = useState<boolean>(false);
 
     const {source} = useParams<UrlParamsT>();

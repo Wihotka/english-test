@@ -1,13 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {useSelector} from 'react-redux';
+
+import {TaskProgressT} from '@components/types';
 import {setTestData, setStage} from '@reducers/testData/dispatchers';
 import {Stage} from './parts';
 import styles from './styles.scss';
-
-type TaskProgressT = {
-    status:boolean;
-    done:boolean;
-};
 
 interface P {
     tasks:TaskProgressT[];

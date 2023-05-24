@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import {PDFDownloadLink} from '@react-pdf/renderer';
 
+import {UserDataT, PostDataT} from '@components/types';
 import config from '@config';
 import {ApiActions, ApiConnector} from '@lib/apiConnector';
 import {getSubjectID} from '@lib/getSubjectID';
@@ -9,28 +10,11 @@ import {LocalizedText} from '@components/elements/localizedText';
 import {PdfResults} from './parts';
 import styles from './styles.scss';
 
-type UserData = {
-    username:string;
-    tel:string;
-    email:string;
-};
-
-type PostData = {
-    subject:string;
-    test:string;
-    source:'platform'|'website';
-    testSubcategory:string;
-    wrongAnswers:number[];
-    score:number;
-    maxScore:number;
-    user:UserData;
-};
-
 interface IUserResults {
     source:'platform'|'website';
     finalScore:number;
     maxScore:number;
-    user:UserData;
+    user:UserDataT;
 }
 
 export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) => {
@@ -50,7 +34,7 @@ export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) =
     useEffect(() => {
         let isSubscribed = true;
 
-        const resultData:PostData = {
+        const resultData:PostDataT = {
             subject: subject,
             test: test,
             source: source,

@@ -38,3 +38,25 @@ export type UrlParamsT = {
     test:string;
     source:string;
 };
+
+ export type TaskProgressT = {
+    status:boolean;
+    done:boolean;
+};
+
+export type UserDataT = {
+    username:string;
+    tel:string;
+    email:string;
+};
+
+export type PostDataT = {
+    subject:string;
+    test:string;
+    source:'platform'|'website';
+    testSubcategory:string;
+    wrongAnswers:number[];
+    score:number;
+    maxScore:number;
+    user:UserDataT;
+};
