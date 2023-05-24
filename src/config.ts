@@ -15,7 +15,7 @@ config.isIsolated = process.env.ISOLATED === 'true';
 
 config.path = {
     main: config.appPath,
-    subject: config.appPath + ':subject/:source'
+    subject: config.appPath + ':subject/:test/:source'
 };
 
 config.options = {

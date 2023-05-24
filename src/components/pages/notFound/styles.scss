@@ -1,3 +1,5 @@
+@import '@mixins';
+
 .notFound{
   display: flex;
   justify-content: center;
@@ -15,15 +17,32 @@
     padding: 48px;
     color: #FFFFFF;
 
+    @include md {
+      padding: 32px;
+    }
+    @include xs {
+      padding: 24px;
+    }
+
     .title{
       margin-bottom: 24px;
       font-weight: 700;
       font-size: 72px;
+
+      @include sm {
+        margin-bottom: 20px;
+        font-size: 64px;
+      }
     }
 
     .description{
       margin-bottom: 36px;
       font-size: 24px;
+
+      @include sm {
+        margin-bottom: 32px;
+        font-size: 20px;
+      }
     }
 
     .toMain{
@@ -33,6 +52,11 @@
       background-color: #FFFFFF;
       font-size: 24px;
       transition: .2s ease;
+
+      @include sm {
+        padding: 20px;
+        font-size: 20px;
+      }
 
       &:hover,
       &:active,
