@@ -5,7 +5,6 @@ import classNames from 'classnames';
 // import md5 from 'md5';
 
 import {UrlParamsT} from '@components/types';
-import config from '@config';
 import {ApiActions, ApiConnector} from '@lib/apiConnector';
 import {getSubjectID} from '@lib/getSubjectID';
 import {StartScreen} from '@components/modules/startScreen';
@@ -17,13 +16,13 @@ export const Main = () => {
     const testData = useSelector((state:any) => state.testData);
     const {isTestStarted, isTestFinished, tasksData, tasksProgress} = testData;
 
-    const {source} = useParams<UrlParamsT>();
+    const {subject} = useParams<UrlParamsT>();
 
     //API
     useEffect(() => {
         let isSubscribed = true;
 
-        const subjectID = getSubjectID(source);
+        const subjectID = getSubjectID(subject);
         // const token = md5(`--sp--${subjectID.toString()}--${md5(subjectID.toString())}`);
 
         const data = {
@@ -39,9 +38,7 @@ export const Main = () => {
                 if (response.status) {
                     console.log('Success');
                 } else {
-                    setTimeout(() => {
-                        location.href = config.personalCabinet;
-                    }, 1500);
+                    console.log('Error');
                 }
             }
         });

@@ -58,5 +58,5 @@ export type PostDataT = {
     wrongAnswers:number[];
     score:number;
     maxScore:number;
-    user:UserDataT;
+    // user:UserDataT;
 };

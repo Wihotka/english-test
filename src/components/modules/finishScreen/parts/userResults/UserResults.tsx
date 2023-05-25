@@ -34,45 +34,43 @@ export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) =
     useEffect(() => {
         let isSubscribed = true;
 
-        const resultData:PostDataT = {
-            subject: subject,
-            test: test,
-            source: source,
-            testSubcategory: option,
-            wrongAnswers: tasksWithWrongAnswers,
-            score: finalScore,
-            maxScore: maxScore,
-            user: user
-        };
-
-        const subjectID = getSubjectID(source);
-
-        const data = {
-            action: ApiActions.sendData,
-            params: {
-                subjectID
-            },
-            postParams: {
-                resultData
-            }
-        };
-
-        ApiConnector.request(data).then((response) => {
-            if (isSubscribed) {
-                if (response.status) {
-                    console.log('Success');
-                } else {
-                    setTimeout(() => {
-                        location.href = config.personalCabinet;
-                    }, 1500);
+        if (finalScore && maxScore) {
+            const resultData:PostDataT = {
+                subject: subject,
+                test: test,
+                source: source,
+                testSubcategory: option,
+                wrongAnswers: tasksWithWrongAnswers,
+                score: finalScore,
+                maxScore: maxScore,
+                // user: user
+            };
+    
+            const subjectID = getSubjectID(subject);
+    
+            const data = {
+                action: ApiActions.sendData,
+                params: {
+                    subjectID,
+                    ...resultData
                 }
-            }
-        });
+            };
+    
+            ApiConnector.request(data).then((response) => {
+                if (isSubscribed) {
+                    if (response.status) {
+                        console.log('Success');
+                    } else {
+                        console.log('Error');
+                    }
+                }
+            });
+        }
 
         return () => {
             isSubscribed = false;
         };
-    }, []);
+    }, [finalScore, maxScore]);
 
     return <div className={styles.currentUserContent}>
         <h3 className={styles.title}>
