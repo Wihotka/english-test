@@ -50,7 +50,7 @@ export class ApiConnector{
         const requestBody = {
             method,
             url,
-            params: {...params, reactApp: 'test'},
+            params: {...params, reactApp: 'introTests'},
             withCredentials: true,
             data: formData,
             headers: {
