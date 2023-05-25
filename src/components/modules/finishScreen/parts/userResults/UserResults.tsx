@@ -61,7 +61,7 @@ export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) =
                     if (response.status) {
                         console.log('Success');
                     } else {
-                        console.log('Error');
+                        console.log('Error'); // TODO обработать вариант ошибки
                     }
                 }
             });

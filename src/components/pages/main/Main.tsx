@@ -5,6 +5,7 @@ import classNames from 'classnames';
 // import md5 from 'md5';
 
 import {UrlParamsT} from '@components/types';
+import config from '@config';
 import {ApiActions, ApiConnector} from '@lib/apiConnector';
 import {getSubjectID} from '@lib/getSubjectID';
 import {StartScreen} from '@components/modules/startScreen';
@@ -16,7 +17,7 @@ export const Main = () => {
     const testData = useSelector((state:any) => state.testData);
     const {isTestStarted, isTestFinished, tasksData, tasksProgress} = testData;
 
-    const {subject} = useParams<UrlParamsT>();
+    const {subject, source} = useParams<UrlParamsT>();
 
     //API
     useEffect(() => {
@@ -38,7 +39,10 @@ export const Main = () => {
                 if (response.status) {
                     console.log('Success');
                 } else {
-                    console.log('Error');
+                    setTimeout(() => {
+                        if (source === 'platform') location.href = config.personalTests;
+                        else location.href = config.website;
+                    }, 1500);
                 }
             }
         });
