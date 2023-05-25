@@ -38,7 +38,7 @@ export class ApiConnector{
         };
 
         const method = data.method ?? 'get';
-        const url = config.apiHost + data.action;
+        const url = config.apiHost + '?action=' + data.action;
         const params = data.params ? Object.assign(defaultParams, data.params) : defaultParams;
         const dataParams = method === 'post' ? (data.postParams ? data.postParams : data.params) : {};
         const isIsolated = config.isIsolated;

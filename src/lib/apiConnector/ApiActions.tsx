@@ -1,5 +1,4 @@
 export const ApiActions = {
-    // getSubjectPageData: 'student_interface_subject_page',
-    getData: '?action=introTests/getData',
-    sendData: ''
+    getData: 'introTests/getData',
+    sendData: 'student_interface_save_intro_test_result'
 };
