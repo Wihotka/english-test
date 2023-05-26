@@ -42,9 +42,14 @@ export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) =
                 testSubcategory: option,
                 wrongAnswers: tasksWithWrongAnswers,
                 score: finalScore,
-                maxScore: maxScore,
-                // user: user
+                maxScore: maxScore
             };
+
+            if (source === 'website') {
+                resultData.username = user.username;
+                resultData.tel = user.tel;
+                resultData.email = user.email;
+            }
     
             const subjectID = getSubjectID(subject);
     
