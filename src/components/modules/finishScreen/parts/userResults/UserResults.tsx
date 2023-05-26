@@ -45,7 +45,7 @@ export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) =
                 maxScore: maxScore
             };
 
-            if (source === 'website') {
+            if (!authorized) {
                 resultData.username = user.username;
                 resultData.tel = user.tel;
                 resultData.email = user.email;
