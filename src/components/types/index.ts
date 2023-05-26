@@ -36,7 +36,7 @@ export type StageT = {
 export type UrlParamsT = {
     subject:string;
     test:string;
-    source:string;
+    source:'platform'|'website';
 };
 
  export type TaskProgressT = {

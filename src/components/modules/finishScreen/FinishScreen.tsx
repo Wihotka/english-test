@@ -8,6 +8,7 @@ import {UserForm, UserResults} from './parts';
 import styles from './styles.scss';
 
 export const FinishScreen = () => {
+    const {authorized} = useSelector((state:any) => state.commonData);
     const {tasksData, tasksProgress, option} = useSelector((state:any) => state.testData);
 
     const [finalScore, setFinalScore] = useState<number>(0);
@@ -16,7 +17,6 @@ export const FinishScreen = () => {
     const [isFormSent, setIsFormSent] = useState<boolean>(false);
 
     const {source} = useParams<UrlParamsT>();
-    const isStudentFromPlatform = source === 'platform';
 
     // Подсчет итогового кол-ва баллов
     useEffect(() => {
@@ -31,7 +31,7 @@ export const FinishScreen = () => {
     }, []);
 
     return <div className={styles.finishScreen}>
-        {isStudentFromPlatform
+        {authorized
             ? <UserResults
                 source={source}
                 finalScore={finalScore}
@@ -40,7 +40,7 @@ export const FinishScreen = () => {
             />
             : isFormSent
                 ? <UserResults
-                    source={source as 'website'}
+                    source={source}
                     finalScore={finalScore}
                     maxScore={maxScore}
                     user={userData}
