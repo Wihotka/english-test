@@ -1,42 +1,44 @@
 {
   "form": {
-    "title": "Well done! The test is completed",
-    "subtitle": "Total score",
+    "title": "Молодець! Тест завершено",
+    "subtitle": "Загальний бал за тест ",
     "description": {
-      "new": "Fill in the form to learn full results and get a present",
-      "current": "We've sent your results on the e-mail in your personal profile. If you haven't recieved the mail, contact the support team"
+      "new": "Щоб дізнатися результати та отримати подарунок, заповніть контактні дані",
+      "website": "Ми надіслали вам методичні рекомендації та інструкцію щодо отримання подарунка на вказаний e-mail. Якщо повідомлення не надійшло, зверніться до технічної підтримки.",
+      "platform": "Ми надіслали вам методичні рекомендації на пошту в особистому кабінеті. Якщо повідомлення не надійшло, зверніться до технічної підтримки.",
+      "platformWithGift": "Ми надіслали вам методичні рекомендації та інструкцію щодо отримання подарунка на пошту в особистому кабінеті. Якщо повідомлення не надійшло, зверніться до технічної підтримки."
     },
     "inputPlaceholders": {
-      "name": "Full name",
-      "tel": "Phone number",
+      "name": "Ім'я, Прізвище",
+      "tel": "Телефон",
       "email": "E-mail"
     },
     "errors": {
-      "noUsername": "Enter your full name",
-      "incorrectUsername": "Invalid first or last name",
-      "noAge": "Enter your age",
-      "notEnoughAge": "Возраст не может быть меньше 1 года",
-      "noTel": "Enter your phone number",
-      "incorrectTel": "Invalid phone number",
-      "noEmail": "Enter your E-mail",
-      "incorrectEmail": "Invalid E-mail"
+      "noUsername": "Введіть своє ім'я та прізвище",
+      "incorrectUsername": "Некоректне ім'я або прізвище",
+      "noTel": "Введіть номер телефону",
+      "incorrectTel": "Некоректний номер телефону",
+      "noEmail": "Введіть свій E-mail",
+      "incorrectEmail": "Некоректний E-mail"
     },
     "personal": {
-      "text": "By submitting this form you agree that the company",
-      "link": "can process your personal data"
+      "text": "Натискаючи на кнопку, ви погоджуєтесь на ",
+      "link": "обробку персональних даних"
     }
   },
   "notFound": {
-    "description": "The page is not found",
-    "back": "Return to the maun page"
+    "description": "Ця сторінка не знайдена",
+    "back": "Повернутися на головну"
   },
   "buttons": {
-    "back": "Back",
-    "next": "Next",
-    "done": "Finish",
-    "submit": "Send",
-    "ok": "Ok",
-    "repeat": "Try again"
+    "back": "Назад",
+    "next": "Далі",
+    "done": "Завершити",
+    "submit": "Відправити",
+    "ok": "Ок",
+    "repeat": "Повторити",
+    "download": "Завантажити результати",
+    "loading": "Завантаження результатів..."
   },
-  "tooltip": "Answer at leat one question"
+  "tooltip": "Дайте відповідь хоча б на одне запитання"
 }
