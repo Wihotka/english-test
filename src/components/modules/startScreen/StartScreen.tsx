@@ -12,6 +12,7 @@ import styles from './styles.scss';
 
 export const StartScreen = () => {
     const {authorized, enrolledOnCourse} = useSelector((state:any) => state.commonData);
+    const langCode = useSelector((state:any) => state.commonData?.settings?.langCode);
     const {subject, test} = useParams<UrlParamsT>();
     const options = config.options[subject];
 
@@ -19,7 +20,16 @@ export const StartScreen = () => {
 
     const startTest = async (option:string) => {
         const [data, progress] = await loadTasksData(subject, test);
-        setTestData({subject: subject, test: test, isTestStarted: true, option: option, tasksData: data, tasksProgress: progress});
+
+        setTestData({
+            subject: subject,
+            test: test,
+            testLang: langCode,
+            isTestStarted: true,
+            option: option,
+            tasksData: data,
+            tasksProgress: progress
+        });
     };
 
     return <div className={styles.startScreen}>

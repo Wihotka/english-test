@@ -5,7 +5,7 @@ import {lowerFirst} from 'lodash';
 
 import {LocalizedText} from '@components/elements/localizedText';
 import {TaskProgressT, UrlParamsT} from '@components/types';
-import {setTestData, setStage} from '@reducers/testData/dispatchers';
+import {setTestData, setStage, setTestLang} from '@reducers/testData/dispatchers';
 import {Stage} from './parts';
 import styles from './styles.scss';
 
@@ -31,12 +31,17 @@ export const TestWrapper = ({tasks, stages}:P) => {
         taskElement.current.scrollTop = 0;
     }, [currentStage]);
 
+    const switchQuestionLang = () => {
+        if (langCode === 'uk') console.log('нехуй переключать');
+        else setTestLang('uk');
+    };
+
     return <div className={styles.testWrapper}>
         <div className={styles.questionWrapper}>
             <div className={styles.question}>
                 <LocalizedText name={`tasks.${questionTheme}`} path={`${subject}/${test}/translation`}/>
             </div>
-            <button>
+            <button onClick={switchQuestionLang}>
                 <img src={require(`_assets/img/lang/${langCode ?? 'uk'}.svg`)} alt='lang' className={styles.lang}/>
             </button>
             <span className={styles.doneTasks}>{`Done ${doneTasks}/${tasks.length}`}</span>

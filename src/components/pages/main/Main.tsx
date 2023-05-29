@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import {useParams} from 'react-router';
 import {useSelector} from 'react-redux';
 import classNames from 'classnames';
-// import md5 from 'md5';
 
 import {UrlParamsT} from '@components/types';
 import config from '@config';
@@ -24,13 +23,11 @@ export const Main = () => {
         let isSubscribed = true;
 
         const subjectID = getSubjectID(subject);
-        // const token = md5(`--sp--${subjectID.toString()}--${md5(subjectID.toString())}`);
 
         const data = {
             action: ApiActions.getData,
             params: {
-                subjectID,
-                // token
+                subjectID
             }
         };
 

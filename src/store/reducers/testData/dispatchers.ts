@@ -4,6 +4,7 @@ import {actions} from './reducer';
 export const {
     setTestData,
     setStage,
+    setTestLang,
     setTaskStatus,
     setTaskDone,
     setIsAudioPlaying,

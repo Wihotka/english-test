@@ -10,7 +10,7 @@ export const {actions, reducer} = createSlice({
         isTestFinished: false, //TEST
         option: '',
         stage: 1,
-        testLang: 'uk',
+        testLang: '',
         isAudioPlaying: false,
         isAnotherAudioPlaying: false,
         tasksData: {},

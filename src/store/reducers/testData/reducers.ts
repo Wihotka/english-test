@@ -8,6 +8,10 @@ export const setStage = (state:{stage:number}, action:{payload:any}) => {
     state.stage = action.payload;
 };
 
+export const setTestLang = (state:{testLang:string}, action:{payload:any}) => {
+    state.testLang = action.payload;
+};
+
 export const setTaskStatus = (state:{tasksProgress:{
     status:boolean;
     score:number;
