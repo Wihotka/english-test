@@ -118,14 +118,12 @@
     position: relative;
     bottom: -8px;
     display: inline-block;
-    width: 128px;
+    width: 112px;
     height: 32px;
-    border: 1px solid #E2E5EB;
-    border-radius: 5px;
 
     @include lg {
         bottom: -6px;
-        width: 112px;
+        width: 96px;
         height: 28px;
     }
     @include md {
@@ -133,12 +131,12 @@
     }
     @include sm {
         bottom: -4px;
-        width: 64px;
+        width: 56px;
         height: 20px;
     }
     @include xs {
         bottom: -3px;
-        width: 56px;
+        width: 48px;
         height: 18px;
     }
 
