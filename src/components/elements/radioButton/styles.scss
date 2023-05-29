@@ -82,6 +82,7 @@
   font-size: 20px;
   line-height: 24px;
   letter-spacing: 0.02em;
+  cursor: pointer;
 
   @include sm {
     font-size: 16px;
@@ -155,6 +156,7 @@
   align-items: center;
   width: 251px;
   height: auto;
+  cursor: pointer;
 
   @include lg {
     width: 200px;

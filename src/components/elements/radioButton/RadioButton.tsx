@@ -46,16 +46,21 @@ const RadioButton = ({
             className={styles.input}
             onChange={onChange}
         />
-        <label
-            htmlFor='radio-button'
-            className={classNames(styles.label, disabled && styles.labelDisabled, imgPath && styles.labelImg)}
-        >
-            {!imgPath && label}
-        </label>
+        {!imgPath && 
+            <label
+                htmlFor={id}
+                className={classNames(styles.label, disabled && styles.labelDisabled, imgPath && styles.labelImg)}
+            >
+                {label}
+            </label>
+        }
         {imgPath &&
-            <div className={styles.imgWrapper}>
+            <label
+                htmlFor={id}
+                className={styles.imgWrapper}
+            >
                 <img src={require(`_assets/img/tasks/${subject}/${test}/${imgPath}`)} alt='image'/>
-            </div>
+            </label>
         }
     </div>;
 };
@@ -69,7 +74,7 @@ export const RadioButtons = ({options, onChange, stageId, questionId, imgLabels}
         <div className={classNames(styles.btnWrapper, imgLabels && styles.btnWrapperImg)}>
             {options.map(({label, name, disabled, img}:SingleP, index) => {
                 const shortenedOptionLabel = label.replace(/\s+/g, '');
-                const optionId = `radio-option-${shortenedOptionLabel}`;
+                const optionId = `radio-option-${stageId}-${questionId}-${shortenedOptionLabel}`;
 
                 return <RadioButton
                     value={label}
