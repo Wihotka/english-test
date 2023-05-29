@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import {useParams} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {lowerFirst} from 'lodash';
+import classNames from 'classnames';
 
 import {LocalizedText} from '@components/elements/localizedText';
 import {TaskProgressT, UrlParamsT} from '@components/types';
@@ -32,8 +33,9 @@ export const TestWrapper = ({tasks, stages}:P) => {
     }, [currentStage]);
 
     const switchQuestionLang = () => {
-        if (langCode === 'uk') console.log('нехуй переключать');
-        else setTestLang('uk');
+        if (langCode !== 'uk') {
+            setTestLang('uk');
+        }
     };
 
     return <div className={styles.testWrapper}>
@@ -41,7 +43,7 @@ export const TestWrapper = ({tasks, stages}:P) => {
             <div className={styles.question}>
                 <LocalizedText name={`tasks.${questionTheme}`} path={`${subject}/${test}/translation`}/>
             </div>
-            <button onClick={switchQuestionLang}>
+            <button className={classNames(langCode === 'uk' && styles.disabledLangBtn)} onClick={switchQuestionLang}>
                 <img src={require(`_assets/img/lang/${langCode ?? 'uk'}.svg`)} alt='lang' className={styles.lang}/>
             </button>
             <span className={styles.doneTasks}>{`Done ${doneTasks}/${tasks.length}`}</span>
