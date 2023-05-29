@@ -1,7 +1,6 @@
 {
   "1": {
     "id": "1",
-    "question": "Choose the best answer.",
     "theme": "LookAndChoose",
     "maxScore": {
       "sixToTen": "4",
@@ -104,7 +103,6 @@
   },
   "2": {
     "id": "2",
-    "question": "Look at the pictures and match the words with them.",
     "theme": "DragAndDropWord",
     "maxScore": {
       "sixToTen": "12",
@@ -190,7 +188,6 @@
   },
   "3": {
     "id": "3",
-    "question": "Look at the sentences and choose the best answer.",
     "theme": "ChooseOne",
     "maxScore": {
       "sixToTen": "4",
@@ -304,7 +301,6 @@
   },
   "4": {
     "id": "4",
-    "question": "Look at the sentences and choose the best answer.",
     "theme": "ChooseOne",
     "maxScore": {
       "sixToTen": "4",
@@ -418,7 +414,6 @@
   },
   "5": {
     "id": "5",
-    "question": "Look at the sentences and choose the best answer.",
     "theme": "ChooseOne",
     "maxScore": {
       "sixToTen": "4",
@@ -522,7 +517,6 @@
   },
   "6": {
     "id": "6",
-    "question": "Put the words in the correct order to make sentences.",
     "theme": "InputSentence",
     "maxScore": {
       "sixToTen": "4",
@@ -596,7 +590,6 @@
   },
   "7": {
     "id": "7",
-    "question": "Look at the picture, read the sentence and choose true or false.",
     "theme": "TrueOrFalse",
     "maxScore": {
       "sixToTen": "4",
@@ -701,7 +694,6 @@
   },
   "8": {
     "id": "8",
-    "question": "Read the text and choose the best answer.",
     "theme": "ReadText",
     "maxScore": {
       "sixToTen": "3",
@@ -781,7 +773,6 @@
   },
   "9": {
     "id": "9",
-    "question": "Listen to the recording and choose the best answer.",
     "theme": "ListenAndChoose",
     "maxScore": {
       "sixToTen": "2",

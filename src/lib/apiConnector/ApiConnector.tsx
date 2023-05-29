@@ -59,7 +59,7 @@ export class ApiConnector{
         };
 
         if (isIsolated) setCommonData({
-            settings: {langCode: 'ru'},
+            settings: {langCode: 'uk'},
             authorized: true,
             enrolledOnCourse: false
         });
