@@ -58,13 +58,19 @@ export class ApiConnector{
             }
         };
 
-        if (isIsolated) setCommonData({
-            settings: {langCode: 'uk'},
-            authorized: true,
-            enrolledOnCourse: false
-        });
+        //Данные для изолированного режима
+        const isolatedData = {
+            data: {
+                status: true,
+                data: {
+                    authorized: true,
+                    enrolledOnCourse: false,
+                    settings: {langCode: 'ua'}
+                }
+            }
+        };
 
-        const serverResponse = await axios(requestBody);
+        const serverResponse = !isIsolated ? await axios(requestBody) : isolatedData;
 
         const apiResponse = serverResponse.data;
 
@@ -76,8 +82,8 @@ export class ApiConnector{
         if (apiResponse.status && apiResponse.data) {
             //Общие данные сохраняем в Redux всегда, когда они приходят
             setCommonData(apiResponse.data);
-            if(apiResponse.data?.settings?.langCode){
-                await i18n.changeLanguage(apiResponse.data?.common?.settings?.langCode);
+            if (apiResponse.data?.settings?.langCode) {
+                await i18n.changeLanguage(apiResponse.data?.settings?.langCode);
             }
         }
 

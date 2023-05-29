@@ -36,9 +36,9 @@ export const TestWrapper = ({tasks, stages}:P) => {
             <div className={styles.question}>
                 <LocalizedText name={`tasks.${questionTheme}`} path={`${subject}/${test}/translation`}/>
             </div>
-            {/* <button>
-                <img src={require(`_assets/img/lang/${langCode ?? 'ru'}.svg`)} alt='lang' className={styles.lang}/>
-            </button> */}
+            <button>
+                <img src={require(`_assets/img/lang/${langCode ?? 'uk'}.svg`)} alt='lang' className={styles.lang}/>
+            </button>
             <span className={styles.doneTasks}>{`Done ${doneTasks}/${tasks.length}`}</span>
         </div>
         <div ref={taskElement} className={styles.task}>
