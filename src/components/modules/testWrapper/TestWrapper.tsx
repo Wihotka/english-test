@@ -57,7 +57,10 @@ export const TestWrapper = ({tasks, stages}:P) => {
             <button className={classNames(langCode === 'uk' && styles.disabledLangBtn)} onClick={switchQuestionLang}>
                 <img src={require(`_assets/img/lang/${testLang ?? 'uk'}.svg`)} alt='lang' className={styles.lang}/>
             </button>
-            <span className={styles.doneTasks}>{`Done ${doneTasks}/${tasks.length}`}</span>
+            <div className={styles.doneTasks}>
+                <LocalizedText name={'tasks.done'} path={`${subject}/${test}/translation`}/>
+                <span> {doneTasks}/{tasks.length}</span>
+            </div>
         </div>
         <div ref={taskElement} className={styles.task}>
             <Stage
