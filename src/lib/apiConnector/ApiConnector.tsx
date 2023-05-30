@@ -65,7 +65,7 @@ export class ApiConnector{
                 data: {
                     authorized: true,
                     enrolledOnCourse: false,
-                    settings: {langCode: 'uk'}
+                    settings: {langCode: 'ru'}
                 }
             }
         };

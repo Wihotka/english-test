@@ -7,7 +7,7 @@ export const {actions, reducer} = createSlice({
         subject: '',
         test: '',
         isTestStarted: false,
-        isTestFinished: false, //TEST
+        isTestFinished: false,
         option: '',
         stage: 1,
         testLang: '',

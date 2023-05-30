@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {useParams} from 'react-router-dom';
 import {useSelector} from 'react-redux';
+import i18n from 'i18next';
 import {lowerFirst} from 'lodash';
 import classNames from 'classnames';
 
@@ -17,6 +18,7 @@ interface P {
 
 export const TestWrapper = ({tasks, stages}:P) => {
     const langCode = useSelector((state:any) => state.commonData?.settings?.langCode);
+    const testLang = useSelector((state:any) => state.testData?.testLang);
     const {subject, test} = useParams<UrlParamsT>();
     //Подсчитываем число ответов
     const doneTasks = tasks.filter(task => task.done).length;
@@ -32,9 +34,18 @@ export const TestWrapper = ({tasks, stages}:P) => {
         taskElement.current.scrollTop = 0;
     }, [currentStage]);
 
-    const switchQuestionLang = () => {
+    const switchQuestionLang = async () => {
         if (langCode !== 'uk') {
-            setTestLang('uk');
+            switch (testLang) {
+                case 'uk':
+                    setTestLang(langCode);
+                    await i18n.changeLanguage(langCode);
+                    break;
+                default:
+                    setTestLang('uk');
+                    await i18n.changeLanguage('uk');
+                    break;
+            }
         }
     };
 
@@ -44,7 +55,7 @@ export const TestWrapper = ({tasks, stages}:P) => {
                 <LocalizedText name={`tasks.${questionTheme}`} path={`${subject}/${test}/translation`}/>
             </div>
             <button className={classNames(langCode === 'uk' && styles.disabledLangBtn)} onClick={switchQuestionLang}>
-                <img src={require(`_assets/img/lang/${langCode ?? 'uk'}.svg`)} alt='lang' className={styles.lang}/>
+                <img src={require(`_assets/img/lang/${testLang ?? 'uk'}.svg`)} alt='lang' className={styles.lang}/>
             </button>
             <span className={styles.doneTasks}>{`Done ${doneTasks}/${tasks.length}`}</span>
         </div>

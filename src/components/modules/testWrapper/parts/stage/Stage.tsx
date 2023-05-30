@@ -1,6 +1,9 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
+import i18n from 'i18next';
 import classNames from 'classnames';
 import ReactTooltip from 'react-tooltip';
+
 import {Button} from '@components/elements/button';
 import {LocalizedText} from '@components/elements/localizedText';
 import * as Tasks from '@modules/tasks';
@@ -16,12 +19,16 @@ interface P {
 }
 
 export const Stage = ({stages, stage, doneTasks, setTestData, setStage}:P) => {
+    const langCode = useSelector((state:any) => state.commonData?.settings?.langCode);
     //Выбираем нужный модуль по теме из tasksData
     const Task = Tasks[stage.theme];
 
     const backClick = () => setStage(state => state > 1 ? --state : state);
     const nextClick = () => setStage(state => state < Object.values(stages).length ? ++state : state);
-    const finishClick = () => setTestData({isTestFinished: true});
+    const finishClick = async () => {
+        setTestData({isTestFinished: true});
+        await i18n.changeLanguage(langCode);
+    };
 
     return <div className={styles.taskWrapper}>
         <Task stage={stage}/>
