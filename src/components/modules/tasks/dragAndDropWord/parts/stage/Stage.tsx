@@ -1,7 +1,10 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useSelector} from 'react-redux';
+import {useDrag} from 'react-dnd';
+import classNames from 'classnames';
+
 import {setTaskStatus} from '@reducers/testData/dispatchers';
-import {DndAnswer, DragWord} from './parts';
+import {DndAnswer, DragWordI} from './parts';
 import styles from './styles.scss';
 
 export const Stage = ({task}) => {
@@ -56,4 +59,31 @@ export const Stage = ({task}) => {
             })}
         </div>
     </div>; 
+};
+
+const DragWord = ({word, id, answers, setAnswer}:DragWordI) => {
+    const [isDropped, setIsDropped] = useState<boolean>(answers && answers.includes(word) ? true : false);
+
+    const [{isDragging}, drag] = useDrag(() => ({
+        type: 'word',
+        item: {
+            id: id
+        },
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging()
+        }),
+        end(_draggedItem, monitor) {
+            setIsDropped(monitor.didDrop());
+            if (setAnswer && monitor.didDrop()) setAnswer(null);
+        },
+    }), [id]);
+
+    return <div
+        ref={drag}
+        className={classNames(
+            styles.dragWord,
+            isDragging && styles.dragWordDragging,
+            isDropped && styles.dragWordDropped
+        )}
+    >{word}</div>;
 };

@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {useDrag, useDrop} from 'react-dnd';
 import classNames from 'classnames';
+
 import {setTaskDone} from '@reducers/testData/dispatchers';
 import styles from './styles.scss';
 
-interface DragWordI {
+export interface DragWordI {
     word:string;
     id:number;
     answers?:string[];
@@ -20,6 +21,7 @@ export const DndAnswer = ({words, answers, taskId, wordIndex}) => {
         setAnswer(answers[wordIndex]);
     }, []);
 
+    //Проверка верных ответов
     useEffect(() => {
         if (answer) {
             currentAnswers[wordIndex] = answer;
@@ -75,8 +77,7 @@ const DropCell = ({words, setAnswer, setId}) => {
     />;
 };
 
-export const DragWord = ({word, id, answers, setAnswer}:DragWordI) => {
-
+const DragWord = ({word, id, answers, setAnswer}:DragWordI) => {
     const [isDropped, setIsDropped] = useState<boolean>(answers && answers.includes(word) ? true : false);
 
     const [{isDragging}, drag] = useDrag(() => ({
@@ -87,7 +88,7 @@ export const DragWord = ({word, id, answers, setAnswer}:DragWordI) => {
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging()
         }),
-        end(draggedItem, monitor) {
+        end(_draggedItem, monitor) {
             setIsDropped(monitor.didDrop());
             if (setAnswer && monitor.didDrop()) setAnswer(null);
         },
