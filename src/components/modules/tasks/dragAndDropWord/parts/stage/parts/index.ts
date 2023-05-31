@@ -1,1 +1,1 @@
-export {DndAnswer, DragWordI} from './dnd';
+export {DndAnswer} from './dnd';

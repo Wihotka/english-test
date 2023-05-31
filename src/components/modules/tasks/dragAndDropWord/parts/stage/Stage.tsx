@@ -4,8 +4,15 @@ import {useDrag} from 'react-dnd';
 import classNames from 'classnames';
 
 import {setTaskStatus} from '@reducers/testData/dispatchers';
-import {DndAnswer, DragWordI} from './parts';
+import {DndAnswer} from './parts';
 import styles from './styles.scss';
+
+interface DragWordI {
+    word:string;
+    id:number;
+    answers?:string[];
+    setAnswer?:React.Dispatch<React.SetStateAction<string | null>>;
+}
 
 export const Stage = ({task}) => {
     const testData = useSelector((state:any) => state.testData);

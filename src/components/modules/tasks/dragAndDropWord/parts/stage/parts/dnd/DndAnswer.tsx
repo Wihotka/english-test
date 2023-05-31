@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import {setTaskDone} from '@reducers/testData/dispatchers';
 import styles from './styles.scss';
 
-export interface DragWordI {
+interface DragWordI {
     word:string;
     id:number;
     answers?:string[];
