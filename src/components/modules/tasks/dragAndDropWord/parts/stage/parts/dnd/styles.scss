@@ -18,12 +18,11 @@
     transition: .2s ease;
 
     @include lg {
-        width: 140px;
+        width: 100%;
         height: 72px;
         font-size: 18px;
     }
     @include md {
-        width: 100px;
         height: 64px;
         font-size: 16px;
     }
@@ -64,12 +63,11 @@
     cursor: pointer;
 
     @include lg {
-        width: 140px;
+        width: 100%;
         height: 72px;
         font-size: 18px;
     }
     @include md {
-        width: 100px;
         height: 64px;
         font-size: 16px;
     }
