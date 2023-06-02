@@ -77,7 +77,7 @@ const DropCell = ({words, setAnswer, setId}) => {
     />;
 };
 
-const DragWord = ({word, id, answers, setAnswer}:DragWordI) => {
+export const DragWord = ({word, id, answers, setAnswer}:DragWordI) => {
     const [isDropped, setIsDropped] = useState<boolean>(answers && answers.includes(word) ? true : false);
 
     const [{isDragging}, drag] = useDrag(() => ({
