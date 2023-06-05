@@ -17,6 +17,8 @@ type P = {
     setIsAudioPlaying:React.Dispatch<React.SetStateAction<boolean>>;
     isAudioPaused:boolean;
     setIsAudioPaused:React.Dispatch<React.SetStateAction<boolean>>;
+    isAudioSlowedDown:boolean;
+    setIsAudioSlowedDown:React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const BtnPlay:FC<P> = (p) => {
@@ -27,7 +29,9 @@ export const BtnPlay:FC<P> = (p) => {
         isAudioPlaying,
         setIsAudioPlaying,
         isAudioPaused,
-        setIsAudioPaused
+        setIsAudioPaused,
+        isAudioSlowedDown,
+        setIsAudioSlowedDown
     } = p;
 
     //Подключаем данные из стора чтобы определять включена ли другая запись в данный момент
@@ -36,9 +40,12 @@ export const BtnPlay:FC<P> = (p) => {
 
     const clickPlayHandler = () => {
         if (disabled) return;
-        isAudioPlaying && !isAudioPaused
-            ? pauseAudio()
-            : type === 'play' ? playAudio() : playSlowlyAudio();
+
+        type === 'play'
+            ? isAudioPlaying && !isAudioPaused
+                ? pauseAudio()
+                : playAudio()
+            : playSlowlyAudio();
     };
 
     const pauseAudio = () => {
@@ -53,23 +60,20 @@ export const BtnPlay:FC<P> = (p) => {
             setIsAudioPlaying(true);
             setIsAudioPaused(false);
             audioObj.volume = 1;
-            audioObj.playbackRate = 1;
+            audioObj.playbackRate = isAudioSlowedDown ? 0.7 : 1;
             audioObj.play().then();
             setIsAudioListening(true);
         }, 0);
     };
 
     const playSlowlyAudio = () => {
-        if (isAudioListening && !isAudioPaused) setIsAnotherAudioListening(true);
-
-        setTimeout(() => {
-            setIsAudioPlaying(true);
-            setIsAudioPaused(false);
-            audioObj.volume = 1;
+        if (isAudioSlowedDown) {
+            audioObj.playbackRate = 1;
+            setIsAudioSlowedDown(false);
+        } else {
             audioObj.playbackRate = 0.7;
-            audioObj.play().then();
-            setIsAudioListening(true);
-        }, 0);
+            setIsAudioSlowedDown(true);
+        }
     };
 
     audioObj.addEventListener('ended', function(){
@@ -109,9 +113,13 @@ export const BtnPlay:FC<P> = (p) => {
         className={btnClassName}
         onClick={clickPlayHandler}
     >
-        {isAudioPlaying && !isAudioPaused
-            ? <img className={styles.logoPause} src={require(`_assets/img/elements/${type}Pause.svg`)} draggable={false} alt='pause'/>
-            : <img className={styles.logoPlay} src={require(`_assets/img/elements/${type}.svg`)} draggable={false} alt='play'/>
+        {type === 'play'
+            ? isAudioPlaying && !isAudioPaused
+                ? <img className={styles.logoPause} src={require(`_assets/img/elements/${type}Pause.svg`)} draggable={false} alt='pause'/>
+                : <img className={styles.logoPlay} src={require(`_assets/img/elements/${type}.svg`)} draggable={false} alt='play'/>
+            : isAudioSlowedDown 
+                ? <img className={styles.logoPlay} src={require(`_assets/img/elements/${type}Slowed.svg`)} draggable={false} alt='play'/>
+                : <img className={styles.logoPlay} src={require(`_assets/img/elements/${type}.svg`)} draggable={false} alt='play'/>
         }
     </button>;
 };
@@ -121,6 +129,7 @@ export const BtnPlayGroup = (p) => {
 
     const [isAudioPlaying, setIsAudioPlaying] = useState<boolean>(false);
     const [isAudioPaused, setIsAudioPaused] = useState<boolean>(false);
+    const [isAudioSlowedDown, setIsAudioSlowedDown] = useState<boolean>(false);
 
     const audioUrl = require(`_assets/sounds/${soundUrl}/${audioFile}.mp3`);
     const [audioObj] = useState<HTMLAudioElement>(new Audio(audioUrl));
@@ -141,6 +150,8 @@ export const BtnPlayGroup = (p) => {
             setIsAudioPlaying={setIsAudioPlaying}
             isAudioPaused={isAudioPaused}
             setIsAudioPaused={setIsAudioPaused}
+            isAudioSlowedDown={isAudioSlowedDown}
+            setIsAudioSlowedDown={setIsAudioSlowedDown}
         />
         <BtnPlay
             audioObj={audioObj}
@@ -150,6 +161,8 @@ export const BtnPlayGroup = (p) => {
             setIsAudioPlaying={setIsAudioPlaying}
             isAudioPaused={isAudioPaused}
             setIsAudioPaused={setIsAudioPaused}
+            isAudioSlowedDown={isAudioSlowedDown}
+            setIsAudioSlowedDown={setIsAudioSlowedDown}
         />
     </div>;
 };
