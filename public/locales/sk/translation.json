@@ -1,42 +1,44 @@
 {
   "form": {
-    "title": "Well done! The test is completed",
-    "subtitle": "Total score",
+    "title": "Výborne! Test bol dokončený",
+    "subtitle": "Celkový počet bodov v teste ",
     "description": {
-      "new": "Fill in the form to learn full results and get a present",
-      "current": "We've sent your results on the e-mail in your personal profile. If you haven't recieved the mail, contact the support team"
+      "new": "Vyplňte svoje kontaktné údaje, aby ste zistili výsledky a dostali darček",
+      "website": "Na vami zadaný e-mail sme vám poslali pokyny a inštrukcie, ako darček získať. Ak správa nedorazila, obráťte sa na technickú podporu.",
+      "platform": "Pokyny sme vám poslali e-mailom do vášho osobného konta. Ak správa nedorazila, obráťte sa na technickú podporu.",
+      "platformWithGift": "Zaslali sme vám pokyny a inštrukcie, ako prijať dar na váš osobný účet. Ak správa nedorazila, obráťte sa na technickú podporu."
     },
     "inputPlaceholders": {
-      "name": "Full name",
-      "tel": "Phone number",
+      "name": "Meno a priezvisko",
+      "tel": "Теlefón",
       "email": "E-mail"
     },
     "errors": {
-      "noUsername": "Enter your full name",
-      "incorrectUsername": "Invalid first or last name",
-      "noAge": "Enter your age",
-      "notEnoughAge": "Возраст не может быть меньше 1 года",
-      "noTel": "Enter your phone number",
-      "incorrectTel": "Invalid phone number",
-      "noEmail": "Enter your E-mail",
-      "incorrectEmail": "Invalid E-mail"
+      "noUsername": "Zadajte vaše meno a priezvisko",
+      "incorrectUsername": "Chybné meno alebo priezvisko",
+      "noTel": "Zadajte telefónne číslo",
+      "incorrectTel": "Chybné telefónne číslo",
+      "noEmail": "Zadajte váš E-mail",
+      "incorrectEmail": "Chybný E-mail"
     },
     "personal": {
-      "text": "By submitting this form you agree that the company",
-      "link": "can process your personal data"
+      "text": "Kliknutím na tlačidlo súhlasíte s tým, že ",
+      "link": "spracovanie osobných údajov"
     }
   },
   "notFound": {
-    "description": "The page is not found",
-    "back": "Return to the maun page"
+    "description": "Túto stránku sa nepodarilo nájsť",
+    "back": "Späť na úvodnú stránku"
   },
   "buttons": {
-    "back": "Back",
-    "next": "Next",
-    "done": "Finish",
-    "submit": "Send",
-    "ok": "Ok",
-    "repeat": "Try again"
+    "back": "Naspäť",
+    "next": "Ďalej",
+    "done": "Ukončiť",
+    "submit": "Оdoslať",
+    "ok": "Ок",
+    "repeat": "Opakovať",
+    "download": "Stiahnuť výsledky",
+    "loading": "Sťahovanie výsledkov..."
   },
-  "tooltip": "Answer at least one question"
+  "tooltip": "Odpovedzte aspoň na jednu otázku"
 }

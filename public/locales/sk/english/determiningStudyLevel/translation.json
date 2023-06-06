@@ -1,26 +1,26 @@
 {
   "greeting": {
     "title": {
-      "firstTime": "Take the test and get a present",
-      "common": "Take the test and find out which level of the Amakids English language course suits you best"
+      "firstTime": "Urob si test a získaj darček",
+      "common": "Absolvuj náš test a zistíš, ktorá úroveň kurzu “AMAenglish” оd AMAkids ti viac vyhovuje "
     },
     "description": {
-      "firstTime": "Find out which level of the Amakids English language course suits you best.There is only one correct answer for each question. You have to give at least one answer to complete the test",
-      "common": "There is only one correct answer for each question. You have to give at least one answer to complete the test"
+      "firstTime": "Zisti, ktorá úroveň kurzu “AMAenglish” оd AMAkids ti viac vyhovuje . Odpovedz na otázky, z  ktorých každá má len jednu správnu odpoveď. Na dokončenie testu treba odpovedať aspoň na jednu otázku",
+      "common": "Odpovedz na otázky, z ktorých každá má len jednu správnu odpoveď. Na dokončenie testu musíš odpovedať aspoň na jednu otázku"
     },
-    "startTest": "Take the test",
-    "childrenFrom": "For kids aged",
-    "sixToTen": "from 6 to 10",
-    "elevenToFourteen": "from 11 to 14+"
+    "startTest": "Začať test",
+    "childrenFrom": "Pre deti od",
+    "sixToTen": "6 do 10 rokov",
+    "elevenToFourteen": "11 do 14+ rokov"
   },
   "tasks": {
-    "done": "Completed",
-    "lookAndChoose": "Choose the best answer.",
-    "dragAndDropWord": "Look at the pictures and match the words with them.",
-    "chooseOne": "Look at the sentences and choose the best answer.",
-    "inputSentence": "Put the words in the correct order to make sentences.",
-    "trueOrFalse": "Look at the picture, read the sentence and choose true or false.",
-    "readText": "Read the text and choose the best answer.",
-    "listenAndChoose": "Listen to the recording and choose the best answer."
+    "done": "Hotovo",
+    "lookAndChoose": "Vyber správnu odpoveď.",
+    "dragAndDropWord": "Pozri si obrázky a priraď k nim slová.",
+    "chooseOne": "Prečítaj si vety a vyber správnu odpoveď.",
+    "inputSentence": "Zoraď slová v správnom poradí, aby vznikli vety.",
+    "trueOrFalse": "Pozri sa na obrázok, prečítaj si vetu a vyber správnu odpoveď.",
+    "readText": "Prečítaj si text a vyber správnu odpoveď.",
+    "listenAndChoose": "Vypočuj si nahrávku a vyber správnu odpoveď."
   }
 }
