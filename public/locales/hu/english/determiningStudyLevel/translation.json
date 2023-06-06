@@ -1,0 +1,26 @@
+{
+  "greeting": {
+    "title": {
+      "firstTime": "Töltsd ki a tesztet, és vedd át az ajándékod!",
+      "common": "Töltsd ki a tesztet, hogy megtudd, az AMAkids angol nyelvtanfolyamának melyik szintje való neked a leginkább!"
+    },
+    "description": {
+      "firstTime": "Derítsd ki, hogy az AMAkids angol nyelvtanfolyamának melyik szintje való neked a leginkább. Add meg a választ azokra a kérdésekre, amelyekre csak egy helyes válasz van. A teszt befejezéséhez legalább egy kérdésre válaszolnod kell.",
+      "common": "Add meg a választ azokra a kérdésekre, amelyekre csak egy helyes válasz van. A teszt befejezéséhez legalább egy kérdésre válaszolnod kell"
+    },
+    "startTest": "Teszt indítása",
+    "childrenFrom": "életkor:",
+    "sixToTen": "6-10 évesek",
+    "elevenToFourteen": "11-14 évesek"
+  },
+  "tasks": {
+    "done": "Kész",
+    "lookAndChoose": "Válaszd ki a helyes választ!",
+    "dragAndDropWord": "Nézd meg a képeket, és párosítsd össze a szavakkal!.",
+    "chooseOne": "Olvasd el a mondatokat, és válaszd ki a helyes választ!",
+    "inputSentence": "Tedd a szavakat a megfelelő sorrendbe, hogy mondatokat kapj!",
+    "trueOrFalse": "Nézd meg a képet, olvasd el a mondatot, és válaszd ki a helyes választ!",
+    "readText": "Olvasd el a szöveget, és válaszd ki a helyes választ!",
+    "listenAndChoose": "Hallgasd meg a felvételt, és válaszd ki a helyes választ."
+  }
+}

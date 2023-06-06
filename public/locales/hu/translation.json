@@ -1,0 +1,44 @@
+{
+  "form": {
+    "title": "Szép munka! A tesztnek vége",
+    "subtitle": "A teszten elérhető pontszám",
+    "description": {
+      "new": "Kérjük töltsd ki az adataidat, hogy elküldhessük az eredményed és megkaphasd az ajándékod",
+      "website": "Az ajándék átvételével kapcsolatos tennivalókat elküldtük a megadott e-mail címre. Ha nem érkezett meg az üzenet, kérjük, lépj kapcsolatba az ügyfélszolgálatunkkal.",
+      "platform": "A tennivalókat elküldtük a személyes online fiókodba. Ha nem érkezett meg az üzenet, kérjük, lépj kapcsolatba az ügyfélszolgálatunkkal.",
+      "platformWithGift": "Az ajándék átvételével kapcsolatos tennivalókat elküldtük a személyes online fiókodba. Ha nem érkezett meg az üzenet, kérjük, lépj kapcsolatba az ügyfélszolgálatunkkal."
+    },
+    "inputPlaceholders": {
+      "name": "Keresztnév, vezetéknév",
+      "tel": "Telefonszám",
+      "email": "E-mail"
+    },
+    "errors": {
+      "noUsername": "Kérjük, add meg a keresztneved és vezetékneved",
+      "incorrectUsername": "Helytelen keresztnév vagy vezetéknév",
+      "noTel": "Kérjük, add meg a telefonszámod",
+      "incorrectTel": "Helytelen telefonszám",
+      "noEmail": "Kérjük add meg az e-mail címed",
+      "incorrectEmail": "Helytelen e-mail cím"
+    },
+    "personal": {
+      "text": "A gombra kattintva elfogadod ",
+      "link": "a személyes adatok kezelését"
+    }
+  },
+  "notFound": {
+    "description": "Ez az oldal nem található",
+    "back": "Vissza a főoldalra"
+  },
+  "buttons": {
+    "back": "Vissza",
+    "next": "Tovább",
+    "done": "Befejezés",
+    "submit": "Küldés",
+    "ok": "Ок",
+    "repeat": "Újra",
+    "download": "Eredmények letöltése",
+    "loading": "Eredmények betöltése..."
+  },
+  "tooltip": "Válaszolj legalább egy kérdésre"
+}
