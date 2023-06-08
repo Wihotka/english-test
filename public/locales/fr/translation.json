@@ -1,0 +1,44 @@
+{
+  "form": {
+    "title": "Bien joué! Test terminé",
+    "subtitle": "Note finale du test ",
+    "description": {
+      "new": "Pour connaître les résultats et recevoir un cadeau, remplissez les coordonnées",
+      "website": "Nous vous avons envoyé des recommandations méthodiques et des instructions pour recevoir un cadeau à l'e-mail spécifié. Si le message n'est pas arrivé, contactez le support technique.",
+      "platform": "Nous vous avons envoyé des recommandations méthodologiques par mail dans votre espace personnel. Si le message n'est pas arrivé, contactez le support technique.",
+      "platformWithGift": "Nous vous avons envoyé des recommandations méthodologiques et des instructions pour recevoir un cadeau par courrier dans votre compte personnel. Si le message n'arrive pas, contactez le support technique."
+    },
+    "inputPlaceholders": {
+      "name": "Prénom, Nom de famille",
+      "tel": "Téléphone",
+      "email": "E-mail"
+    },
+    "errors": {
+      "noUsername": "Entrez votre prénom et votre nom de famille",
+      "incorrectUsername": "Nom ou prénom incorrect",
+      "noTel": "Entrez le numéro de téléphone",
+      "incorrectTel": "Numéro de téléphone invalide",
+      "noEmail": "Entrer votre Email",
+      "incorrectEmail": "Email invalide"
+    },
+    "personal": {
+      "text": "En cliquant sur le bouton, vous acceptez",
+      "link": "traitement des données personnelles"
+    }
+  },
+  "notFound": {
+    "description": "Cette page n'a pas été trouvée",
+    "back": "Revenir à la page principale"
+  },
+  "buttons": {
+    "back": "Retour",
+    "next": "Suite",
+    "done": "Terminer",
+    "submit": "Envoyer",
+    "ok": "Ok",
+    "repeat": "Répéter",
+    "download": "Télécharger les résultats",
+    "loading": "Chargement des résultats..."
+  },
+  "tooltip": "Répondez au moins à une question"
+}
