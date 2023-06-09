@@ -1,42 +1,44 @@
 {
   "form": {
-    "title": "Well done! The test is completed",
-    "subtitle": "Total score",
+    "title": "Браво! Теста е завършен",
+    "subtitle": "Общ резултат от теста ",
     "description": {
-      "new": "Fill in the form to learn full results and get a present",
-      "current": "We've sent your results on the e-mail in your personal profile. If you haven't recieved the mail, contact the support team"
+      "new": "За да получиш резултата от теста и своя подарък, попълни данните за контакт",
+      "website": "Методически препоръки и инструкции за получаване на подаръка бяха споделени на посочения имейл. В случай, че съобщението не е получено моля свържете се с техническа поддръжка.",
+      "platform": "Методически препоръки и инструкции бяха споделени в пощенската кутия на личният ви профил. В случай, че съобщението не е получено моля свържете се с техническа поддръжка..",
+      "platformWithGift": "Методически препоръки и инструкции бяха споделени в пощенската кутия на личният ви профил. В случай, че съобщението не е получено моля свържете се с техническа поддръжка."
     },
     "inputPlaceholders": {
-      "name": "Full name",
-      "tel": "Phone number",
+      "name": "Име, Фамилия",
+      "tel": "Телефон",
       "email": "E-mail"
     },
     "errors": {
-      "noUsername": "Enter your full name",
-      "incorrectUsername": "Invalid first or last name",
-      "noAge": "Enter your age",
-      "notEnoughAge": "Возраст не может быть меньше 1 года",
-      "noTel": "Enter your phone number",
-      "incorrectTel": "Invalid phone number",
-      "noEmail": "Enter your E-mail",
-      "incorrectEmail": "Invalid E-mail"
+      "noUsername": "Въведете име и фамилия",
+      "incorrectUsername": "Неправилно име или фамилия",
+      "noTel": "Въведете телефонен номер",
+      "incorrectTel": "Неправилен телефонен номер",
+      "noEmail": "Въведете Вашия E-mail",
+      "incorrectEmail": "Неправилен E-mail"
     },
     "personal": {
-      "text": "By submitting this form you agree that the company",
-      "link": "can process your personal data"
+      "text": "С натискане на бутона давате съгласието си за",
+      "link": "обработката на личните Ви данни"
     }
   },
   "notFound": {
-    "description": "The page is not found",
-    "back": "Return to the maun page"
+    "description": "Страницата не е намерена",
+    "back": "Към главната страница"
   },
   "buttons": {
-    "back": "Back",
-    "next": "Next",
-    "done": "Finish",
-    "submit": "Send",
-    "ok": "Ok",
-    "repeat": "Try again"
+    "back": "Назад",
+    "next": "Напред",
+    "done": "Завърши",
+    "submit": "Готово",
+    "ok": "Ок",
+    "repeat": "Повтори",
+    "download": "Изтегли резултати",
+    "loading": "Зареждане на резултати..."
   },
-  "tooltip": "Answer at least one question"
+  "tooltip": "Отговори на поне един въпрос"
 }

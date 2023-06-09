@@ -1,26 +1,26 @@
 {
   "greeting": {
     "title": {
-      "firstTime": "Take the test and get a present",
-      "common": "Take the test and find out which level of the Amakids English language course suits you best"
+      "firstTime": "Направи теста и спечели подарък", 
+      "common": "Направи теста и разбери кое ниво от курса по “Английски език” на AMAKids е подходящо за теб" 
     },
     "description": {
-      "firstTime": "Find out which level of the Amakids English language course suits you best.There is only one correct answer for each question. You have to give at least one answer to complete the test",
-      "common": "There is only one correct answer for each question. You have to give at least one answer to complete the test"
+      "firstTime": "Разбери кое ниво от курса по “Английски език” на AMAKids е подходящо за теб. Отговори на въпросите, за всеки от които има само един верен отговор. За да преминеш теста е нужен верен отговор на поне един от въпросите",
+      "common": "Отговори на въпросите, за всеки от които има само един верен отговор. За да преминеш теста е нужен верен отговор на поне един от въпросите"
     },
-    "startTest": "Take the test",
-    "childrenFrom": "For kids aged",
-    "sixToTen": "from 6 to 10",
-    "elevenToFourteen": "from 11 to 14+"
+    "startTest": "Направи тест",
+    "childrenFrom": "За деца от",
+    "sixToTen": "6 до 10 години",
+    "elevenToFourteen": "11 до 14+ години"
   },
   "tasks": {
-    "done": "Completed",
-    "lookAndChoose": "Choose the best answer.",
-    "dragAndDropWord": "Look at the pictures and match the words with them.",
-    "chooseOne": "Look at the sentences and choose the best answer.",
-    "inputSentence": "Put the words in the correct order to make sentences.",
-    "trueOrFalse": "Look at the picture, read the sentence and choose true or false.",
-    "readText": "Read the text and choose the best answer.",
-    "listenAndChoose": "Listen to the recording and choose the best answer."
+    "done": "Завършено",
+    "lookAndChoose": "Избери правилния отговор.",
+    "dragAndDropWord": "Свържи картинките с подходящите думи.",
+    "chooseOne": "Прочети изречението и избери правилния отговор",
+    "inputSentence": "Подреди думите така, че да направиш изречение.",
+    "trueOrFalse": "Погледни картинката, прочети изречението и отговори на въпроса.",
+    "readText": "Прочети изречението и отговори на въпроса.",
+    "listenAndChoose": "Чуй записа и отговори на въпроса."
   }
 }
