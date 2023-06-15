@@ -40,5 +40,10 @@
     "download": "Изтегли резултати",
     "loading": "Зареждане на резултати..."
   },
-  "tooltip": "Отговори на поне един въпрос"
+  "tooltip": "Отговори на поне един въпрос",
+  "error": {
+    "title": "Unable to send results",
+    "textRepeat": "Please try again",
+    "textTech": "Contact technical support"
+  }
 }

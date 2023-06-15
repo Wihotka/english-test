@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import {PDFDownloadLink} from '@react-pdf/renderer';
 
@@ -15,11 +15,24 @@ interface IUserResults {
     finalScore:number;
     maxScore:number;
     user:UserDataT;
+    setIsFailedDataSending:React.Dispatch<React.SetStateAction<boolean>>;
+    failedAttempts:number;
+    setFailedAttempts:React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) => {
+export const UserResults = ({
+    source,
+    finalScore,
+    maxScore,
+    user,
+    setIsFailedDataSending,
+    failedAttempts,
+    setFailedAttempts
+}:IUserResults) => {
     const {authorized, enrolledOnCourse} = useSelector((state:any) => state.commonData);
     const {subject, test, option, tasksData, tasksProgress} = useSelector((state:any) => state.testData);
+
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     const redirectUrl = source === 'platform' ? config.personalTests : config.website;
     const isFirstTime = authorized ? !enrolledOnCourse : true;
@@ -29,11 +42,11 @@ export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) =
         return null;
     }).filter(task => task) as number[];
 
-    // TODO Отправка данных
+    // Отправка данных
     useEffect(() => {
         let isSubscribed = true;
 
-        if (finalScore && maxScore) {
+        if (finalScore !== undefined && maxScore && failedAttempts < 1) {
             const resultData:PostDataT = {
                 subject: subject,
                 test: test,
@@ -63,9 +76,16 @@ export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) =
             ApiConnector.request(data).then((response) => {
                 if (isSubscribed) {
                     if (response.status) {
-                        console.log('Success');
+                        setIsFailedDataSending(false);
+                        setIsLoading(false);
+
+                        console.log('Successful sending of data');
                     } else {
-                        console.log('Error'); // TODO обработать вариант ошибки
+                        setIsFailedDataSending(true);
+                        setFailedAttempts(prev => prev += 1);
+                        setIsLoading(false);
+
+                        console.log('Failed sending of data');
                     }
                 }
             });
@@ -120,9 +140,14 @@ export const UserResults = ({source, finalScore, maxScore, user}:IUserResults) =
                     : <LocalizedText name={'buttons.download'} path={'translation'}/> 
                 )}
             </PDFDownloadLink>
-            <a href={redirectUrl} className={styles.okBtn}>
-                <LocalizedText name={'buttons.ok'} path={'translation'}/>
-            </a>
+            {isLoading
+                ? <div className={styles.loading}>
+                    <LocalizedText name={'buttons.loading'} path={'translation'}/> 
+                </div>
+                : <a href={redirectUrl} className={styles.okBtn}>
+                    <LocalizedText name={'buttons.ok'} path={'translation'}/>
+                </a>
+            }
         </div>
     </div>;
 };

@@ -40,5 +40,10 @@
     "download": "Eredmények letöltése",
     "loading": "Eredmények betöltése..."
   },
-  "tooltip": "Válaszolj legalább egy kérdésre"
+  "tooltip": "Válaszolj legalább egy kérdésre",
+  "error": {
+    "title": "Unable to send results",
+    "textRepeat": "Please try again",
+    "textTech": "Contact technical support"
+  }
 }

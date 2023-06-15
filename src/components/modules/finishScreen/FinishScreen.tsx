@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 
 import {UrlParamsT, UserDataT} from '@components/types';
 import {LocalizedText} from '@components/elements/localizedText';
-import {UserForm, UserResults} from './parts';
+import {UserForm, UserResults, UserError} from './parts';
 import styles from './styles.scss';
 
 export const FinishScreen = () => {
@@ -15,6 +15,8 @@ export const FinishScreen = () => {
     const [maxScore, setMaxScore] = useState<number>(0);
     const [userData, setUserData] = useState<UserDataT>({username: '', tel: '', email: ''});
     const [isFormSent, setIsFormSent] = useState<boolean>(false);
+    const [isFailedDataSending, setIsFailedDataSending] = useState<boolean>(false);
+    const [failedAttempts, setFailedAttempts] = useState<number>(0);
 
     const {source} = useParams<UrlParamsT>();
 
@@ -31,35 +33,51 @@ export const FinishScreen = () => {
     }, []);
 
     return <div className={styles.finishScreen}>
-        {authorized
-            ? <UserResults
+        {isFailedDataSending
+            ? <UserError
                 source={source}
                 finalScore={finalScore}
                 maxScore={maxScore}
                 user={userData}
+                setIsFailedDataSending={setIsFailedDataSending}
+                failedAttempts={failedAttempts}
+                setFailedAttempts={setFailedAttempts}
             />
-            : isFormSent
+            : authorized
                 ? <UserResults
                     source={source}
                     finalScore={finalScore}
                     maxScore={maxScore}
                     user={userData}
+                    setIsFailedDataSending={setIsFailedDataSending}
+                    failedAttempts={failedAttempts}
+                    setFailedAttempts={setFailedAttempts}
                 />
-                : <div className={styles.newUserContent}>
-                    <img src={require('_assets/img/greeting.png')} alt='greeting' className={styles.greetingImg}/>
-                    <div className={styles.infoNew}>
-                        <h3 className={styles.title}>
-                            <LocalizedText name={'form.title'} path={'translation'}/>
-                        </h3>
-                        <p className={styles.text}>
-                            <LocalizedText name={'form.description.new'} path={'translation'}/>
-                        </p>
-                        <UserForm
-                            setUserData={setUserData}
-                            setIsFormSent={setIsFormSent}
-                        />
+                : isFormSent
+                    ? <UserResults
+                        source={source}
+                        finalScore={finalScore}
+                        maxScore={maxScore}
+                        user={userData}
+                        setIsFailedDataSending={setIsFailedDataSending}
+                        failedAttempts={failedAttempts}
+                        setFailedAttempts={setFailedAttempts}
+                    />
+                    : <div className={styles.newUserContent}>
+                        <img src={require('_assets/img/greeting.png')} alt='greeting' className={styles.greetingImg}/>
+                        <div className={styles.infoNew}>
+                            <h3 className={styles.title}>
+                                <LocalizedText name={'form.title'} path={'translation'}/>
+                            </h3>
+                            <p className={styles.text}>
+                                <LocalizedText name={'form.description.new'} path={'translation'}/>
+                            </p>
+                            <UserForm
+                                setUserData={setUserData}
+                                setIsFormSent={setIsFormSent}
+                            />
+                        </div>
                     </div>
-                </div>
         }
     </div>;
 };

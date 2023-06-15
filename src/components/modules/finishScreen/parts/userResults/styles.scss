@@ -222,3 +222,13 @@
     width: 80vw;
     height: 90vh;
 }
+
+.loading {
+    color: #F50882;
+    font-size: 18px;
+    text-align: center;
+
+    @include sm {
+        font-size: 14px;
+    }
+}

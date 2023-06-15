@@ -38,5 +38,10 @@
     "ok": "Ok",
     "repeat": "Try again"
   },
-  "tooltip": "Answer at least one question"
+  "tooltip": "Answer at least one question",
+  "error": {
+    "title": "Unable to send results",
+    "textRepeat": "Please try again",
+    "textTech": "Contact technical support"
+  }
 }

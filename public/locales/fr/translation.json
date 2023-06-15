@@ -40,5 +40,10 @@
     "download": "Télécharger les résultats",
     "loading": "Chargement des résultats..."
   },
-  "tooltip": "Répondez au moins à une question"
+  "tooltip": "Répondez au moins à une question",
+  "error": {
+    "title": "Unable to send results",
+    "textRepeat": "Please try again",
+    "textTech": "Contact technical support"
+  }
 }
