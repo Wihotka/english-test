@@ -27,7 +27,10 @@ export const UserError = ({
     failedAttempts,
     setFailedAttempts
 }:IUserError) => {
+    const {common} = useSelector((state:any) => state.commonData);
     const {subject, test, option, tasksProgress} = useSelector((state:any) => state.testData);
+
+    const isAmakids = common?.company.title.toLowerCase() === 'amakids';
 
     const redirectUrl = source === 'platform' ? config.personalTests : config.website;
     const tasksWithWrongAnswers = tasksProgress.map((task, index) => {
@@ -92,7 +95,9 @@ export const UserError = ({
                 : <LocalizedText name={'error.textRepeat'} path={'translation'}/>
             }
         </p>
-        {failedAttempts >= 3 && <a href="mailto:tech.amakids@yandex.ru" className={styles.link}>tech.amakids@yandex.ru</a>}
+        {failedAttempts >= 3 && <a href={isAmakids ? 'mailto:tech.amakids@yandex.ru' : 'mailto:tech.smartum@gmail.com'} className={styles.link}>
+            {isAmakids ? 'tech.amakids@yandex.ru' : 'tech.smartum@gmail.com'}
+        </a>}
         {failedAttempts >= 3
             ? <a href={redirectUrl} className={styles.btn}>
                 <LocalizedText name={'buttons.ok'} path={'translation'}/>
