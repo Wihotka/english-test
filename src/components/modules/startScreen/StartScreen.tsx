@@ -57,7 +57,6 @@ export const StartScreen = () => {
                     </>
                     : <LocalizedText name={'greeting.description.common'} path={`${subject}/${test}/translation`}/>
                 }
-                <LocalizedText name={`greeting.description.${isFirstTime ? 'firstTime' : 'common'}`} path={`${subject}/${test}/translation`}/>
             </p>
             <h4 className={styles.startTest}>
                 <LocalizedText name={'greeting.startTest'} path={`${subject}/${test}/translation`}/>
