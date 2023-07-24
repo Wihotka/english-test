@@ -65,7 +65,12 @@ export class ApiConnector{
                 data: {
                     authorized: true,
                     enrolledOnCourse: false,
-                    settings: {langCode: 'ru'}
+                    settings: {langCode: 'ru'},
+                    common: {
+                        company: {
+                            title: 'AMAkids'
+                        }
+                    }
                 }
             }
         };

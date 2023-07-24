@@ -2,10 +2,12 @@
   "greeting": {
     "title": {
       "firstTime": "Töltsd ki a tesztet, és vedd át az ajándékod!",
-      "common": "Töltsd ki a tesztet, hogy megtudd, az AMAkids angol nyelvtanfolyamának melyik szintje való neked a leginkább!"
+      "common1": "Töltsd ki a tesztet, hogy megtudd, az ",
+      "common2": " angol nyelvtanfolyamának melyik szintje való neked a leginkább!"
     },
     "description": {
-      "firstTime": "Derítsd ki, hogy az AMAkids angol nyelvtanfolyamának melyik szintje való neked a leginkább. Add meg a választ azokra a kérdésekre, amelyekre csak egy helyes válasz van. A teszt befejezéséhez legalább egy kérdésre válaszolnod kell.",
+      "firstTime1": "Derítsd ki, hogy az ",
+      "firstTime2": " angol nyelvtanfolyamának melyik szintje való neked a leginkább. Add meg a választ azokra a kérdésekre, amelyekre csak egy helyes válasz van. A teszt befejezéséhez legalább egy kérdésre válaszolnod kell.",
       "common": "Add meg a választ azokra a kérdésekre, amelyekre csak egy helyes válasz van. A teszt befejezéséhez legalább egy kérdésre válaszolnod kell"
     },
     "startTest": "Teszt indítása",

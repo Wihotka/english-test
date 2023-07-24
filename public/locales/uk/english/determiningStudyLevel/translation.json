@@ -2,10 +2,12 @@
   "greeting": {
     "title": {
       "firstTime": "Take the test and get a present",
-      "common": "Take the test and find out which level of the Amakids English language course suits you best"
+      "common1": "Take the test and find out which level of the ",
+      "common2": " English language course suits you best"
     },
     "description": {
-      "firstTime": "Find out which level of the Amakids English language course suits you best.There is only one correct answer for each question. You have to give at least one answer to complete the test",
+      "firstTime1": "Find out which level of the ",
+      "firstTime2": " English language course suits you best.There is only one correct answer for each question. You have to give at least one answer to complete the test",
       "common": "There is only one correct answer for each question. You have to give at least one answer to complete the test"
     },
     "startTest": "Take the test",

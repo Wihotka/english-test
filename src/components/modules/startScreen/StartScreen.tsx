@@ -11,7 +11,7 @@ import config from '@config';
 import styles from './styles.scss';
 
 export const StartScreen = () => {
-    const {authorized, enrolledOnCourse} = useSelector((state:any) => state.commonData);
+    const {authorized, enrolledOnCourse, common} = useSelector((state:any) => state.commonData);
     const langCode = useSelector((state:any) => state.commonData?.settings?.langCode);
     const {subject, test} = useParams<UrlParamsT>();
     const options = config.options[subject];
@@ -37,11 +37,26 @@ export const StartScreen = () => {
         <div className={styles.info}>
             <div className={styles.titleWrap}>
                 <h3 className={styles.title}>
-                    <LocalizedText name={`greeting.title.${isFirstTime ? 'firstTime' : 'common'}`} path={`${subject}/${test}/translation`}/>
+                    {isFirstTime
+                        ? <LocalizedText name={'greeting.title.firstTime'} path={`${subject}/${test}/translation`}/>
+                        : <>
+                            <LocalizedText name={'greeting.title.common1'} path={`${subject}/${test}/translation`}/>
+                            {common?.company.title}
+                            <LocalizedText name={'greeting.title.common2'} path={`${subject}/${test}/translation`}/>
+                        </>
+                    }
                 </h3>
                 {isFirstTime && <img src={require('_assets/img/gift.png')} alt='gift'/>}
             </div>
             <p className={styles.text}>
+                {isFirstTime
+                    ? <>
+                        <LocalizedText name={'greeting.description.firstTime1'} path={`${subject}/${test}/translation`}/>
+                        {common?.company.title}
+                        <LocalizedText name={'greeting.description.firstTime2'} path={`${subject}/${test}/translation`}/>
+                    </>
+                    : <LocalizedText name={'greeting.description.common'} path={`${subject}/${test}/translation`}/>
+                }
                 <LocalizedText name={`greeting.description.${isFirstTime ? 'firstTime' : 'common'}`} path={`${subject}/${test}/translation`}/>
             </p>
             <h4 className={styles.startTest}>

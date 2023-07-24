@@ -2,10 +2,12 @@
   "greeting": {
     "title": {
       "firstTime": "Passes le test et recois un cadeau",
-      "common": "Réponds au quiz et découvres quel niveau de notre cours d'anglais AMAkids te convient le mieux"
+      "common1": "Réponds au quiz et découvres quel niveau de notre cours d'anglais ",
+      "common2": " te convient le mieux"
     },
     "description": {
-      "firstTime": "Découvres quel niveau de notre cours d'anglais AMAkids te convient le mieux. Réponds aux questions, chacune n'ayant qu'une seule bonne réponse. Tu dois répondre à au moins une question pour terminer le test.",
+      "firstTime1": "Découvres quel niveau de notre cours d'anglais ",
+      "firstTime2": " te convient le mieux. Réponds aux questions, chacune n'ayant qu'une seule bonne réponse. Tu dois répondre à au moins une question pour terminer le test.",
       "common": "Réponds aux questions, chacune n'ayant qu'une seule bonne réponse. Tu dois répondre à au moins une question pour terminer le test."
     },
     "startTest": "Passer le test",

@@ -2,10 +2,12 @@
   "greeting": {
     "title": {
       "firstTime": "Urob si test a získaj darček",
-      "common": "Absolvuj náš test a zistíš, ktorá úroveň kurzu “AMAenglish” оd AMAkids ti viac vyhovuje "
+      "common1": "Absolvuj náš test a zistíš, ktorá úroveň kurzu “AMAenglish” оd ",
+      "common2": " ti viac vyhovuje"
     },
     "description": {
-      "firstTime": "Zisti, ktorá úroveň kurzu “AMAenglish” оd AMAkids ti viac vyhovuje . Odpovedz na otázky, z  ktorých každá má len jednu správnu odpoveď. Na dokončenie testu treba odpovedať aspoň na jednu otázku",
+      "firstTime1": "Zisti, ktorá úroveň kurzu “AMAenglish” оd ",
+      "firstTime2": " ti viac vyhovuje . Odpovedz na otázky, z  ktorých každá má len jednu správnu odpoveď. Na dokončenie testu treba odpovedať aspoň na jednu otázku",
       "common": "Odpovedz na otázky, z ktorých každá má len jednu správnu odpoveď. Na dokončenie testu musíš odpovedať aspoň na jednu otázku"
     },
     "startTest": "Začať test",
