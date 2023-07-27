@@ -42,8 +42,8 @@
   },
   "tooltip": "Odpovedzte aspoň na jednu otázku",
   "pdf": {
-    "title": "Test 'Estimating the level of learning'",
-    "score": "Total score"
+    "title": "Test 'Odporúčanie úrovne výučby angličtiny'",
+    "score": "Celkové skóre"
   },
   "error": {
     "title": "Unable to send results",
