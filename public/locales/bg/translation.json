@@ -42,8 +42,8 @@
   },
   "tooltip": "Отговори на поне един въпрос",
   "pdf": {
-    "title": "Test 'Estimating the level of learning'",
-    "score": "Total score"
+    "title": "Тест за установяване на нивото",
+    "score": "Краен резултат"
   },
   "error": {
     "title": "Unable to send results",
