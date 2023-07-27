@@ -40,8 +40,8 @@
   },
   "tooltip": "Answer at least one question",
   "pdf": {
-    "title": "Тест на знание английского языка",
-    "score": "Колличество баллов"
+    "title": "Test 'Estimating the level of learning'",
+    "score": "Total score"
   },
   "error": {
     "title": "Unable to send results",
