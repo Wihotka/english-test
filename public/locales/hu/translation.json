@@ -42,8 +42,8 @@
   },
   "tooltip": "Válaszolj legalább egy kérdésre",
   "pdf": {
-    "title": "Test 'Estimating the level of learning'",
-    "score": "Total score"
+    "title": "Teszt „a tanfolyam várható szintjének meghatározására”",
+    "score": "Összes pont"
   },
   "error": {
     "title": "Unable to send results",
