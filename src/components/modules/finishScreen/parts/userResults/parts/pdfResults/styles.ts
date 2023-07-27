@@ -50,7 +50,8 @@ export const pdfStyles = StyleSheet.create({
     },
     logo: {
       width: 160,
-      height: 80
+      height: 80,
+      objectFit: 'contain'
     },
     checkbox: {
       display: 'flex',

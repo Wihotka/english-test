@@ -39,6 +39,10 @@
     "repeat": "Try again"
   },
   "tooltip": "Answer at least one question",
+  "pdf": {
+    "title": "Тест на знание английского языка",
+    "score": "Колличество баллов"
+  },
   "error": {
     "title": "Unable to send results",
     "textRepeat": "Please try again",

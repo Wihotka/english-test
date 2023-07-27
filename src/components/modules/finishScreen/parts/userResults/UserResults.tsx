@@ -29,8 +29,10 @@ export const UserResults = ({
     failedAttempts,
     setFailedAttempts
 }:IUserResults) => {
-    const {authorized, enrolledOnCourse} = useSelector((state:any) => state.commonData);
+    const {authorized, enrolledOnCourse, common} = useSelector((state:any) => state.commonData);
     const {subject, test, option, tasksData, tasksProgress} = useSelector((state:any) => state.testData);
+
+    const isAmakids = common?.company.title.toLowerCase() === 'amakids';
 
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -132,6 +134,7 @@ export const UserResults = ({
                     subject={subject}
                     test={test}
                     option={option}
+                    isAmakids={isAmakids}
                 />}
                 fileName='results.pdf'
             >

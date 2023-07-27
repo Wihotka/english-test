@@ -41,6 +41,10 @@
     "loading": "Eredmények betöltése..."
   },
   "tooltip": "Válaszolj legalább egy kérdésre",
+  "pdf": {
+    "title": "Тест на знание английского языка",
+    "score": "Колличество баллов"
+  },
   "error": {
     "title": "Unable to send results",
     "textRepeat": "Please try again",

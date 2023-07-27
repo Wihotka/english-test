@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import {Page, Text, View, Image, Document} from '@react-pdf/renderer';
 import {pdfStyles} from './styles';
 
@@ -9,6 +10,7 @@ interface IPdfResults {
     subject:string;
     test:string;
     option:string;
+    isAmakids:boolean;
 }
 
 enum Themes {
@@ -27,8 +29,11 @@ export const PdfResults = ({
     progress,
     subject,
     test,
-    option
+    option,
+    isAmakids
 }:IPdfResults) => {
+    const {t} = useTranslation('translation');
+
     return <Document >
         <Page size='A4' wrap style={pdfStyles.page}>
             {/* Numeration */}
@@ -38,10 +43,10 @@ export const PdfResults = ({
             {/* Header */}
             <View style={pdfStyles.header}>
                 <View style={pdfStyles.headerTextBlock}>
-                    <Text style={pdfStyles.headerTitle}>Тест на знание английского языка</Text>
-                    <Text style={pdfStyles.headerSubtitle}>Колличество баллов: {finalScore}</Text>
+                    <Text style={pdfStyles.headerTitle}>{`${t('pdf.title')}`}</Text>
+                    <Text style={pdfStyles.headerSubtitle}>{`${t('pdf.score')}: ${finalScore}`}</Text>
                 </View>
-                <Image src={require('_assets/img/logo.png')} style={pdfStyles.logo}/>
+                <Image src={require(`_assets/img/logo/${isAmakids ? 'amakids' : 'smartum'}.png`)} style={pdfStyles.logo}/>
             </View>
             {/* Questions */}
             <View style={pdfStyles.sections}>
@@ -87,7 +92,7 @@ export const PdfResults = ({
                                 </View>
                             </View>
                             <View style={pdfStyles.taskScore}>
-                                <Text>Колличество баллов: </Text>
+                                <Text>{`${t('pdf.score')}: `}</Text>
                                 <Text style={pdfStyles.score}>{progress[+task.id - 1].score}</Text>
                             </View>
                         </View>)}
@@ -111,7 +116,7 @@ export const PdfResults = ({
                                 </View>)}
                             </View>
                             <View style={pdfStyles.taskScore}>
-                                <Text>Колличество баллов: </Text>
+                                <Text>{`${t('pdf.score')}: `}</Text>
                                 <Text style={pdfStyles.score}>{progress[+task.id - 1].score}</Text>
                             </View>
                         </View>)}
@@ -156,7 +161,7 @@ export const PdfResults = ({
                                 </View>
                             </View>
                             <View style={pdfStyles.taskScore}>
-                                <Text>Колличество баллов: </Text>
+                                <Text>{`${t('pdf.score')}: `}</Text>
                                 <Text style={pdfStyles.score}>{progress[+task.id - 1].score}</Text>
                             </View>
                         </View>)}
@@ -181,7 +186,7 @@ export const PdfResults = ({
                                 </View>
                             </View>
                             <View style={pdfStyles.taskScore}>
-                                <Text>Колличество баллов: </Text>
+                                <Text>{`${t('pdf.score')}: `}</Text>
                                 <Text style={pdfStyles.score}>{progress[+task.id - 1].score}</Text>
                             </View>
                         </View>)}
@@ -230,7 +235,7 @@ export const PdfResults = ({
                                 </View>
                             </View>
                             <View style={pdfStyles.taskScore}>
-                                <Text>Колличество баллов: </Text>
+                                <Text>{`${t('pdf.score')}: `}</Text>
                                 <Text style={pdfStyles.score}>{progress[+task.id - 1].score}</Text>
                             </View>
                         </View>)}
@@ -276,7 +281,7 @@ export const PdfResults = ({
                                 </View>
                             </View>
                             <View style={pdfStyles.taskScore}>
-                                <Text>Колличество баллов: </Text>
+                                <Text>{`${t('pdf.score')}: `}</Text>
                                 <Text style={pdfStyles.score}>{progress[+task.id - 1].score}</Text>
                             </View>
                         </View>)}
@@ -346,7 +351,7 @@ export const PdfResults = ({
                                 }
                             </View>
                             <View style={pdfStyles.taskScore}>
-                                <Text>Колличество баллов: </Text>
+                                <Text>{`${t('pdf.score')}: `}</Text>
                                 <Text style={pdfStyles.score}>{progress[+task.id - 1].score}</Text>
                             </View>
                         </View>)}

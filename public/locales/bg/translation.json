@@ -41,6 +41,10 @@
     "loading": "Зареждане на резултати..."
   },
   "tooltip": "Отговори на поне един въпрос",
+  "pdf": {
+    "title": "Тест на знание английского языка",
+    "score": "Колличество баллов"
+  },
   "error": {
     "title": "Unable to send results",
     "textRepeat": "Please try again",
